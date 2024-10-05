@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "laravel-mail-436415",
+  "private_key_id": "ca9f51542dfe7e15865763928d2ed7f76ad9c1a5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCsqW6Yzu9rEf0n\ncMvFfcjKRUqTdlS+E5onbuM70HvNIE+FTc52nftacc3mSitY6q4cghrNj0G7J9lR\nOLCutb2Mdx26i3lopyItYyoX2MI7y7sGQUFdh6r6yt/P+gmEtZRlkdTeeeMUK0zH\nmxgKkgD+I9XrwnW3RWNn4D8L3amYKWTadDdsgqUeGqK7QLaSMeJdqltTqX8McXoT\n4AxuozCQCH4SUJ6M8JaOClKxHvJnXfnBv+AXNIJu88nKTKq29BzgtcdNWHTPtUaT\nREJyERxUWSY1xSIgAGf2FZSQGzbhrZS7AyQMn7kG7n2PEB6kI4njPQFJexytiA8X\nyd6mtYH/AgMBAAECggEACbY/ZfxV0+RKJLrKgMxSIVaDxbGlPfUk+aIvc+uGhdjo\natYf4+TVAOxf1DFIfj2NF5trMzQjUrSrcPnLA7jDSwW0OAxPrZxLvC5/bUygTZ69\ntrIFoY4tBuL8czAG8wkHqi2UF1jXILOizk4iAbjesheFQ+KcnndvtPsUcMVsxwXi\nqQI/vSxUs/h/i9XhjTUfEyUSZfbSOylXNTeHW9udALOKggA2SZOtL0BHR2FSDpLR\nKnp9Qc2m4uOPAxnUy/WIZLSiwstOYwoGybT7rUjZeS0UBWmlrtuK9Ftpmq6io+kW\n2jV000LNrl3nMjVCCJ/E6FZjqwMDMGJ/Jf+YaiYjkQKBgQDh2JdttfiFol3E8er2\n97yQLNTaov7JCaohCbfeC+yGPvN9+AAJX9Uw7lXaBfg6ocVBbqRSe9ZIjuWvFzgC\nFlRRZLiSE56uRT2GjEkMEe60Vcz+kjuUnQfTC5Hb69ytvsxxCbdkW4C6vePfXK+q\nuMSSESiHx6ZNBinQzMeBaQgS2QKBgQDDtwGclx9BMJtPs1ZYuZe5LvLjBdCvKPr9\nYQFp5ZjzxLe4Za7M7r9OLeu2nVv/p9An4VVN1d7uNhcvdtvn0H7mQCvR42ZnrV7I\n6WPi/7r42zUmGZ43weVzbVMilgOxWowhlqdSeTJfZ6ZMnQ9klIISFjtdJTxu70Qq\nBtrAYX8ElwKBgGwGQHAOkR/CSN2x5PRaDMxdVTZ6rimUwNZqopLH20tfAvJm1AWn\n2/46kb/mCRRqWkJw3JJDf3xXNU9paLW+3nfMGGhukADFR6d6pFnsneOOAq5lXbA4\n6AwvRYYOrBBC6eDLh/etuMYZm8wztiaPmB5RrLQ9b7L51rhzqp2gkmcJAoGACAoI\nYupCOmdIuelf7p0RAmZPS8v9WnSQer/1Uug/dCPseAKVP42/BfMU75dfJA08m6bB\n3kSet6I5KZX0Sn1h+QtBwYlZt4CDmDUeCUD/6SD3+eyrdxbb2fXvqEgJNsvFXcvW\na6jWzNxxFEyPSU5gWWXYYmcZKGVjo2ZMrgJTOVkCgYEA2JO7Hz/wIESRWu9t1mii\nXYvrxcbgwdA9TQgP6Oohn1GxXYSLAlPbZMgHEA9yzByo7sTxRt1zGnLFUlYQTazK\nsZV5mRXza442WmAU7G0SnT36SaepJzKsJBuEwYr+lJHZG3BZwNXp8aTMnNoDJd1v\nXt3MTH1aTtXSaE2pQL+JStg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "laravel-mail-test@laravel-mail-436415.iam.gserviceaccount.com",
+  "client_id": "112725607419493139712",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/laravel-mail-test%40laravel-mail-436415.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

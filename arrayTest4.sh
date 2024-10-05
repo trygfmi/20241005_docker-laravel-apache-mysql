@@ -1,0 +1,1 @@
+./arrayTest5.sh a_b_c_ aaa

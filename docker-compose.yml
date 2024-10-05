@@ -1,0 +1,34 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8081:80"
+    volumes:
+      - ./src:/var/www/html
+    container_name: apache_laravel
+    #environment設定してみたが、適用されなかったので、手動で直す必要がある /etc/apache2/sites-available/000-default.conf
+    #environment:
+      #- APACHE_DOCUMENT_ROOT=/var/www/html/public
+    working_dir: /var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: laravel_db
+    restart: no
+    environment:
+      #DB_HOSTが設定されていない場合、コンテナ名がDB_HOSTになる
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: rootpassword
+      TZ: Asia/Tokyo
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./test/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - "3306:3306"
+
+volumes:
+  dbdata:

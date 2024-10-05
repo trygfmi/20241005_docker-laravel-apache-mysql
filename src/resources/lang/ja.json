@@ -1,0 +1,8 @@
+{
+    "Name" : "アカウント名",
+    "Email" : "メールアドレス",
+    "Password" : "パスワード",
+    "Confirm Password" : "パスワード再確認",
+    "Register" : "登録",
+    "Saved." : "セーブされました"
+}
