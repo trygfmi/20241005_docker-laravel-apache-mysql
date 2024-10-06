@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('own_pokemon_completes', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->primary();
+            $table->id('id');
             $table->string('own_pokemon_name');
-            $table->string('nickname');
+            $table->string('nickname')->nullable();
             $table->integer('sp');
             $table->integer('lv');
             $table->string('food_lv1');
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('sub_skill_lv75');
             $table->string('sub_skill_lv100');
             $table->string('personality');
-            $table->string('remarks');
+            $table->string('remarks')->nullable();
             $table->timestamps();
         });
     }

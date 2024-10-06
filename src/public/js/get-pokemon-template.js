@@ -38,7 +38,10 @@ function getPokemonTemplate(){
             
 
             // registerForm.innerHTML = registerForm.innerHTML + `
-            registerForm.innerHTML = registerForm.innerHTML + `
+            // registerForm.innerHTML = registerForm.innerHTML + `
+            registerForm.innerHTML = `
+                    <p><img src="images/` + response.choice_pokemon_id['id'] + `.png" alt="` + response.choice_pokemon_name + `"></p>
+                    <p><label>id</label><select name="choice_pokemon_id"><option>` + response.choice_pokemon_id['id'] + `</option></select></p>
                     <p><label>name</label><select name="own_pokemon_name"><option>` + response.choice_pokemon_name + `</option></select></p>
                     <p><label for="nickname">nickname</label><input id="nickname" type="text" name="nickname"></p>
                     <p><label for="sp">sp</label><input id="sp" type="text" name="sp"></p>

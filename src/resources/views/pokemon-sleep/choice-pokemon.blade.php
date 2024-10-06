@@ -13,7 +13,7 @@
     <button onclick="getPokemonTemplate()" >登録フォーム表示</button>
 
     <div id="formWrapper" style="display: none;">
-        <form action="choice-pokemon" method="post">
+        <form action="{{route('save-choice-pokemon')}}" method="post">
             @csrf
             <div id="registerForm">
                 

@@ -16,7 +16,7 @@ class MainSkillSeeder extends Seeder
     {
         //
         DB::table('main_skills')->insert([
-            /*
+            // /*
             ['id'=>1, 'main_skill'=>'エナジーチャージS', 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>2, 'main_skill'=>'エナジーチャージM', 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>3, 'main_skill'=>'食材ゲットS', 'created_at'=>now(), 'updated_at'=>now()],
@@ -27,13 +27,13 @@ class MainSkillSeeder extends Seeder
             ['id'=>8, 'main_skill'=>'げんきオールS', 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>9, 'main_skill'=>'ゆめのかけらゲットS', 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>10, 'main_skill'=>'ゆびをふる', 'created_at'=>now(), 'updated_at'=>now()],
-            */
-            /*
+            // */
+            // /*
             ['id'=>11, 'main_skill'=>'おてつだいブースト(でんき)', 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>12, 'main_skill'=>'おてつだいブースト(ほのお)', 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>13, 'main_skill'=>'おてつだいブースト(みず)', 'created_at'=>now(), 'updated_at'=>now()],
-            */
-            ['id'=>14, 'main_skill'=>'料理チャンスS', 'created_at'=>now(), 'updated_at'=>now()],
+            // */
+            // ['id'=>14, 'main_skill'=>'料理チャンスS', 'created_at'=>now(), 'updated_at'=>now()],
         ]);
     }
 }

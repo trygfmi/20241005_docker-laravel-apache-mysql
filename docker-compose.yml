@@ -5,7 +5,7 @@ services:
       - "8081:80"
     volumes:
       - ./src:/var/www/html
-    container_name: apache_laravel
+    container_name: apache_laravel2
     #environment設定してみたが、適用されなかったので、手動で直す必要がある /etc/apache2/sites-available/000-default.conf
     #environment:
       #- APACHE_DOCUMENT_ROOT=/var/www/html/public
@@ -15,7 +15,7 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: laravel_db
+    container_name: laravel_db2
     restart: no
     environment:
       #DB_HOSTが設定されていない場合、コンテナ名がDB_HOSTになる

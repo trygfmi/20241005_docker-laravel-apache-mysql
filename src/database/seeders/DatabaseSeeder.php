@@ -44,6 +44,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ChoicePokemonConstrainedSeeder::class);
         // $this->call(SubSkillSeeder::class);
         // $this->call(PersonalitySeeder::class);
-        // $this->call(OwnPokemonCompleteSeeder::class);
+        $this->call(OwnPokemonCompleteSeeder::class);
     }
 }

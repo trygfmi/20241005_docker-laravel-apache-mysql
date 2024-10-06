@@ -40,7 +40,10 @@ class ChoicePokemonController extends Controller
         // $choice_pokemon = ChoicePokemon::where('name', $request->selectPokemonName)->get();
         $choice_pokemon_name = $request->selectPokemonName;
 
-        $test = ChoicePokemonConstrained::where('name', $request->selectPokemonName)->with('create_pokemon_template2.food_lv60')->get();
+        $choice_pokemon = ChoicePokemonConstrained::where('name', $request->selectPokemonName)->get();
+        $choice_pokemon_id = $choice_pokemon[0];
+
+        $test = ChoicePokemonConstrained::where('name', $request->selectPokemonName)->get();
 
         $foodlv1 = ChoicePokemonConstrained::where('name', $request->selectPokemonName)->with('create_pokemon_template2.food_lv1')->get();
         $foodlv1_food1 = $foodlv1[0]->create_pokemon_template2->food_lv1->food1;
@@ -64,7 +67,7 @@ class ChoicePokemonController extends Controller
         return response()->json([
                                 //  'choice_pokemon'=>$choice_pokemon, 
                                 "choice_pokemon_name"=>$choice_pokemon_name,
-                                "test"=>$test,
+                                "choice_pokemon_id"=>$choice_pokemon_id,
                                 'foodlv1_food1'=>$foodlv1_food1,
                                 'foodlv30_food1'=>$foodlv30_food1, 'foodlv30_food2'=>$foodlv30_food2,
                                 'foodlv60_food1'=>$foodlv60_food1, 'foodlv60_food2'=>$foodlv60_food2, 'foodlv60_food3'=>$foodlv60_food3,
@@ -72,6 +75,7 @@ class ChoicePokemonController extends Controller
                                 'main_skill'=>$main_skill,
                                 'sub_skill'=>$sub_skill_array,
                                 'personality'=>$personality_array,
+                                'test'=>$test,
                                 ]);
     }
 
@@ -90,7 +94,7 @@ class ChoicePokemonController extends Controller
     {
         //
         // dd($request);
-
+        $id = $request->choice_pokemon_id;
         $own_pokemon_name = $request->own_pokemon_name;
         $nickname = $request->nickname;
         $sp = $request->sp;
@@ -127,6 +131,7 @@ class ChoicePokemonController extends Controller
             'remarks'=>$remarks, 
             'created_at'=>now(), 
             'updated_at'=>now(), 
+            'image_path'=>'images/'.$id.'.png',
         ]);
         
         $createdPokemon->save();

@@ -16,7 +16,6 @@ class CreatePokemonTemplate3Seeder extends Seeder
     {
         //
         DB::table('create_pokemon_template3s')->insert([
-            
             ['id'=>1, 'food_lv1_id'=>1, 'food_lv30_id'=>1, 'food_lv60_id'=>1, 'main_skill_id'=>3, 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>2, 'food_lv1_id'=>2, 'food_lv30_id'=>2, 'food_lv60_id'=>2, 'main_skill_id'=>3, 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>3, 'food_lv1_id'=>3, 'food_lv30_id'=>3, 'food_lv60_id'=>3, 'main_skill_id'=>3, 'created_at'=>now(), 'updated_at'=>now()],

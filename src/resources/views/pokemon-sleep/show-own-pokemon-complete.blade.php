@@ -1,27 +1,31 @@
 <div>
     <!-- Simplicity is an acquired taste. - Katharine Gerould -->
     @if(isset($result))
+        <table>
+        <tr>
+            <th>id</th><th>画像</th><th>ポケモン名</th><th>ニックネーム</th><th>sp</th><th>lv</th><th>食材lv1</th><th>食材lv30</th><th>食材lv60</th><th>メインスキル</th><th>サブスキルlv1</th><th>サブスキルlv25</th><th>サブスキルlv50</th><th>サブスキルlv75</th><th>サブスキルlv100</th><th>性格</th><th>備考</th>
+        </tr>
         @foreach($result as $r)
-            <p>---------------------------------------</p>
-            <p>id:{{$r->id}}</p>
-            <p>own_pokemon_name:{{$r->own_pokemon_name}}</p>
-            <p>sp:{{$r->sp}}</p>
-            <p>lv:{{$r->lv}}</p>
-            <p>food_lv1:{{$r->food_lv1}}</p>
-            <p>food_lv30:{{$r->food_lv30}}</p>
-            <p>food_lv60:{{$r->food_lv60}}</p>
-            <p>main_skill:{{$r->main_skill}}</p>
-            <p>sub_skill_lv1:{{$r->sub_skill_lv1}}</p>
-            <p>sub_skill_lv25:{{$r->sub_skill_lv25}}</p>
-            <p>sub_skill_lv50:{{$r->sub_skill_lv50}}</p>
-            <p>sub_skill_lv75:{{$r->sub_skill_lv75}}</p>
-            <p>sub_skill_lv100:{{$r->sub_skill_lv100}}</p>
-            <p>personality:{{$r->personality}}</p>
-            <p>remarks:{{$r->remarks}}</p>
-            <p>created_at:{{$r->created_at}}</p>
-            <p>updated_at:{{$r->updated_at}}</p>
-            <p>---------------------------------------</p>
+            <tr>
+                <td>{{$r->id}}</td>
+                <td><img src="{{$r->image_path}}" alt="{{$r->own_pokemon_name}}"></td>
+                <td>{{$r->own_pokemon_name}}</td>
+                <td>{{$r->nickname}}</td>
+                <td>{{$r->sp}}</td>
+                <td>{{$r->lv}}</td>
+                <td>{{$r->food_lv1}}</td>
+                <td>{{$r->food_lv30}}</td>
+                <td>{{$r->food_lv60}}</td>
+                <td>{{$r->main_skill}}</td>
+                <td>{{$r->sub_skill_lv1}}</td>
+                <td>{{$r->sub_skill_lv25}}</td>
+                <td>{{$r->sub_skill_lv50}}</td>
+                <td>{{$r->sub_skill_lv75}}</td>
+                <td>{{$r->sub_skill_lv100}}</td>
+                <td>{{$r->personality}}</td>
+                <td>{{$r->remarks}}</td>
+            </tr>
         @endforeach
-        
+        </table>
     @endif
 </div>
