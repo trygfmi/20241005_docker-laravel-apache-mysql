@@ -10,7 +10,17 @@
             @endforeach
         @endif
     </select>
-    <button onclick="getPokemonTemplate()" >登録フォーム表示</button>
+    <button id="test" onclick="getPokemonTemplate()">登録フォーム表示</button>
+
+
+
+    @if(session('success-register'))
+        <script>
+            alert("{{session('success-register')}}");
+        </script>
+    @endif
+
+
 
     <div id="formWrapper" style="display: none;">
         <form action="{{route('save-choice-pokemon')}}" method="post">
@@ -19,11 +29,15 @@
                 
             </div>
 
-            <button type="submit">登録</button>
+            <button id="register-button" type="submit">登録</button>
         </form>
     </div>
+    <input id="hidden-count" type="hidden" name="hidden-count" value="0">
     
 
 
     
 </div>
+
+
+

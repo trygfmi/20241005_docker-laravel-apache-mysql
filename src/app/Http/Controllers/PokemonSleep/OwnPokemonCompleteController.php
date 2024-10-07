@@ -60,6 +60,16 @@ class OwnPokemonCompleteController extends Controller
         //
     }
 
+    public function delete(Request $request){
+        // dd($request);
+        $deletePokemonNumber = count($request->deleteId);
+        for($i=0; $i<$deletePokemonNumber; $i++){
+            OwnPokemonComplete::find($request->deleteId[$i])->delete();
+        }
+        
+        return redirect()->back()->with('success-delete','削除されました');
+    }
+
     /**
      * Remove the specified resource from storage.
      */

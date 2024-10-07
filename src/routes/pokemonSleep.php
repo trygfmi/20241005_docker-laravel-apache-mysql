@@ -77,5 +77,6 @@ Route::get('/show-own-pokemon-complete', [OwnPokemonCompleteController::class, '
 Route::get('/search-own-pokemon-complete', [OwnPokemonCompleteController::class, 'searchIndex']);
 Route::post('/search-own-pokemon-complete', [OwnPokemonCompleteController::class, 'search'])->name('search');
 Route::get('/get-json-own-pokemon-complete', [OwnPokemonCompleteController::class, 'getJson']);
+Route::post('/show-own-pokemon-complete', [OwnPokemonCompleteController::class, 'delete'])->name('delete-own-pokemon-complete');
 
 

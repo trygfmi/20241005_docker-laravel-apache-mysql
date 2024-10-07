@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('choice_pokemon_constraineds', function (Blueprint $table) {
             $table->unsignedBigInteger('id')->primary();
-            $table->string('name');
+            $table->string('name')->colattion('utf8mb4_bin');
             $table->unique(['id', 'name']);
             $table->foreignid('create_pokemon_template_id')->constrained('create_pokemon_templates')->onDelete('cascade');
             $table->foreignid('create_pokemon_template2_id')->constrained('create_pokemon_template2s')->onDelete('cascade');

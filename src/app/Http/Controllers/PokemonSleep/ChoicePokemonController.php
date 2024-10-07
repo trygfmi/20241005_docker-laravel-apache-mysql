@@ -23,6 +23,11 @@ class ChoicePokemonController extends Controller
     public function index()
     {
         //
+        /*
+        DB::enableQueryLog();
+        ChoicePokemonConstrained::whereRaw('BINARY name = ?', ['カラカラ'])->get();
+        dd(DB::getQueryLog());
+        */
         // dd(response());
         //dd(ChoicePokemonConstrained::with('create_pokemon_templates')->get());
         $choice_pokemon = ChoicePokemonConstrained::orderBy('name', 'asc')->get();
@@ -41,6 +46,7 @@ class ChoicePokemonController extends Controller
         $choice_pokemon_name = $request->selectPokemonName;
 
         $choice_pokemon = ChoicePokemonConstrained::where('name', $request->selectPokemonName)->get();
+        // $choice_pokemon = ChoicePokemonConstrained::whereRaw('BINARY name = ?', [$request->selectPokemonName])->get();
         $choice_pokemon_id = $choice_pokemon[0];
 
         $test = ChoicePokemonConstrained::where('name', $request->selectPokemonName)->get();
@@ -94,49 +100,53 @@ class ChoicePokemonController extends Controller
     {
         //
         // dd($request);
-        $id = $request->choice_pokemon_id;
-        $own_pokemon_name = $request->own_pokemon_name;
-        $nickname = $request->nickname;
-        $sp = $request->sp;
-        $lv = $request->lv;
-        $food_lv1 = $request->food_lv1;
-        $food_lv30 = $request->food_lv30;
-        $food_lv60 = $request->food_lv60;
-        $main_skill = $request->main_skill;
-        $sub_skill_lv1 = $request->sub_skill_lv1;
-        $sub_skill_lv25 = $request->sub_skill_lv25;
-        $sub_skill_lv50 = $request->sub_skill_lv50;
-        $sub_skill_lv75 = $request->sub_skill_lv75;
-        $sub_skill_lv100 = $request->sub_skill_lv100;
-        $personality = $request->personality;
-        $remarks = $request->remarks;
+        // dd($request->own_pokemon_name);
+        for($i=0; $i<count($request->choice_pokemon_id); $i++){
+            $id = $request->choice_pokemon_id[$i];
+            $own_pokemon_name = $request->own_pokemon_name[$i];
+            $nickname = $request->nickname[$i];
+            $sp = $request->sp[$i];
+            $lv = $request->lv[$i];
+            $food_lv1 = $request->food_lv1[$i];
+            $food_lv30 = $request->food_lv30[$i];
+            $food_lv60 = $request->food_lv60[$i];
+            $main_skill = $request->main_skill[$i];
+            $sub_skill_lv1 = $request->sub_skill_lv1[$i];
+            $sub_skill_lv25 = $request->sub_skill_lv25[$i];
+            $sub_skill_lv50 = $request->sub_skill_lv50[$i];
+            $sub_skill_lv75 = $request->sub_skill_lv75[$i];
+            $sub_skill_lv100 = $request->sub_skill_lv100[$i];
+            $personality = $request->personality[$i];
+            $remarks = $request->remarks[$i];
 
 
 
-        $createdPokemon = OwnPokemonComplete::create([
-            'own_pokemon_name'=>$own_pokemon_name,
-            'nickname'=>$nickname,
-            'sp'=>$sp,
-            'lv'=>$lv,
-            'food_lv1'=>$food_lv1,
-            'food_lv30'=>$food_lv30, 
-            'food_lv60'=>$food_lv60, 
-            'main_skill'=>$main_skill, 
-            'sub_skill_lv1'=>$sub_skill_lv1, 
-            'sub_skill_lv25'=>$sub_skill_lv25, 
-            'sub_skill_lv50'=>$sub_skill_lv50, 
-            'sub_skill_lv75'=>$sub_skill_lv75, 
-            'sub_skill_lv100'=>$sub_skill_lv100, 
-            'personality'=>$personality, 
-            'remarks'=>$remarks, 
-            'created_at'=>now(), 
-            'updated_at'=>now(), 
-            'image_path'=>'images/'.$id.'.png',
-        ]);
+            $createdPokemon = OwnPokemonComplete::create([
+                'own_pokemon_name'=>$own_pokemon_name,
+                'nickname'=>$nickname,
+                'sp'=>$sp,
+                'lv'=>$lv,
+                'food_lv1'=>$food_lv1,
+                'food_lv30'=>$food_lv30, 
+                'food_lv60'=>$food_lv60, 
+                'main_skill'=>$main_skill, 
+                'sub_skill_lv1'=>$sub_skill_lv1, 
+                'sub_skill_lv25'=>$sub_skill_lv25, 
+                'sub_skill_lv50'=>$sub_skill_lv50, 
+                'sub_skill_lv75'=>$sub_skill_lv75, 
+                'sub_skill_lv100'=>$sub_skill_lv100, 
+                'personality'=>$personality, 
+                'remarks'=>$remarks, 
+                'created_at'=>now(), 
+                'updated_at'=>now(), 
+                'image_path'=>'images/'.$id.'.png',
+            ]);
+            
+            $createdPokemon->save();
+        }
         
-        $createdPokemon->save();
 
-        return "登録できました";
+        return redirect()->back()->with('success-register', "登録されました");
     }
 
     /**
