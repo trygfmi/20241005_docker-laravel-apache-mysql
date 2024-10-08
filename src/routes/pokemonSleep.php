@@ -80,3 +80,7 @@ Route::get('/get-json-own-pokemon-complete', [OwnPokemonCompleteController::clas
 Route::post('/show-own-pokemon-complete', [OwnPokemonCompleteController::class, 'delete'])->name('delete-own-pokemon-complete');
 
 
+
+use App\Http\Controllers\PokemonSleep\BuildOwnPokemonCompleteSeederController;
+// 現在のown_pokemon_completesテーブルに保存されている全レコードをseederで追加できる状態の文字列を出力
+Route::get('build-own-pokemon-complete-seeder', [BuildOwnPokemonCompleteSeederController::class, 'buildSeeder']);

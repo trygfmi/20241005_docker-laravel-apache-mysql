@@ -17,130 +17,118 @@ function getPokemonTemplate(){
             console.log(parseInt(document.getElementById('hidden-count').value));
             hiddenCount = document.getElementById('hidden-count').value;
 
-            p1_id = createPElement(hiddenCount, 1);
-            createImgElement(response.choice_pokemon_id, response.choice_pokemon_name, p1_id);
 
 
-            p2_id = createPElement(hiddenCount, 2);
-            label1_id = createLabelElement(hiddenCount, 1, 'id', p2_id);
-            select1_id = createSelectElement(hiddenCount, 1, "choice_pokemon_id[]", label1_id);
+            tbody_id = document.getElementById('registerTableForm');
+
+
+            tr1_id = createTrElement(hiddenCount, 1, tbody_id);
+            td1_id = createTdElement(hiddenCount, 1, tr1_id);
+            select1_id = createSelectElement(hiddenCount, 1, "choice_pokemon_id[]", td1_id);
             createOptionElement(response.choice_pokemon_id['id'], select1_id);
 
 
 
-            p3_id = createPElement(hiddenCount, 3)
-            label2_id = createLabelElement(hiddenCount, 3, "name", p3_id);
-            select2_id = createSelectElement(hiddenCount, 2, "own_pokemon_name[]", label2_id);
+            td2_id = createTdElement(hiddenCount, 2, tr1_id);
+            createImgElement(response.choice_pokemon_id, response.choice_pokemon_name, td2_id);
+
+
+
+            td3_id = createTdElement(hiddenCount, 3, tr1_id);
+            select2_id = createSelectElement(hiddenCount, 2, "own_pokemon_name[]", td3_id);
             createOptionElement(response.choice_pokemon_name, select2_id);
 
 
-
-            p4_id = createPElement(hiddenCount, 4,);
-            label4_id = createLabelElement(hiddenCount, 4, "nickname", p4_id);
-            createInputElement(hiddenCount, "nickname", "nickname[]", label4_id);
+            td4_id = createTdElement(hiddenCount, 4, tr1_id);
+            createInputElement(hiddenCount, "nickname", "nickname[]",td4_id, "100px", false);
 
 
 
-            p5_id = createPElement(hiddenCount, 5);
-            label5_id = createLabelElement(hiddenCount, 5, "sp", p5_id);
-            createInputElement(hiddenCount, "sp", "sp[]", label5_id);
+            td5_id = createTdElement(hiddenCount, 5, tr1_id);
+            createInputElement(hiddenCount, "sp", "sp[]", td5_id, "50px", true);
 
 
-
-            p6_id = createPElement(hiddenCount, 6);
-            label6_id = createLabelElement(hiddenCount, 6, "lv", p6_id);
-            createInputElement(hiddenCount, "lv", "lv[]", label6_id);
+            td6_id = createTdElement(hiddenCount, 6, tr1_id);
+            createInputElement(hiddenCount, "lv", "lv[]", td6_id, "30px", true);
 
 
-
-            p7_id = createPElement(hiddenCount, 7);
-            label7_id = createLabelElement(hiddenCount, 7, "food_lv1", p7_id);
-            select3_id = createSelectElement(hiddenCount, 3, "food_lv1[]", label7_id);
+            td7_id = createTdElement(hiddenCount, 7, tr1_id);
+            select3_id = createSelectElement(hiddenCount, 3, "food_lv1[]", td7_id);
             createOptionElement(response.foodlv1_food1, select3_id);
 
 
 
-            p8_id = createPElement(hiddenCount, 8);
-            label8_id = createLabelElement(hiddenCount, 8, "food_lv30", p8_id);
-            select4_id = createSelectElement(hiddenCount, 4, "food_lv30[]", label8_id);
+            td8_id = createTdElement(hiddenCount, 8, tr1_id);
+            select4_id = createSelectElement(hiddenCount, 4, "food_lv30[]", td8_id);
             createOptionElement(response.foodlv30_food1, select4_id);
             createOptionElement(response.foodlv30_food2, select4_id);
 
 
 
-            p9_id = createPElement(hiddenCount, 9);
-            label9_id = createLabelElement(hiddenCount, 9, "food_lv60", p9_id);
-            select5_id = createSelectElement(hiddenCount, 5, "food_lv60[]", label9_id);
+            td9_id = createTdElement(hiddenCount, 9, tr1_id);
+            select5_id = createSelectElement(hiddenCount, 5, "food_lv60[]", td9_id);
             createOptionElement(response.foodlv60_food1, select5_id);
             createOptionElement(response.foodlv60_food2, select5_id);
             createOptionElement(response.foodlv60_food3, select5_id);
 
 
 
-            p10_id = createPElement(hiddenCount, 10);
-            label10_id = createLabelElement(hiddenCount, 10, "main_skill", p10_id);
-            select6_id = createSelectElement(hiddenCount, 6, "main_skill[]", label10_id);
+            td10_id = createTdElement(hiddenCount, 10, tr1_id);
+            select6_id = createSelectElement(hiddenCount, 6, "main_skill[]", td10_id);
             createOptionElement(response.main_skill, select6_id);
 
 
 
-            p11_id = createPElement(hiddenCount, 11);
-            label11_id = createLabelElement(hiddenCount, 11, "sub_skill_lv1", p11_id);
-            select7_id = createSelectElement(hiddenCount, 7, "sub_skill_lv1[]", label11_id);
+            td11_id = createTdElement(hiddenCount, 11, tr1_id);
+            select7_id = createSelectElement(hiddenCount, 7, "sub_skill_lv1[]", td11_id);
             for(i=0; i<17; i++){
                 createOptionElement(response.sub_skill[i].sub_skill, select7_id);
             }
             
 
 
-            p12_id = createPElement(hiddenCount, 12);
-            label12_id = createLabelElement(hiddenCount, 12, "sub_skill_lv25", p12_id);
-            select8_id = createSelectElement(hiddenCount, 8, "sub_skill_lv25[]", label12_id);
+            td12_id = createTdElement(hiddenCount, 12, tr1_id);
+            select8_id = createSelectElement(hiddenCount, 8, "sub_skill_lv25[]", td12_id);
             for(i=0; i<17; i++){
                 createOptionElement(response.sub_skill[i].sub_skill, select8_id);
             }
 
 
 
-            p13_id = createPElement(hiddenCount, 13);
-            label13_id = createLabelElement(hiddenCount, 13, "sub_skill_lv50", p13_id);
-            select9_id = createSelectElement(hiddenCount, 9, "sub_skill_lv50[]", label13_id);
+            td13_id = createTdElement(hiddenCount, 13, tr1_id);
+            select9_id = createSelectElement(hiddenCount, 9, "sub_skill_lv50[]", td13_id);
             for(i=0; i<17; i++){
                 createOptionElement(response.sub_skill[i].sub_skill, select9_id);
             }
 
 
 
-            p14_id = createPElement(hiddenCount, 14);
-            label14_id = createLabelElement(hiddenCount, 14, "sub_skill_lv75", p14_id);
-            select10_id = createSelectElement(hiddenCount, 10, "sub_skill_lv75[]", label14_id);
+            td14_id = createTdElement(hiddenCount, 14, tr1_id);
+            select10_id = createSelectElement(hiddenCount, 10, "sub_skill_lv75[]", td14_id);
             for(i=0; i<17; i++){
                 createOptionElement(response.sub_skill[i].sub_skill, select10_id);
             }
 
 
 
-            p15_id = createPElement(hiddenCount, 15);
-            label15_id = createLabelElement(hiddenCount, 15, "sub_skill_lv100", p15_id);
-            select11_id = createSelectElement(hiddenCount, 11, "sub_skill_lv100[]", label15_id);
+            td15_id = createTdElement(hiddenCount, 15, tr1_id);
+            select11_id = createSelectElement(hiddenCount, 11, "sub_skill_lv100[]", td15_id);
             for(i=0; i<17; i++){
                 createOptionElement(response.sub_skill[i].sub_skill, select11_id);
             }
 
 
 
-            p16_id = createPElement(hiddenCount, 16);
-            label16_id = createLabelElement(hiddenCount, 16, "personality", p16_id);
-            select12_id = createSelectElement(hiddenCount, 12, "personality[]", label16_id);
+            td16_id = createTdElement(hiddenCount, 16, tr1_id);
+            select12_id = createSelectElement(hiddenCount, 12, "personality[]", td16_id);
             for(i=0; i<25; i++){
                 createOptionElement(response.personality[i].personality, select12_id);
             }
 
 
 
-            p17_id = createPElement(hiddenCount, 17,);
-            label17_id = createLabelElement(hiddenCount, 17, "remarks", p17_id);
-            createInputElement(hiddenCount, "remarks", "remarks[]", label17_id);
+            td17_id = createTdElement(hiddenCount, 17, tr1_id);
+            createInputElement(hiddenCount, "remarks", "remarks[]", td17_id, "70px", false);
 
 
 
@@ -173,138 +161,6 @@ function getPokemonTemplate(){
             */
 
             
-
-            // registerForm.innerHTML = registerForm.innerHTML + `
-            // registerForm.innerHTML = registerForm.innerHTML + `
-            /*
-            registerForm.innerHTML = `
-                    <p><img src="images/` + response.choice_pokemon_id['id'] + `.png" alt="` + response.choice_pokemon_name + `"></p>
-                    <p><label>id<select name="choice_pokemon_id[]"><option>` + response.choice_pokemon_id['id'] + `</option></select></label></p>
-                    <p><label>name<select name="own_pokemon_name[]"><option>` + response.choice_pokemon_name + `</option></select></label></p>
-                    <p><label for="nickname">nickname</label><input id="nickname" type="text" name="nickname[]"></p>
-                    <p><label for="sp">sp</label><input id="sp" type="text" name="sp[]"></p>
-                    <p><label for="lv">lv</label><input id="lv" type="text" name="lv[]"></p>
-                    <p><label>food_lv1<select name="food_lv1[]"><option>` + response.foodlv1_food1 + `</option></select></label><p>
-                    <p><label>food_lv30<select name="food_lv30[]"><option>` + response.foodlv30_food1 + `</option>
-                    <option>` + response.foodlv30_food2 + `</option></select></label></p>
-                    <p><label>food_lv60<select name="food_lv60[]"><option>` + response.foodlv60_food1 + `</option>
-                    <option>` + response.foodlv60_food2 + `</option>
-                    <option>` + response.foodlv60_food3 + `</option></select></label><p>
-                    <p><label>main_skill<select name="main_skill[]"><option>` + response.main_skill + `</option></select></label></p>
-                    <p><label>sub_skill_lv1<select name="sub_skill_lv1[]"><option>` + response.sub_skill[0].sub_skill + `</option>
-                    <option>` + response.sub_skill[1].sub_skill + `</option>
-                    <option>` + response.sub_skill[2].sub_skill + `</option>
-                    <option>` + response.sub_skill[3].sub_skill + `</option>
-                    <option>` + response.sub_skill[4].sub_skill + `</option>
-                    <option>` + response.sub_skill[5].sub_skill + `</option>
-                    <option>` + response.sub_skill[6].sub_skill + `</option>
-                    <option>` + response.sub_skill[7].sub_skill + `</option>
-                    <option>` + response.sub_skill[8].sub_skill + `</option>
-                    <option>` + response.sub_skill[9].sub_skill + `</option>
-                    <option>` + response.sub_skill[10].sub_skill + `</option>
-                    <option>` + response.sub_skill[11].sub_skill + `</option>
-                    <option>` + response.sub_skill[12].sub_skill + `</option>
-                    <option>` + response.sub_skill[13].sub_skill + `</option>
-                    <option>` + response.sub_skill[14].sub_skill + `</option>
-                    <option>` + response.sub_skill[15].sub_skill + `</option>
-                    <option>` + response.sub_skill[16].sub_skill + `</option></select></label></p>
-                    <p><label>sub_skill_lv25<select name="sub_skill_lv25[]"><option>` + response.sub_skill[0].sub_skill + `</option>
-                    <option>` + response.sub_skill[1].sub_skill + `</option>
-                    <option>` + response.sub_skill[2].sub_skill + `</option>
-                    <option>` + response.sub_skill[3].sub_skill + `</option>
-                    <option>` + response.sub_skill[4].sub_skill + `</option>
-                    <option>` + response.sub_skill[5].sub_skill + `</option>
-                    <option>` + response.sub_skill[6].sub_skill + `</option>
-                    <option>` + response.sub_skill[7].sub_skill + `</option>
-                    <option>` + response.sub_skill[8].sub_skill + `</option>
-                    <option>` + response.sub_skill[9].sub_skill + `</option>
-                    <option>` + response.sub_skill[10].sub_skill + `</option>
-                    <option>` + response.sub_skill[11].sub_skill + `</option>
-                    <option>` + response.sub_skill[12].sub_skill + `</option>
-                    <option>` + response.sub_skill[13].sub_skill + `</option>
-                    <option>` + response.sub_skill[14].sub_skill + `</option>
-                    <option>` + response.sub_skill[15].sub_skill + `</option>
-                    <option>` + response.sub_skill[16].sub_skill + `</option></select></label></p>
-                    <p><label>sub_skill_lv50<select name="sub_skill_lv50[]"><option>` + response.sub_skill[0].sub_skill + `</option>
-                    <option>` + response.sub_skill[1].sub_skill + `</option>
-                    <option>` + response.sub_skill[2].sub_skill + `</option>
-                    <option>` + response.sub_skill[3].sub_skill + `</option>
-                    <option>` + response.sub_skill[4].sub_skill + `</option>
-                    <option>` + response.sub_skill[5].sub_skill + `</option>
-                    <option>` + response.sub_skill[6].sub_skill + `</option>
-                    <option>` + response.sub_skill[7].sub_skill + `</option>
-                    <option>` + response.sub_skill[8].sub_skill + `</option>
-                    <option>` + response.sub_skill[9].sub_skill + `</option>
-                    <option>` + response.sub_skill[10].sub_skill + `</option>
-                    <option>` + response.sub_skill[11].sub_skill + `</option>
-                    <option>` + response.sub_skill[12].sub_skill + `</option>
-                    <option>` + response.sub_skill[13].sub_skill + `</option>
-                    <option>` + response.sub_skill[14].sub_skill + `</option>
-                    <option>` + response.sub_skill[15].sub_skill + `</option>
-                    <option>` + response.sub_skill[16].sub_skill + `</option></select></label></p>
-                    <p><label>sub_skill_lv75<select name="sub_skill_lv75[]"><option>` + response.sub_skill[0].sub_skill + `</option>
-                    <option>` + response.sub_skill[1].sub_skill + `</option>
-                    <option>` + response.sub_skill[2].sub_skill + `</option>
-                    <option>` + response.sub_skill[3].sub_skill + `</option>
-                    <option>` + response.sub_skill[4].sub_skill + `</option>
-                    <option>` + response.sub_skill[5].sub_skill + `</option>
-                    <option>` + response.sub_skill[6].sub_skill + `</option>
-                    <option>` + response.sub_skill[7].sub_skill + `</option>
-                    <option>` + response.sub_skill[8].sub_skill + `</option>
-                    <option>` + response.sub_skill[9].sub_skill + `</option>
-                    <option>` + response.sub_skill[10].sub_skill + `</option>
-                    <option>` + response.sub_skill[11].sub_skill + `</option>
-                    <option>` + response.sub_skill[12].sub_skill + `</option>
-                    <option>` + response.sub_skill[13].sub_skill + `</option>
-                    <option>` + response.sub_skill[14].sub_skill + `</option>
-                    <option>` + response.sub_skill[15].sub_skill + `</option>
-                    <option>` + response.sub_skill[16].sub_skill + `</option></select></label></p>
-                    <p><label>sub_skill_lv100<select name="sub_skill_lv100[]"><option>` + response.sub_skill[0].sub_skill + `</option>
-                    <option>` + response.sub_skill[1].sub_skill + `</option>
-                    <option>` + response.sub_skill[2].sub_skill + `</option>
-                    <option>` + response.sub_skill[3].sub_skill + `</option>
-                    <option>` + response.sub_skill[4].sub_skill + `</option>
-                    <option>` + response.sub_skill[5].sub_skill + `</option>
-                    <option>` + response.sub_skill[6].sub_skill + `</option>
-                    <option>` + response.sub_skill[7].sub_skill + `</option>
-                    <option>` + response.sub_skill[8].sub_skill + `</option>
-                    <option>` + response.sub_skill[9].sub_skill + `</option>
-                    <option>` + response.sub_skill[10].sub_skill + `</option>
-                    <option>` + response.sub_skill[11].sub_skill + `</option>
-                    <option>` + response.sub_skill[12].sub_skill + `</option>
-                    <option>` + response.sub_skill[13].sub_skill + `</option>
-                    <option>` + response.sub_skill[14].sub_skill + `</option>
-                    <option>` + response.sub_skill[15].sub_skill + `</option>
-                    <option>` + response.sub_skill[16].sub_skill + `</option></select></label></p>
-                    <p><label>personality<select name="personality[]"><option>` + response.personality[0].personality + `</option>
-                    <option>` + response.personality[1].personality + `</option>
-                    <option>` + response.personality[2].personality + `</option>
-                    <option>` + response.personality[3].personality + `</option>
-                    <option>` + response.personality[4].personality + `</option>
-                    <option>` + response.personality[5].personality + `</option>
-                    <option>` + response.personality[6].personality + `</option>
-                    <option>` + response.personality[7].personality + `</option>
-                    <option>` + response.personality[8].personality + `</option>
-                    <option>` + response.personality[9].personality + `</option>
-                    <option>` + response.personality[10].personality + `</option>
-                    <option>` + response.personality[11].personality + `</option>
-                    <option>` + response.personality[12].personality + `</option>
-                    <option>` + response.personality[13].personality + `</option>
-                    <option>` + response.personality[14].personality + `</option>
-                    <option>` + response.personality[15].personality + `</option>
-                    <option>` + response.personality[16].personality + `</option>
-                    <option>` + response.personality[17].personality + `</option>
-                    <option>` + response.personality[18].personality + `</option>
-                    <option>` + response.personality[19].personality + `</option>
-                    <option>` + response.personality[20].personality + `</option>
-                    <option>` + response.personality[21].personality + `</option>
-                    <option>` + response.personality[22].personality + `</option>
-                    <option>` + response.personality[23].personality + `</option>
-                    <option>` + response.personality[24].personality + `</option></select></label></p>
-                    <p><label for="remarks">remarks</label><input id="remarks" type="text" name="remarks[]"></p>
-                    ` + registerForm.innerHTML + `
-            `;
-            */
         },
         error: function() {
             // エラー時の処理
@@ -322,6 +178,22 @@ function getPokemonTemplate(){
 }
 
 
+
+function createTrElement(hiddenCount, elementNumber, table_id){
+    tr = document.createElement('tr');
+    tr.id = "tr"+hiddenCount+elementNumber;
+    table_id.appendChild(tr);
+
+    return tr.id;
+}
+
+function createTdElement(hiddenCount, elementNumber, tr_id){
+    td = document.createElement('td');
+    td.id = 'td'+hiddenCount+elementNumber;
+    document.getElementById(tr_id).appendChild(td);
+
+    return td.id;
+}
 
 function createPElement(hiddenCount, elementNumber){
     p = document.createElement('p');
@@ -362,10 +234,12 @@ function createOptionElement(option_text, select_id){
     document.getElementById(select_id).appendChild(option);
 }
 
-function createInputElement(hiddenCount, input_id, input_name, label_id){
+function createInputElement(hiddenCount, input_id, input_name, label_id, width, hasRequired){
     input = document.createElement('input');
     input.id = input_id+hiddenCount;
     input.type = "text";
     input.name = input_name;
+    input.style.width = width;
+    input.required = hasRequired;
     document.getElementById(label_id).appendChild(input);
 }
