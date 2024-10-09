@@ -144,3 +144,12 @@ require __DIR__."/ajax.php";
 
 
 
+Route::get('custom-dialog', function(){
+    return view('test.custom-dialog');
+});
+Route::get('custom-alert', function(){
+    return view('test.custom-alert');
+});
+Route::get('await-custom-dialog', function(){
+    return view('test.await-custom-dialog');
+});

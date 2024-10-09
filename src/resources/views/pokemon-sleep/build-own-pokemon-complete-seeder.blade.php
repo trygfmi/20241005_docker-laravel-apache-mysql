@@ -4,6 +4,7 @@
     @if(isset($ownPokemonComplete))
         @foreach($ownPokemonComplete as $opc)
             [
+                'image_path'=>'{{$opc->image_path}}',
                 'own_pokemon_name'=>'{{$opc->own_pokemon_name}}',
                 'nickname'=>'{{$opc->nickname}}',
                 'sp'=>{{$opc->sp}},

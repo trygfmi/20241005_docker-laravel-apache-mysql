@@ -5,9 +5,7 @@ namespace Database\Seeders\PokemonSleep;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-use Illuminate\Support\Facades\DB;
-
-class OwnPokemonCompleteSeeder extends Seeder
+class OwnPokemonCompleteSeederSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,32 +13,7 @@ class OwnPokemonCompleteSeeder extends Seeder
     public function run(): void
     {
         //
-        // DB::table('own_pokemon_completes')->insert([
         DB::table('own_pokemon_complete_seeders')->insert([
-            /*
-            [
-                'own_pokemon_name'=>'ピカチュウ',
-                'nickname'=>'',
-                'sp'=>597,
-                'lv'=>9,
-                'food_lv1'=>'モーモーミルク',
-                'food_lv30'=>'モーモーミルク', 
-                'food_lv60'=>'モーモーミルク', 
-                'main_skill'=>'食料ゲットS', 
-                'sub_skill_lv1'=>'スキル確率アップS', 
-                'sub_skill_lv25'=>'スキル確率アップS', 
-                'sub_skill_lv50'=>'スキル確率アップS', 
-                'sub_skill_lv75'=>'スキル確率アップS', 
-                'sub_skill_lv100'=>'スキル確率アップS', 
-                'personality'=>'さみしがり', 
-                'remarks'=>'', 
-                'created_at'=>now(), 
-                'updated_at'=>now(), 
-            ],
-            */
-
-
-
             [ 'image_path'=>'images/133.png', 'own_pokemon_name'=>'ピカチュウ', 'nickname'=>'', 'sp'=>597, 'lv'=>9, 'food_lv1'=>'モーモーミルク', 'food_lv30'=>'モーモーミルク', 'food_lv60'=>'モーモーミルク', 'main_skill'=>'食料ゲットS', 'sub_skill_lv1'=>'スキル確率アップS', 'sub_skill_lv25'=>'スキル確率アップS', 'sub_skill_lv50'=>'スキル確率アップS', 'sub_skill_lv75'=>'スキル確率アップS', 'sub_skill_lv100'=>'スキル確率アップS', 'personality'=>'さみしがり', 'remarks'=>'', 'created_at'=>'2024-10-06 13:05:47', 'updated_at'=>'2024-10-06 13:05:47' ],
             [ 'image_path'=>'images/133.png', 'own_pokemon_name'=>'イーブイ', 'nickname'=>'', 'sp'=>597, 'lv'=>10, 'food_lv1'=>'モーモーミルク', 'food_lv30'=>'リラックスカカオ', 'food_lv60'=>'モーモーミルク', 'main_skill'=>'食材ゲットS', 'sub_skill_lv1'=>'ゆめのかけらボーナス', 'sub_skill_lv25'=>'食材確率アップS', 'sub_skill_lv50'=>'最大所持数アップS', 'sub_skill_lv75'=>'おてつだいスピードS', 'sub_skill_lv100'=>'スキル確率アップS', 'personality'=>'おとなしい', 'remarks'=>'', 'created_at'=>'2024-10-06 13:11:40', 'updated_at'=>'2024-10-06 13:11:40' ],
             [ 'image_path'=>'images/133.png', 'own_pokemon_name'=>'イーブイ', 'nickname'=>'', 'sp'=>597, 'lv'=>11, 'food_lv1'=>'モーモーミルク', 'food_lv30'=>'リラックスカカオ', 'food_lv60'=>'リラックスカカオ', 'main_skill'=>'食材ゲットS', 'sub_skill_lv1'=>'げんき回復ボーナス', 'sub_skill_lv25'=>'スキル確率アップS', 'sub_skill_lv50'=>'最大所持数アップL', 'sub_skill_lv75'=>'おてつだいボーナス', 'sub_skill_lv100'=>'リサーチEXPボーナス', 'personality'=>'がんばりや', 'remarks'=>'', 'created_at'=>'2024-10-06 13:12:48', 'updated_at'=>'2024-10-06 13:12:48' ],

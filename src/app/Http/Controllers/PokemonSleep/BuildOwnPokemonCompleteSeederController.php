@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\PokemonSleep\OwnPokemonComplete;
 use Illuminate\Http\Request;
 
+use App\Models\PokemonSleep\OwnPokemonCompleteSeeders;
+
 
 class BuildOwnPokemonCompleteSeederController extends Controller
 {
@@ -36,9 +38,12 @@ class BuildOwnPokemonCompleteSeederController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request)
     {
         //
+        $ownPokemonCompleteSeeder = OwnPokemonCompleteSeeders::all();
+
+        return view('pokemon-sleep.show-build-own-pokemon-complete-seeder', ['ownPokemonCompleteSeeder'=>$ownPokemonCompleteSeeder]);
     }
 
     /**

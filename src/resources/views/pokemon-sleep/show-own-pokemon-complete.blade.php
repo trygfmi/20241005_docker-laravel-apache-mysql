@@ -1,6 +1,8 @@
-
+<link rel="stylesheet" href="{{asset('css/custom-alert.css')}}">
 
 <div>
+    @include('components.test.custom-alert')
+
     <!-- Simplicity is an acquired taste. - Katharine Gerould -->
     @if(isset($result))
         <form action="{{route('delete-own-pokemon-complete')}}" method="post">
@@ -13,7 +15,7 @@
                     <tr>
                         <td><input class="test" type="checkbox" name="deleteId[]" value="{{$r->id}}"></td>
                         <td>{{$r->id}}</td>
-                        <td><img src="{{$r->image_path}}" alt="{{$r->own_pokemon_name}}"></td>
+                        <td><img src="{{asset('storage')}}/{{$r->image_path}}" alt="{{$r->own_pokemon_name}}"></td>
                         <td>{{$r->own_pokemon_name}}</td>
                         <td>{{$r->nickname}}</td>
                         <td>{{$r->sp}}</td>
@@ -32,15 +34,15 @@
                     </tr>
                 @endforeach
             </table>
-            <button id="deleteButton" type="submit" disabled>削除</button>
+            <button id="deleteButton" type="submit" disabled style="position: fixed; bottom: 5%; right: 5%;">削除</button>
         </form>
     @endif
 
 
 
     @if(session('success-delete'))
-        <script>
-            alert("{{session('success-delete')}}")
+        <script src="{{asset('js/custom-alert.js')}}">
+            
         </script>
     @endif
 </div>
