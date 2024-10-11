@@ -1,5 +1,13 @@
-.dialog {
+.wrapperCustomDialog{
     display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(129, 129, 129, 0.4);
+    z-index: 1000;
+}
+
+.dialog {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -7,7 +15,6 @@
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ccc;
-    z-index: 1000;
 }
 
 .dialog-content {

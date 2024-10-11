@@ -15,6 +15,13 @@ class ChoicePokemonConstrainedSeeder extends Seeder
     public function run(): void
     {
         //
+        // 20241011に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>425, 'name'=>'フワンテ', /*'image_path'=>'images/425.png', */'create_pokemon_template_id'=>425, 'create_pokemon_template2_id'=>425,  'create_pokemon_template3_id'=>425, 'created_at'=>now(), 'updated_at'=>now()],
+            ['id'=>426, 'name'=>'フワライド', /*'image_path'=>'images/426.png', */'create_pokemon_template_id'=>426, 'create_pokemon_template2_id'=>426,  'create_pokemon_template3_id'=>426, 'created_at'=>now(), 'updated_at'=>now()],
+        ]);
+        
+        /*
         DB::table('choice_pokemon_constraineds')->insert([
             ['id'=>1, 'name'=>'フシギダネ', 'image_path'=>'images/1.png', 'create_pokemon_template_id'=>1, 'create_pokemon_template2_id'=>1,  'create_pokemon_template3_id'=>1, 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>2, 'name'=>'フシギソウ', 'image_path'=>'images/2.png', 'create_pokemon_template_id'=>2, 'create_pokemon_template2_id'=>2,  'create_pokemon_template3_id'=>2, 'created_at'=>now(), 'updated_at'=>now()],
@@ -170,5 +177,7 @@ class ChoicePokemonConstrainedSeeder extends Seeder
             ['id'=>913, 'name'=>'ウェルカモ', 'image_path'=>'images/913.png', 'create_pokemon_template_id'=>913, 'create_pokemon_template2_id'=>913, 'create_pokemon_template3_id'=>913, 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>914, 'name'=>'ウェーニバル', 'image_path'=>'images/914.png', 'create_pokemon_template_id'=>914, 'create_pokemon_template2_id'=>914, 'create_pokemon_template3_id'=>914, 'created_at'=>now(), 'updated_at'=>now()],
         ]);
+        */
+
     }
 }

@@ -153,3 +153,9 @@ Route::get('custom-alert', function(){
 Route::get('await-custom-dialog', function(){
     return view('test.await-custom-dialog');
 });
+
+
+
+Route::get('top', function(){
+    return view('pokemon-sleep.top');
+});

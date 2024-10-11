@@ -5,6 +5,8 @@ namespace Database\Seeders\PokemonSleep;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use Illuminate\Support\Facades\DB;
+
 class OwnPokemonCompleteSeederSeeder extends Seeder
 {
     /**
@@ -13,6 +15,7 @@ class OwnPokemonCompleteSeederSeeder extends Seeder
     public function run(): void
     {
         //
+        /*
         DB::table('own_pokemon_complete_seeders')->insert([
             [ 'image_path'=>'images/133.png', 'own_pokemon_name'=>'ピカチュウ', 'nickname'=>'', 'sp'=>597, 'lv'=>9, 'food_lv1'=>'モーモーミルク', 'food_lv30'=>'モーモーミルク', 'food_lv60'=>'モーモーミルク', 'main_skill'=>'食料ゲットS', 'sub_skill_lv1'=>'スキル確率アップS', 'sub_skill_lv25'=>'スキル確率アップS', 'sub_skill_lv50'=>'スキル確率アップS', 'sub_skill_lv75'=>'スキル確率アップS', 'sub_skill_lv100'=>'スキル確率アップS', 'personality'=>'さみしがり', 'remarks'=>'', 'created_at'=>'2024-10-06 13:05:47', 'updated_at'=>'2024-10-06 13:05:47' ],
             [ 'image_path'=>'images/133.png', 'own_pokemon_name'=>'イーブイ', 'nickname'=>'', 'sp'=>597, 'lv'=>10, 'food_lv1'=>'モーモーミルク', 'food_lv30'=>'リラックスカカオ', 'food_lv60'=>'モーモーミルク', 'main_skill'=>'食材ゲットS', 'sub_skill_lv1'=>'ゆめのかけらボーナス', 'sub_skill_lv25'=>'食材確率アップS', 'sub_skill_lv50'=>'最大所持数アップS', 'sub_skill_lv75'=>'おてつだいスピードS', 'sub_skill_lv100'=>'スキル確率アップS', 'personality'=>'おとなしい', 'remarks'=>'', 'created_at'=>'2024-10-06 13:11:40', 'updated_at'=>'2024-10-06 13:11:40' ],
@@ -137,5 +140,6 @@ class OwnPokemonCompleteSeederSeeder extends Seeder
             [ 'image_path'=>'images/147.png', 'own_pokemon_name'=>'ミニリュウ', 'nickname'=>'', 'sp'=>488, 'lv'=>11, 'food_lv1'=>'げきからハーブ', 'food_lv30'=>'ワカクサコーン', 'food_lv60'=>'げきからハーブ', 'main_skill'=>'げんきチャージS', 'sub_skill_lv1'=>'食材確率アップS', 'sub_skill_lv25'=>'ゆめのかけらボーナス', 'sub_skill_lv50'=>'おてつだいスピードM', 'sub_skill_lv75'=>'スキル確率アップS', 'sub_skill_lv100'=>'スキルレベルアップS', 'personality'=>'ゆうかん', 'remarks'=>'', 'created_at'=>'2024-10-08 17:07:12', 'updated_at'=>'2024-10-08 17:07:12' ],
             [ 'image_path'=>'images/147.png', 'own_pokemon_name'=>'ミニリュウ', 'nickname'=>'', 'sp'=>450, 'lv'=>12, 'food_lv1'=>'げきからハーブ', 'food_lv30'=>'ワカクサコーン', 'food_lv60'=>'ワカクサコーン', 'main_skill'=>'げんきチャージS', 'sub_skill_lv1'=>'食材確率アップS', 'sub_skill_lv25'=>'スキル確率アップM', 'sub_skill_lv50'=>'スキル確率アップS', 'sub_skill_lv75'=>'最大所持数アップS', 'sub_skill_lv100'=>'おてつだいスピードS', 'personality'=>'なまいき', 'remarks'=>'', 'created_at'=>'2024-10-08 17:07:12', 'updated_at'=>'2024-10-08 17:07:12' ],
         ]);
+        */
     }
 }

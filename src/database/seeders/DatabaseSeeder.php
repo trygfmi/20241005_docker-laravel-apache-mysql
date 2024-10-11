@@ -42,10 +42,10 @@ class DatabaseSeeder extends Seeder
         // $this->call(CreatePokemonTemplate2Seeder::class);
         // $this->call(MainSkillSeeder::class);
         // $this->call(CreatePokemonTemplate3Seeder::class);
-        // $this->call(ChoicePokemonConstrainedSeeder::class);
+        $this->call(ChoicePokemonConstrainedSeeder::class);
         // $this->call(SubSkillSeeder::class);
         // $this->call(PersonalitySeeder::class);
         // $this->call(OwnPokemonCompleteSeeder::class);
-        $this->call(OwnPokemonCompleteSeederSeeder::class);
+        // $this->call(OwnPokemonCompleteSeederSeeder::class);
     }
 }

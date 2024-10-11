@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{asset('css/custom-alert.css')}}">
 
 <div>
-    @include('components.test.custom-alert')
+    @include('components.test.custom-alert-remove')
 
     <!-- Simplicity is an acquired taste. - Katharine Gerould -->
     @if(isset($result))

@@ -15,6 +15,13 @@ class CreatePokemonTemplateSeeder extends Seeder
     public function run(): void
     {
         //
+        // 20241011に追加
+        DB::table('create_pokemon_templates')->insert([
+            ['id'=>425, 'foodlv1_id'=>425, 'created_at'=>now(), 'updated_at'=>now()],
+            ['id'=>426, 'foodlv1_id'=>426, 'created_at'=>now(), 'updated_at'=>now()],
+        ]);
+        
+        /*
         DB::table('create_pokemon_templates')->insert([
             ['id'=>1, 'foodlv1_id'=>1, 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>2, 'foodlv1_id'=>2, 'created_at'=>now(), 'updated_at'=>now()],
@@ -170,5 +177,7 @@ class CreatePokemonTemplateSeeder extends Seeder
             ['id'=>913, 'foodlv1_id'=>913, 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>914, 'foodlv1_id'=>914, 'created_at'=>now(), 'updated_at'=>now()],
         ]);
+        */
+        
     }
 }

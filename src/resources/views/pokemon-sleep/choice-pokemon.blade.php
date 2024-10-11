@@ -1,12 +1,16 @@
+<link rel="stylesheet" href="{{asset('css/custom-alert.css')}}">
 <link rel="stylesheet" href="{{asset('css/custom-dialog.css')}}">
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/js/get-pokemon-template.js"></script>
 
 <div>
+    <!-- <a href="#tr10_0">移動</a> -->
     <!-- It is quality rather than quantity that matters. - Lucius Annaeus Seneca -->
     @include('components.test.loading')
+    @include('components.test.custom-alert-register')
     @include('components.test.custom-dialog')
+
 
 
     <select id="selectPokemonName">
@@ -17,16 +21,6 @@
         @endif
     </select>
     <button id="test" onclick=getPokemonTemplate()>登録フォーム表示</button>
-    
-
-
-    @if(session('success-register'))
-        <script>
-            alert("{{session('success-register')}}");
-        </script>
-    @endif
-
-
 
     <div id="formWrapper" style="display: none;">
         <form action="{{route('save-choice-pokemon')}}" method="post">
@@ -48,13 +42,17 @@
         </form>
     </div>
     <!-- document.createElementメソッドを実行したときのid名設定用 -->
-    <input id="hiddenCount" type="hidden" name="hiddenCount" value="0">
+    <input id="tableRowCount" type="hidden" name="hiddenCount" value="0">
     <!-- 画像のsrc用 -->
-    <input id="hiddenImgUrl" type="hidden" value="{{asset('storage/images/')}}"/>
+    <input id="tableImgSrc" type="hidden" value="{{asset('storage/images/')}}"/>
     
 
 
-    
+    @if(session('success-register'))
+        <script src="{{asset('js/custom-alert.js')}}">
+            
+        </script>
+    @endif
 </div>
 
 

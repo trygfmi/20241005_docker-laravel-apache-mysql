@@ -15,8 +15,15 @@ class Foodlv30Seeder extends Seeder
     public function run(): void
     {
         //
-        // DB::table('foodlv30s')->where('id', 1)->delete();
-
+        /*
+        // 20241011に追加
+        DB::table('foodlv30s')->insert([
+            ['id'=>425,'food1'=>'ワカクサコーン','food2'=>'ピュアなオイル','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>426,'food1'=>'ワカクサコーン','food2'=>'ピュアなオイル','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+        
+        /*
         DB::table('foodlv30s')->insert([
             ['id'=>1, 'food1'=>'あまいミツ', 'food2'=>'あんみんトマト',  'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>2, 'food1'=>'あまいミツ', 'food2'=>'あんみんトマト', 'created_at'=>now(), 'updated_at'=>now()],
@@ -172,5 +179,7 @@ class Foodlv30Seeder extends Seeder
             ['id'=>913, 'food1'=>'ワカクサ大豆', 'food2'=>'ふといながねぎ', 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>914, 'food1'=>'ワカクサ大豆', 'food2'=>'ふといながねぎ', 'created_at'=>now(), 'updated_at'=>now()],
         ]);
+        */
+
     }
 }

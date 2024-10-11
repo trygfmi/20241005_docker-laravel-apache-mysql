@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 // pokemon_sleep ------------------------------------------------
 use App\Http\Controllers\PokemonSleep\FoodController;
 // Foodモデルで全レコードを取得後、foods変数を通して画面に表示
-Route::get('/foods', [FoodController::class, 'index']);
+Route::get('/foods', [FoodController::class, 'index'])->name('foods');
 // アクセスしたら、Foodモデルに紐づいているテーブルのidが28番目のnameをbananaにし、全レコードを表示する
 Route::get('/foods-save', [FoodController::class, 'save']);
 
@@ -66,14 +66,14 @@ Route::get('show-import-own-pokemon', [ImportOwnPokemonController::class, 'show'
 
 
 use App\Http\Controllers\PokemonSleep\ChoicePokemonController;
-Route::get('choice-pokemon', [ChoicePokemonController::class, 'index']);
+Route::get('choice-pokemon', [ChoicePokemonController::class, 'index'])->name('choice-pokemon');
 Route::post('choice-pokemon', [ChoicePokemonController::class, 'store'])->name('save-choice-pokemon');
 Route::get('get-pokemon-template-via-ajax', [ChoicePokemonController::class, 'getPokemonTemplate']);
 
 
 
 use App\Http\Controllers\PokemonSleep\OwnPokemonCompleteController;
-Route::get('/show-own-pokemon-complete', [OwnPokemonCompleteController::class, 'index']);
+Route::get('/show-own-pokemon-complete', [OwnPokemonCompleteController::class, 'index'])->name('show-own-pokemon-complete');
 Route::get('/search-own-pokemon-complete', [OwnPokemonCompleteController::class, 'searchIndex']);
 Route::post('/search-own-pokemon-complete', [OwnPokemonCompleteController::class, 'search'])->name('search');
 Route::get('/get-json-own-pokemon-complete', [OwnPokemonCompleteController::class, 'getJson']);
