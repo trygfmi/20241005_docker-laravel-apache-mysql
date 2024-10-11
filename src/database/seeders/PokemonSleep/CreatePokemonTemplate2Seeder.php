@@ -15,11 +15,29 @@ class CreatePokemonTemplate2Seeder extends Seeder
     public function run(): void
     {
         //
+        /*
+        // 2024-10-12に追加
+        DB::table('create_pokemon_template2s')->insert([
+            ['id'=>998,'food_lv1_id'=>998,'food_lv30_id'=>998,'food_lv60_id'=>998,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>999,'food_lv1_id'=>999,'food_lv30_id'=>999,'food_lv60_id'=>999,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 2024-10-12に追加
+        DB::table('create_pokemon_template2s')->insert([
+            ['id'=>425,'food_lv1_id'=>425,'food_lv30_id'=>425,'food_lv60_id'=>425,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>426,'food_lv1_id'=>426,'food_lv30_id'=>426,'food_lv60_id'=>426,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241011に追加
         DB::table('create_pokemon_template2s')->insert([
             ['id'=>425, 'food_lv1_id'=>425, 'food_lv30_id'=>425, 'food_lv60_id'=>425, 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>426, 'food_lv1_id'=>426, 'food_lv30_id'=>426, 'food_lv60_id'=>426, 'created_at'=>now(), 'updated_at'=>now()],
         ]);
+        */
         
         /*
         DB::table('create_pokemon_template2s')->insert([

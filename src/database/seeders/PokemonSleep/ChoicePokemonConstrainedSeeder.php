@@ -15,11 +15,29 @@ class ChoicePokemonConstrainedSeeder extends Seeder
     public function run(): void
     {
         //
+        /*
+        // 2024-10-12に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>998,'name'=>'aaa','create_pokemon_template_id'=>998,'create_pokemon_template2_id'=>998,'create_pokemon_template3_id'=>998,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>999,'name'=>'bbb','create_pokemon_template_id'=>999,'create_pokemon_template2_id'=>999,'create_pokemon_template3_id'=>999,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 2024-10-12に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>425,'name'=>'フワンテ','create_pokemon_template_id'=>425,'create_pokemon_template2_id'=>425,'create_pokemon_template3_id'=>425,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>426,'name'=>'フワライド','create_pokemon_template_id'=>426,'create_pokemon_template2_id'=>426,'create_pokemon_template3_id'=>426,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241011に追加
         DB::table('choice_pokemon_constraineds')->insert([
-            ['id'=>425, 'name'=>'フワンテ', /*'image_path'=>'images/425.png', */'create_pokemon_template_id'=>425, 'create_pokemon_template2_id'=>425,  'create_pokemon_template3_id'=>425, 'created_at'=>now(), 'updated_at'=>now()],
-            ['id'=>426, 'name'=>'フワライド', /*'image_path'=>'images/426.png', */'create_pokemon_template_id'=>426, 'create_pokemon_template2_id'=>426,  'create_pokemon_template3_id'=>426, 'created_at'=>now(), 'updated_at'=>now()],
+            ['id'=>425, 'name'=>'フワンテ', 'create_pokemon_template_id'=>425, 'create_pokemon_template2_id'=>425,  'create_pokemon_template3_id'=>425, 'created_at'=>now(), 'updated_at'=>now()],
+            ['id'=>426, 'name'=>'フワライド', 'create_pokemon_template_id'=>426, 'create_pokemon_template2_id'=>426,  'create_pokemon_template3_id'=>426, 'created_at'=>now(), 'updated_at'=>now()],
         ]);
+        */
         
         /*
         DB::table('choice_pokemon_constraineds')->insert([

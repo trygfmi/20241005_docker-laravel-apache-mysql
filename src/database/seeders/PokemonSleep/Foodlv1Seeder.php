@@ -15,11 +15,21 @@ class Foodlv1Seeder extends Seeder
     public function run(): void
     {
         //
+        /*
+        // 2024-10-12に追加
+        DB::table('foodlv1s')->insert([
+            ['id'=>998,'food1'=>'ワカクサコーン','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>999,'food1'=>'ワカクサコーン','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241011に追加
         DB::table('foodlv1s')->insert([
             ['id'=>425, 'food1'=>'ワカクサコーン', 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>426, 'food1'=>'ワカクサコーン', 'created_at'=>now(), 'updated_at'=>now()],
         ]);
+        */
         
         /*
         DB::table('foodlv1s')->insert([

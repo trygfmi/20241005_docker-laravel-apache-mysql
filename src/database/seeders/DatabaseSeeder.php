@@ -35,13 +35,13 @@ class DatabaseSeeder extends Seeder
         ]);
         */
 
-        // $this->call(Foodlv1Seeder::class);
-        // $this->call(Foodlv30Seeder::class);
-        // $this->call(Foodlv60Seeder::class);
-        // $this->call(CreatePokemonTemplateSeeder::class);
-        // $this->call(CreatePokemonTemplate2Seeder::class);
-        // $this->call(MainSkillSeeder::class);
-        // $this->call(CreatePokemonTemplate3Seeder::class);
+        $this->call(Foodlv1Seeder::class);
+        $this->call(Foodlv30Seeder::class);
+        $this->call(Foodlv60Seeder::class);
+        $this->call(CreatePokemonTemplateSeeder::class);
+        $this->call(CreatePokemonTemplate2Seeder::class);
+        $this->call(MainSkillSeeder::class);
+        $this->call(CreatePokemonTemplate3Seeder::class);
         $this->call(ChoicePokemonConstrainedSeeder::class);
         // $this->call(SubSkillSeeder::class);
         // $this->call(PersonalitySeeder::class);
