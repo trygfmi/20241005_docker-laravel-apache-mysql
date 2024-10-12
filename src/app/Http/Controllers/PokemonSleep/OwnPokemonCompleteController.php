@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\PokemonSleep\OwnPokemonComplete;
+use App\Models\SubSkill;
 
 class OwnPokemonCompleteController extends Controller
 {
@@ -81,7 +82,8 @@ class OwnPokemonCompleteController extends Controller
     public function searchIndex()
     {
         //
-        return view('pokemon-sleep.search-own-pokemon-complete');
+        $sub_skills = SubSkill::orderby('sub_skill', 'asc')->get();
+        return view('pokemon-sleep.search-own-pokemon-complete', ['sub_skills'=>$sub_skills]);
     }
 
     public function search(Request $request){

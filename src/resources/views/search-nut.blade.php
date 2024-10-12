@@ -10,7 +10,8 @@
     <form action="{{route('search-nut')}}" method="post" >
         @csrf
         <label for="keyword">検索ワード</label>
-        <input id="keyword" type="text" name="keyword" required autofocus>
+        {{--<input id="keyword" type="text" name="keyword" required autofocus>--}}
+        <input id="keyword" type="text" name="keyword" required >
         <select id="selectName" name="selectName">
             <option>aaa</option>
             <option>bbb</option>

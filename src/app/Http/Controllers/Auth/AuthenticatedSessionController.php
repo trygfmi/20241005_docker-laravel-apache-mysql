@@ -38,11 +38,8 @@ class AuthenticatedSessionController extends Controller
     {
         Auth::guard('web')->logout();
 
-        // セッションデータをすべて削除して、セッションを無効化し、
-        // sessionsテーブルのidカラムのセッションIDを再生成する
         $request->session()->invalidate();
 
-        // csrfトークンを再生成する
         $request->session()->regenerateToken();
 
         return redirect('/');

@@ -6,7 +6,8 @@
         <form action="{{route('register-main-skill')}}" method="post" >
             @csrf
             <x-input-label for="main_skill" value="メインスキル" />
-            <x-text-input id="main_skill" name="main_skill" required autofocus />
+            {{--<x-text-input id="main_skill" name="main_skill" required autofocus />--}}
+            <x-text-input id="main_skill" name="main_skill" required />
             <x-primary-button>
                 登録
             </x-primary-button>

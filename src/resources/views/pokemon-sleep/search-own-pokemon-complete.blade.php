@@ -10,23 +10,9 @@
         <label for="keyword">sub_skill</label>
         <!-- <input id="keyword" type="text" name="keyword" required autofocus> -->
         <select id="keyword" name="keyword">
-            <option>スキル確率アップS</option>
-            <option>おてつだいスピードS</option>
-            <option>食材確率アップS</option>
-            <option>最大所持数アップS</option>
-            <option>スキルレベルアップS</option>
-            <option>スキル確率アップM</option>
-            <option>おてつだいスピードM</option>
-            <option>食材確率アップM</option>
-            <option>最大所持数アップM</option>
-            <option>最大所持数アップL</option>
-            <option>スキルレベルアップM</option>
-            <option>きのみの数S</option>
-            <option>睡眠EXPボーナス</option>
-            <option>おてつだいボーナス</option>
-            <option>げんき回復ボーナス</option>
-            <option>リサーチEXPボーナス</option>
-            <option>ゆめのかけらボーナス</option>
+            @foreach($sub_skills as $ss)
+                <option>{{$ss->sub_skill}}</option>
+            @endforeach
         </select>
         <button type="submit">検索</button>
     </form>

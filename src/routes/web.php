@@ -51,6 +51,17 @@ dd($name);
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
+
+Route::get('preview-top', function(){
+    return view('preview-top');
+})->name('preview-top');
+Route::get('web-preview-top', function(){
+    return view('web-preview-top');
+})->name('web-preview-top');
+
+
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
@@ -110,17 +121,17 @@ require __DIR__.'/authTest.php';
 
 
 
-use App\Http\Controllers\MailController;
+// use App\Http\Controllers\MailController;
 // Googleのgmail apiで実装しようとして挫折
 // Route::get('/send-email', [MailController::class, 'send']);
-Route::get('/send-email-log', [MailController::class, 'sendLog']);
+// Route::get('/send-email-log', [MailController::class, 'sendLog']);
 
 
 
 // unixタイムスタンプを表示します
 Route::get('show-timestamp', function(){
     return view('show-timestamp');
-});
+})->name('show-timestamp');
 
 
 
@@ -132,7 +143,7 @@ use Illuminate\Support\Facades\DB;
 Route::get('show-facade-class-name', function(){
     // return view('show-facade-class-name', ['message' => App::getFacadeRoot()]);
     return view('show-facade-class-name', ['message' => DB::getFacadeRoot()]);
-});
+})->name('show-facade-class-name');
 
 
 
@@ -144,18 +155,3 @@ require __DIR__."/ajax.php";
 
 
 
-Route::get('custom-dialog', function(){
-    return view('test.custom-dialog');
-});
-Route::get('custom-alert', function(){
-    return view('test.custom-alert');
-});
-Route::get('await-custom-dialog', function(){
-    return view('test.await-custom-dialog');
-});
-
-
-
-Route::get('top', function(){
-    return view('pokemon-sleep.top');
-});

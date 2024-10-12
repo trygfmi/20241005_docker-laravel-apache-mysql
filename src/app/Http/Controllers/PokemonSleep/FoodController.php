@@ -22,14 +22,14 @@ class FoodController extends Controller
     }
 
     public function save(){
-        /*
+        // /*
         $food = new Food();
         $food->name = 'とくせんリンゴ';
         $food->energy = 100;
         $food->save();
-        */
-        $food = Food::find(3);
-        $food->name = "とくせんリンゴ";
+        // */
+        // $food = Food::find(3);
+        // $food->name = "とくせんリンゴ";
         // $food->save();
 
         $foods = Food::all();

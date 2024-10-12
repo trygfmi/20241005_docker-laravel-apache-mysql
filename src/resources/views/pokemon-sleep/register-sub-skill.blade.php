@@ -6,7 +6,8 @@
         <form action="{{route('register-sub-skill')}}" method="post" >
             @csrf
             <x-input-label for="sub_skill" value="サブスキル" />
-            <x-text-input id="sub_skill" name="sub_skill" :value="old('sub_skill')" required autofocus />
+            {{--<x-text-input id="sub_skill" name="sub_skill" :value="old('sub_skill')" required autofocus />--}}
+            <x-text-input id="sub_skill" name="sub_skill" :value="old('sub_skill')" required />
             <x-primary-button>
                 登録
             </x-primary-button>

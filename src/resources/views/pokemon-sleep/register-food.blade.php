@@ -25,7 +25,8 @@
             @csrf
             
             <x-input-label for="food" name="food" value="食べ物" />
-            <x-text-input id="food" name="food" required autofocus />
+            {{--<x-text-input id="food" name="food" required autofocus />--}}
+            <x-text-input id="food" name="food" required />
         
             <x-input-label for="energy" name="energy" value="エネルギー量" />
             <x-text-input id="energy" name="energy" required  />
