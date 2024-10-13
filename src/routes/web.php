@@ -84,16 +84,19 @@ require __DIR__.'/auth.php';
 
 use App\Http\Controllers\ShowRegisteredUsersController;
 // Userモデルで全レコードを取得後、users変数を通してデータを画面に表示します
-Route::get('/show-users', [ShowRegisteredUsersController::class, 'index'])->name('show-users');
+Route::get('/show-users', [ShowRegisteredUsersController::class, 'index'])
+->name('show-users');
 // Route::post('/delete-user', [ShowRegisteredUsersController::class, 'deleteUser'])->name('delete-example');
 // inputでnameがtestの値を取得し、testがUserモデルに紐づくnameカラムの値に一致する場合削除して、セッションでstatus変数を通して画面にメッセージを表示する
-Route::post('/show-users', [ShowRegisteredUsersController::class, 'deleteUser'])->name('delete-users');
+Route::post('/show-users', [ShowRegisteredUsersController::class, 'deleteUser'])
+->name('delete-users');
 
 
 
 use App\Http\Controllers\CreateTableController;
 // createTableビューを返します
-Route::get('/create-table', [CreateTableController::class, 'index'])->name('create-table');
+Route::get('/create-table', [CreateTableController::class, 'index'])
+->name('create-table');
 /*
 use Illuminate\Http\Request;
 Route::post('/create-table', function(Request $request){

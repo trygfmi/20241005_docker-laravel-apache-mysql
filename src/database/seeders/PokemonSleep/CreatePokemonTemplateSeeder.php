@@ -16,6 +16,26 @@ class CreatePokemonTemplateSeeder extends Seeder
     {
         //
         /*
+        // 20241015に追加
+        DB::table('create_pokemon_templates')->insert([
+            ['id'=>996,'foodlv1_id'=>996,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>997,'foodlv1_id'=>997,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>998,'foodlv1_id'=>998,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>999,'foodlv1_id'=>999,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 2024-10-13に追加
+        DB::table('create_pokemon_templates')->insert([
+            ['id'=>996,'foodlv1_id'=>996,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>997,'foodlv1_id'=>997,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>998,'foodlv1_id'=>998,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>999,'foodlv1_id'=>999,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 2024-10-12に追加
         DB::table('create_pokemon_templates')->insert([
             ['id'=>998,'foodlv1_id'=>998,'created_at'=>now(),'updated_at'=>now()],

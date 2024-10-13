@@ -100,6 +100,7 @@ class OwnPokemonCompleteController extends Controller
         return view('pokemon-sleep.search-own-pokemon-complete', ['result'=>$result]);
     }
 
+    // 各セルにtrueかfalseを持つ配列を返す
     public function getJson(Request $request){
         // $keyword = $request->keyword;
         $keyword = $request->keyword;
@@ -111,6 +112,7 @@ class OwnPokemonCompleteController extends Controller
                                     ->get();
 
         // 各行の列がキーワードに該当するかをtrueかfalseで持ちます
+        // $resultの数だけ行を用意し、行番号を識別するために、$resultのidも用意している
         $result_index_id_array = [];
         for($i=0; $i<count($result); $i++){
             $result_index_id_array = $result_index_id_array + [$i => ["id"=>$result[$i]['id'], 
@@ -123,6 +125,7 @@ class OwnPokemonCompleteController extends Controller
         }
 
 
+        // 列の判定を行う
         $result_index_id_array = $this->setTrueFalseToCell($result_index_id_array, 'sub_skill_lv100', $keyword, 'lv100');
         $result_index_id_array = $this->setTrueFalseToCell($result_index_id_array, 'sub_skill_lv75', $keyword, 'lv75');
         $result_index_id_array = $this->setTrueFalseToCell($result_index_id_array, 'sub_skill_lv50', $keyword, 'lv50');
@@ -142,15 +145,11 @@ class OwnPokemonCompleteController extends Controller
         // sub_skillのそれぞれのカラムでキーワードに該当する行のidを連想配列に挿入
         $result_sub_skill = OwnPokemonComplete::where($sub_skill_column_name, $keyword)->get();
         $result_sub_skill_count = count($result_sub_skill);
-        $result_sub_skill_id_array = [];
-        for($i=0; $i<$result_sub_skill_count; $i++){
-            $result_sub_skill_id_array = $result_sub_skill_id_array + ["id$i"=>$result_sub_skill[$i]['id']];
-        }
 
         // キーワードに該当するセルの真偽値をtrueにします
         for($i=0; $i<$result_sub_skill_count; $i++){
             for($j=0; $j<count($result_index_id_array); $j++){
-                if($result_index_id_array[$j]['id'] == $result_sub_skill_id_array["id$i"]){
+                if($result_index_id_array[$j]['id'] == $result_sub_skill[$i]['id']){
                     $result_index_id_array[$j]["boolean_$lv"] = true;
                 }
             }

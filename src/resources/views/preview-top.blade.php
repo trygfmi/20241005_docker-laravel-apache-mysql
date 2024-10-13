@@ -10,7 +10,7 @@
 <div>
     <!-- Smile, breathe, and go slowly. - Thich Nhat Hanh -->
     <p>
-        <h2>preview-web-top</h2>
+        <h2>web-preview-top</h2>
         <a href="{{route('web-preview-top')}}">web-preview-top</a>
     </p>
     <iframe src="{{route('web-preview-top')}}"></iframe>

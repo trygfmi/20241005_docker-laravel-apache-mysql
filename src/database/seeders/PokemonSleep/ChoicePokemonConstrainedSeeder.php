@@ -16,6 +16,26 @@ class ChoicePokemonConstrainedSeeder extends Seeder
     {
         //
         /*
+        // 20241015に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>996,'name'=>'aaa','create_pokemon_template_id'=>996,'create_pokemon_template2_id'=>996,'create_pokemon_template3_id'=>996,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>997,'name'=>'bbb','create_pokemon_template_id'=>997,'create_pokemon_template2_id'=>997,'create_pokemon_template3_id'=>997,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>998,'name'=>'ccc','create_pokemon_template_id'=>998,'create_pokemon_template2_id'=>998,'create_pokemon_template3_id'=>998,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>999,'name'=>'ddd','create_pokemon_template_id'=>999,'create_pokemon_template2_id'=>999,'create_pokemon_template3_id'=>999,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 2024-10-13に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>996,'name'=>'aaa','create_pokemon_template_id'=>996,'create_pokemon_template2_id'=>996,'create_pokemon_template3_id'=>996,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>997,'name'=>'bbb','create_pokemon_template_id'=>997,'create_pokemon_template2_id'=>997,'create_pokemon_template3_id'=>997,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>998,'name'=>'ccc','create_pokemon_template_id'=>998,'create_pokemon_template2_id'=>998,'create_pokemon_template3_id'=>998,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>999,'name'=>'ddd','create_pokemon_template_id'=>999,'create_pokemon_template2_id'=>999,'create_pokemon_template3_id'=>999,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 2024-10-12に追加
         DB::table('choice_pokemon_constraineds')->insert([
             ['id'=>998,'name'=>'aaa','create_pokemon_template_id'=>998,'create_pokemon_template2_id'=>998,'create_pokemon_template3_id'=>998,'created_at'=>now(),'updated_at'=>now()],

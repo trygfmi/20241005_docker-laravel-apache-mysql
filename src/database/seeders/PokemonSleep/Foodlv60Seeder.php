@@ -16,6 +16,26 @@ class Foodlv60Seeder extends Seeder
     {
         //
         /*
+        // 20241015に追加
+        DB::table('foodlv60s')->insert([
+            ['id'=>996,'food1'=>'マメミート','food2'=>'めざましコーヒー','food3'=>'ワカクサ大豆','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>997,'food1'=>'マメミート','food2'=>'めざましコーヒー','food3'=>'ワカクサ大豆','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>998,'food1'=>'ワカクサコーン','food2'=>'ピュアなオイル','food3'=>'ほっこりポテト','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>999,'food1'=>'ワカクサコーン','food2'=>'ピュアなオイル','food3'=>'ほっこりポテト','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 2024-10-13に追加
+        DB::table('foodlv60s')->insert([
+            ['id'=>996,'food1'=>'マメミート','food2'=>'めざましコーヒー','food3'=>'ワカクサ大豆','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>997,'food1'=>'マメミート','food2'=>'めざましコーヒー','food3'=>'ワカクサ大豆','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>998,'food1'=>'ワカクサコーン','food2'=>'ピュアなオイル','food3'=>'ほっこりポテト','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>999,'food1'=>'ワカクサコーン','food2'=>'ピュアなオイル','food3'=>'ほっこりポテト','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 2024-10-12に追加
         DB::table('foodlv60s')->insert([
             ['id'=>998,'food1'=>'ワカクサコーン','food2'=>'ピュアなオイル','food3'=>'ほっこりポテト','created_at'=>now(),'updated_at'=>now()],

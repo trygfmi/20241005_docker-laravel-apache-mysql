@@ -1,6 +1,8 @@
 # 新規ポケモンが追加されたときに実行するシェルスクリプト
 # 指定したファイルから1行ずつ文字列を受け取って、php artisan db:seedで利用できる文字列を生成し、対象ファイルに記述するシェルスクリプトです
-# 実行例: ./input_food_lv60_file.sh 2024-10-11/food_lv60_data.txt
+# 実行例: ./input_create_pokemon_template_file.sh 2024-10-11/create_pokemon_template_data.txt
+# create_pokemon_template_seeder_symbolic
+# ../../../src/database/seeders/PokemonSleep/CreatePokemonTemplateSeeder.php
 
 
 
@@ -23,14 +25,16 @@ fi
 
 startLineNumber=18
 insertLineNumber=18
-today=$(date +"%Y-%m-%d")
+# today=$(date +"%Y-%m-%d")
+today=$2
+writingFile=$(readlink create_pokemon_template_seeder_symbolic)
 
 
 
 sed -i '' ''$insertLineNumber'i\
         // '$today'に追加\
-        DB::table('\'foodlv60s\'')->insert([\
-' ../../src/database/seeders/PokemonSleep/Foodlv60Seeder.php
+        DB::table('\'create_pokemon_templates\'')->insert([\
+' $writingFile
 # 最後に挿入した文字列全体をコメントアウトするために追加した行数分、数をプラスしています
 insertLineNumber=$((insertLineNumber+2))
 
@@ -40,10 +44,10 @@ insertLineNumber=$((insertLineNumber+2))
 while read -r line; do
   array=($line)
 #   newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}", \\'food1\\'=>\\'"${array[1]}"\\', \\'food2\\'=>\\'"${array[2]}"\\', \\'created_at\\'=>now(), \\'updated_at\\'=>now()],")
-  newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}",\\'food1\\'=>\\'"${array[1]}"\\',\\'food2\\'=>\\'"${array[2]}"\\',\\'food3\\'=>\\'"${array[3]}"\\',\\'created_at\\'=>now(),\\'updated_at\\'=>now()],")
+  newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}",\\'foodlv1_id\\'=>"${array[1]}",\\'created_at\\'=>now(),\\'updated_at\\'=>now()],")
   sed -i '' ''$insertLineNumber'i\
             '$newPokemonRow'\
-' ../../src/database/seeders/PokemonSleep/Foodlv60Seeder.php
+' $writingFile
   insertLineNumber=$((insertLineNumber+1))
 done < $inputFileName
 
@@ -51,20 +55,22 @@ done < $inputFileName
 
 sed -i '' ''$insertLineNumber'i\
         ]);\
-' ../../src/database/seeders/PokemonSleep/Foodlv60Seeder.php
+' $writingFile
 insertLineNumber=$((insertLineNumber+1))
 
 
 
-cd ../../src
+# <<test
+cd ../../../src
 php artisan db:seed
-cd ../shellscript/pokemonsleep
+cd ../shellscript/pokemonsleep/new_register_new_pokemon
+# test
 
 
 
 sed -i '' ''$startLineNumber'i\
         /*\
-' ../../src/database/seeders/PokemonSleep/Foodlv60Seeder.php
+' $writingFile
 insertLineNumber=$((insertLineNumber+1))
 
 
@@ -72,7 +78,7 @@ insertLineNumber=$((insertLineNumber+1))
 sed -i '' ''$insertLineNumber'i\
         */\
 \
-' ../../src/database/seeders/PokemonSleep/Foodlv60Seeder.php
+' $writingFile
 
 
 

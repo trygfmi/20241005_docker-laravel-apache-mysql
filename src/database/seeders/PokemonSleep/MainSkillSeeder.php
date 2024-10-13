@@ -16,6 +16,20 @@ class MainSkillSeeder extends Seeder
     {
         //
         /*
+        // 20241015に追加
+        DB::table('main_skills')->insert([
+            ['id'=>80,'main_skill'=>'たくわえる','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 2024-10-13に追加
+        DB::table('main_skills')->insert([
+            ['id'=>80,'main_skill'=>'たくわえる','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 2024-10-12に追加
         DB::table('main_skills')->insert([
             ['id'=>77,'main_skill'=>'たくわえる(エナジーチャージS)','created_at'=>now(),'updated_at'=>now()],
