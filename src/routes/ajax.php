@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
+use App\Models\Preview\PreviewRouteAjax;
 Route::get('ajax-preview-top',function(){
-    return view('ajax.ajax-preview-top');
+    $route_ajaxes = PreviewRouteAjax::all();
+    return view('ajax.ajax-preview-top', ['route_ajaxes'=>$route_ajaxes]);
 })->name('ajax-preview-top');
 
 

@@ -16,6 +16,25 @@ class OwnPokemonCompleteController extends Controller
     public function index()
     {
         //
+        // $result = OwnPokemonComplete::where('sub_skill_lv1', "きのみの数S")->pluck('id');
+        /*
+        $result = OwnPokemonComplete::where('sub_skill_lv1', "きのみの数S")
+                                    ->orWhere('sub_skill_lv25', "きのみの数S")
+                                    ->orWhere('sub_skill_lv50', "きのみの数S")
+                                    ->orWhere('sub_skill_lv75', "きのみの数S")
+                                    ->orWhere('sub_skill_lv100', "きのみの数S")
+                                    ->pluck('id');
+        */
+        /*
+        $result = OwnPokemonComplete::select('id')
+                                    ->where('sub_skill_lv1', "きのみの数S")
+                                    ->get();
+        */
+        $result = OwnPokemonComplete::select('id', 'own_pokemon_name')
+                                    ->where('sub_skill_lv1', "きのみの数S")
+                                    ->get();
+        // */
+        // dd($result);
         $result = OwnPokemonComplete::all();
 
         return view('pokemon-sleep.show-own-pokemon-complete', ['result'=>$result]);
@@ -111,50 +130,31 @@ class OwnPokemonCompleteController extends Controller
                                     ->orWhere('sub_skill_lv100', $keyword)
                                     ->get();
 
-        // 各行の列がキーワードに該当するかをtrueかfalseで持ちます
-        // $resultの数だけ行を用意し、行番号を識別するために、$resultのidも用意している
-        $result_index_id_array = [];
-        for($i=0; $i<count($result); $i++){
-            $result_index_id_array = $result_index_id_array + [$i => ["id"=>$result[$i]['id'], 
-                                                                      'boolean_lv1'=>false, 
-                                                                      'boolean_lv25'=>false, 
-                                                                      'boolean_lv50'=>false, 
-                                                                      'boolean_lv75'=>false, 
-                                                                      'boolean_lv100'=>false]
-                                                              ];
-        }
 
 
-        // 列の判定を行う
-        $result_index_id_array = $this->setTrueFalseToCell($result_index_id_array, 'sub_skill_lv100', $keyword, 'lv100');
-        $result_index_id_array = $this->setTrueFalseToCell($result_index_id_array, 'sub_skill_lv75', $keyword, 'lv75');
-        $result_index_id_array = $this->setTrueFalseToCell($result_index_id_array, 'sub_skill_lv50', $keyword, 'lv50');
-        $result_index_id_array = $this->setTrueFalseToCell($result_index_id_array, 'sub_skill_lv25', $keyword, 'lv25');
-        $result_index_id_array = $this->setTrueFalseToCell($result_index_id_array, 'sub_skill_lv1', $keyword, 'lv1');
+         // 各sub_skill_lvのkeywordに該当する行のidを取得
+        $sub_skill_lv100_id_array = OwnPokemonComplete::where('sub_skill_lv100', $keyword)
+                                                            ->pluck('id');
+        $sub_skill_lv75_id_array = OwnPokemonComplete::where('sub_skill_lv75', $keyword)
+                                                            ->pluck('id');
+        $sub_skill_lv50_id_array = OwnPokemonComplete::where('sub_skill_lv50', $keyword)
+                                                            ->pluck('id');
+        $sub_skill_lv25_id_array = OwnPokemonComplete::where('sub_skill_lv25', $keyword)
+                                                            ->pluck('id');
+        $sub_skill_lv1_id_array = OwnPokemonComplete::where('sub_skill_lv1', $keyword)
+                                                            ->pluck('id');
+
         
 
-        // */
-        // $result_number_id = ['number'=>count($result_sub_skill_lv100), 'id'=>$result_sub_skill_lv100[0]['id']];
-        // $result_number_id = array('number'=>2, 'id'=>1);
-        //dd($result);
-        return response()->json(['message'=>$result, 'result_index_id_array'=>$result_index_id_array]);
-    }
+        // 計算量が多くなるのでクライアントサイド側で判定処理を実施
+        return response()->json([
+            'message'=>$result, 
+            'sub_skill_lv100_id_array'=>$sub_skill_lv100_id_array,
+            'sub_skill_lv75_id_array'=>$sub_skill_lv75_id_array,
+            'sub_skill_lv50_id_array'=>$sub_skill_lv50_id_array,
+            'sub_skill_lv25_id_array'=>$sub_skill_lv25_id_array,
+            'sub_skill_lv1_id_array'=>$sub_skill_lv1_id_array,
+        ]);
 
-    // 該当するセルの色を変更するために該当セルに真偽値を設定する
-    public function setTrueFalseToCell($result_index_id_array, $sub_skill_column_name, $keyword, $lv){
-        // sub_skillのそれぞれのカラムでキーワードに該当する行のidを連想配列に挿入
-        $result_sub_skill = OwnPokemonComplete::where($sub_skill_column_name, $keyword)->get();
-        $result_sub_skill_count = count($result_sub_skill);
-
-        // キーワードに該当するセルの真偽値をtrueにします
-        for($i=0; $i<$result_sub_skill_count; $i++){
-            for($j=0; $j<count($result_index_id_array); $j++){
-                if($result_index_id_array[$j]['id'] == $result_sub_skill[$i]['id']){
-                    $result_index_id_array[$j]["boolean_$lv"] = true;
-                }
-            }
-        }
-
-        return $result_index_id_array;
     }
 }

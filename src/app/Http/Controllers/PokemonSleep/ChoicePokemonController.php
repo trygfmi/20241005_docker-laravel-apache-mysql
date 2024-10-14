@@ -140,6 +140,7 @@ class ChoicePokemonController extends Controller
                 'created_at'=>now(), 
                 'updated_at'=>now(), 
                 'image_path'=>'images/'.$id.'.png',
+                'shiny_image_path'=>'images/shiny/'.$id.'.png',
             ]);
             
             $createdPokemon->save();

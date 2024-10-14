@@ -28,5 +28,6 @@ class OwnPokemonComplete extends Model
         'created_at',
         'updated_at',
         'image_path',
+        'shiny_image_path',
     ];
 }

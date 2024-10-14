@@ -10,8 +10,10 @@ use App\Http\Controllers\ImportCsv\ImportPokemonNameController;
 
 
 
+use App\Models\Preview\PreviewRouteImportCsv;
 Route::get('import-csv-preview-top', function(){
-    return view('import-csv.import-csv-preview-top');
+    $route_import_csvs = PreviewRouteImportCsv::all();
+    return view('import-csv.import-csv-preview-top', ['route_import_csvs'=>$route_import_csvs]);
 })->name('import-csv-preview-top');
 
 

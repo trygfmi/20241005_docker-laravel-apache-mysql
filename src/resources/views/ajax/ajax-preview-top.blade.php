@@ -9,6 +9,23 @@
 
 <div>
     <!-- Be present above all else. - Naval Ravikant -->
+    @if(isset($route_ajaxes))
+        @foreach($route_ajaxes as $route_ajax)
+            <p>
+                <h2>{{$route_ajax->view_file_name}}</h2>
+                <a href="{{route($route_ajax->helper_name)}}">{{$route_ajax->view_file_name}}</a>
+                <p>route_url:   {{$route_ajax->route_url}}</p>
+                <p>controller:  {{$route_ajax->controller}}</p>
+                <p>method:      {{$route_ajax->method}}</p>
+                <p>helper_name: {{$route_ajax->helper_name}}</p>
+                <p>middleware:  {{$route_ajax->middleware}}</p>
+            </p>
+            <iframe src="{{route($route_ajax->helper_name)}}"></iframe>
+        @endforeach
+    @endif
+
+
+    
     <p>
         <h2>index-ajax-hello</h2>
         <a href="{{route('index-ajax-hello')}}">index-ajax-hello</a>

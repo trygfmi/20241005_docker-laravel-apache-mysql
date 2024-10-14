@@ -7,6 +7,23 @@
 
 <div>
     <!-- The biggest battle is the war against ignorance. - Mustafa Kemal Atatürk -->
+    @if(isset($route_webs))
+        @foreach($route_webs as $route_web)
+            <p>
+                <h2>{{$route_web->view_file_name}}</h2>
+                <a href="{{route($route_web->helper_name)}}">{{$route_web->view_file_name}}</a>
+                <p>route_url:   {{$route_web->route_url}}</p>
+                <p>controller:  {{$route_web->controller}}</p>
+                <p>method:      {{$route_web->method}}</p>
+                <p>helper_name: {{$route_web->helper_name}}</p>
+                <p>middleware:  {{$route_web->middleware}}</p>
+            </p>
+            <iframe src="{{route($route_web->helper_name)}}"></iframe>
+        @endforeach
+    @endif
+
+
+    
     <p>
         <h2>welcome</h2>
         <a href="{{route('welcome')}}">welcome</a>

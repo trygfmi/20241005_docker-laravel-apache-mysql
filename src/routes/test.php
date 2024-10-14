@@ -3,16 +3,18 @@
 use Illuminate\Support\Facades\Route;
 
 
-
+use App\Models\Preview\PreviewRouteTest;
 Route::get('test-preview-top', function(){
-    return view('test.test-preview-top');
+    $route_tests = PreviewRouteTest::all();
+    return view('test.test-preview-top', ['route_tests'=>$route_tests]);
 })->name('test-preview-top');
 
 
 
 use App\Http\Controllers\Test\TestController;
 // dd(dump and die)を使用して、クラスパスやリクエスト、レスポンスの内容を表示します
-Route::get('show-read-from-handler', [TestController::class, 'showReadFromHandler'])->name('show-read-from-handler');
+Route::get('show-read-from-handler', [TestController::class, 'showReadFromHandler'])
+->name('show-read-from-handler');
 
 
 

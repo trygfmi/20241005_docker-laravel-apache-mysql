@@ -25,6 +25,23 @@
 
 <div>
     <!-- Very little is needed to make a happy life. - Marcus Aurelius -->
+    @if(isset($route_pokemon_sleeps))
+        @foreach($route_pokemon_sleeps as $route_pokemon_sleep)
+            <p>
+                <h2>{{$route_pokemon_sleep->view_file_name}}</h2>
+                <a href="{{route($route_pokemon_sleep->helper_name)}}">{{$route_pokemon_sleep->view_file_name}}</a>
+                <p>route_url:   {{$route_pokemon_sleep->route_url}}</p>
+                <p>controller:  {{$route_pokemon_sleep->controller}}</p>
+                <p>method:      {{$route_pokemon_sleep->method}}</p>
+                <p>helper_name: {{$route_pokemon_sleep->helper_name}}</p>
+                <p>middleware:  {{$route_pokemon_sleep->middleware}}</p>
+            </p>
+            <iframe src="{{route($route_pokemon_sleep->helper_name)}}"></iframe>
+        @endforeach
+    @endif
+
+
+    
     <p>
         <h2>welcome</h2>
         <a href="{{route('welcome')}}" target="_blank">welcome page</a>

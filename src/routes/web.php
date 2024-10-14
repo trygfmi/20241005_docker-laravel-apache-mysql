@@ -53,12 +53,21 @@ use Illuminate\Support\Facades\Route;
 
 
 
+use App\Models\Preview\PreviewRouteTop;
 Route::get('preview-top', function(){
-    return view('preview-top');
+    $preview_route_tops = PreviewRouteTop::all();
+    return view('preview-top', ['preview_route_tops'=>$preview_route_tops]);
 })->name('preview-top');
+
+
+
+use App\Models\Preview\PreviewRouteWeb;
 Route::get('web-preview-top', function(){
-    return view('web-preview-top');
+    $route_webs = PreviewRouteWeb::all();
+    return view('web-preview-top', ['route_webs'=>$route_webs]);
 })->name('web-preview-top');
+
+
 
 
 

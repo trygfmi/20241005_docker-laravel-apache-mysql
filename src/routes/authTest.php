@@ -4,14 +4,17 @@ use App\Http\Controllers\AuthTest\AuthTestController;
 
 
 
+use App\Models\Preview\PreviewRouteAuthTest;
 Route::get('auth-test-preview-top', function(){
-    return view('auth-test.auth-test-preview-top');
+    $route_auth_tests = PreviewRouteAuthTest::all();
+    return view('auth-test.auth-test-preview-top', ['route_auth_tests'=>$route_auth_tests]);
 })->name('auth-test-preview-top');
 
 
 
 // nameとpasswordを受け取ってログインするボタンが表示されます
-Route::get('/auth-test', [AuthTestController::class, 'index'])->name('auth-test');
+Route::get('/auth-test', [AuthTestController::class, 'index'])
+->name('preview-auth-test');
 // idが5のユーザーのemailカラムを$user変数で返します
 Route::post('/auth-test', [AuthTestController::class, 'authTest'])->name('auth-test');
 // Route::post('/auth-test', [AuthTestController::class, 'authLogin'])->name('auth-login');

@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 // pokemon_sleep ------------------------------------------------
+use App\Models\Preview\PreviewRoutePokemonSleep;
 Route::get('pokemon-sleep-preview-top', function(){
-    return view('pokemon-sleep.pokemon-sleep-preview-top');
+    $route_pokemon_sleeps = PreviewRoutePokemonSleep::all();
+    return view('pokemon-sleep.pokemon-sleep-preview-top', ['route_pokemon_sleeps'=>$route_pokemon_sleeps]);
 })->name('pokemon-sleep-preview-top');
 
 

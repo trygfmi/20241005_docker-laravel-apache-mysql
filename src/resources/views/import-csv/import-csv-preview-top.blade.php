@@ -9,6 +9,23 @@
 
 <div>
     <!-- If you do not have a consistent goal in life, you can not live it in a consistent way. - Marcus Aurelius -->
+    @if(isset($route_import_csvs))
+        @foreach($route_import_csvs as $route_import_csv)
+            <p>
+                <h2>{{$route_import_csv->view_file_name}}</h2>
+                <a href="{{route($route_import_csv->helper_name)}}">{{$route_import_csv->view_file_name}}</a>
+                <p>route_url:   {{$route_import_csv->route_url}}</p>
+                <p>controller:  {{$route_import_csv->controller}}</p>
+                <p>method:      {{$route_import_csv->method}}</p>
+                <p>helper_name: {{$route_import_csv->helper_name}}</p>
+                <p>middleware:  {{$route_import_csv->middleware}}</p>
+            </p>
+            <iframe src="{{route($route_import_csv->helper_name)}}"></iframe>
+        @endforeach
+    @endif
+
+
+    
     <p>
         <h2>import-users</h2>
         <a href="{{route('import-users')}}">import-users</a>

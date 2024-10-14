@@ -323,4 +323,20 @@ function createInputElement(input_id, type, input_name, td_id, width, hasRequire
     input.required = hasRequired;
     document.getElementById(td_id).appendChild(input);
 
+    if(input_id == "remarks"){
+        input.addEventListener('blur', function(event){
+            input_value = this.value;
+
+            this_table_row_element = document.getElementById(event.target.parentElement.parentElement.id);
+            option_element = this_table_row_element.children[1].children[0].children[0];
+            pokemon_id = option_element.text;
+            img_element = this_table_row_element.children[2].children[0];
+
+            if(input_value == "色違い"){
+                img_element.src = "storage/images/shiny/" + pokemon_id + ".png";
+            }else{
+                img_element.src = "storage/images/" + pokemon_id + ".png";
+            }
+        });
+    }
 }
