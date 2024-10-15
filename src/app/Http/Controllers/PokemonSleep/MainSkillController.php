@@ -49,7 +49,7 @@ class MainSkillController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(MainSkill $mainSkill)
+    public function show()
     {
         //
         $main_skills = MainSkill::all();

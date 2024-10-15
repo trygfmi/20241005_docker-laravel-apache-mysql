@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Preview;
 
-use App\Models\Preview\PreviewRoutePokemonSleep;
+use App\Models\Preview\PreviewRouteTop;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class PreviewRoutePokemonSleepController extends Controller
+
+class PreviewRouteTopController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +36,7 @@ class PreviewRoutePokemonSleepController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(PreviewRoutePokemonSleep $previewRoutePokemonSleep)
+    public function show(PreviewRouteTop $previewRouteTop)
     {
         //
     }
@@ -42,7 +44,7 @@ class PreviewRoutePokemonSleepController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PreviewRoutePokemonSleep $previewRoutePokemonSleep)
+    public function edit(PreviewRouteTop $previewRouteTop)
     {
         //
     }
@@ -50,7 +52,7 @@ class PreviewRoutePokemonSleepController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, PreviewRoutePokemonSleep $previewRoutePokemonSleep)
+    public function update(Request $request, PreviewRouteTop $previewRouteTop)
     {
         //
     }
@@ -58,7 +60,7 @@ class PreviewRoutePokemonSleepController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PreviewRoutePokemonSleep $previewRoutePokemonSleep)
+    public function destroy(PreviewRouteTop $previewRouteTop)
     {
         //
     }

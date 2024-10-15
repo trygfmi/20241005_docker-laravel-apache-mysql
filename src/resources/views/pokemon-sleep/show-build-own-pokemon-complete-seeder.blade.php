@@ -10,22 +10,22 @@
                 @foreach($ownPokemonCompleteSeeder as $opcs)
                     <tr>
                         <td>{{$opcs->id}}</td>
-                        <td><img src="{{$opcs->image_path}}"></td>
+                        <td><img src="{{asset('storage')}}/{{$opcs->image_path}}"></td>
                         <td>{{$opcs->own_pokemon_name}}</td>
                         <td>{{$opcs->nickname}}</td>
-                        <td>{{$opcs->id}}</td>
-                        <td>{{$opcs->id}}</td>
-                        <td>{{$opcs->id}}</td>
-                        <td>{{$opcs->id}}</td>
-                        <td>{{$opcs->id}}</td>
-                        <td>{{$opcs->id}}</td>
-                        <td>{{$opcs->id}}</td>
-                        <td>{{$opcs->id}}</td>
-                        <td>{{$opcs->id}}</td>
-                        <td>{{$opcs->id}}</td>
-                        <td>{{$opcs->id}}</td>
-                        <td>{{$opcs->id}}</td>
-                        <td>{{$opcs->id}}</td>
+                        <td>{{$opcs->sp}}</td>
+                        <td>{{$opcs->lv}}</td>
+                        <td>{{$opcs->food_lv1}}</td>
+                        <td>{{$opcs->food_lv30}}</td>
+                        <td>{{$opcs->food_lv60}}</td>
+                        <td>{{$opcs->main_skill}}</td>
+                        <td>{{$opcs->sub_skill_lv1}}</td>
+                        <td>{{$opcs->sub_skill_lv25}}</td>
+                        <td>{{$opcs->sub_skill_lv50}}</td>
+                        <td>{{$opcs->sub_skill_lv75}}</td>
+                        <td>{{$opcs->sub_skill_lv100}}</td>
+                        <td>{{$opcs->personality}}</td>
+                        <td>{{$opcs->remarks}}</td>
                     </tr>
                 @endforeach
                 

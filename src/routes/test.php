@@ -11,6 +11,14 @@ Route::get('test-preview-top', function(){
 
 
 
+use App\Http\Controllers\Preview\PreviewRouteTestController;
+Route::get('create-test-preview-top', [PreviewRouteTestController::class, 'createIndex'])
+->name('create-test-preview-top-index');
+Route::post('create-test-preview-top', [PreviewRouteTestController::class, 'create'])
+->name('create-test-preview-top');
+
+
+
 use App\Http\Controllers\Test\TestController;
 // dd(dump and die)を使用して、クラスパスやリクエスト、レスポンスの内容を表示します
 Route::get('show-read-from-handler', [TestController::class, 'showReadFromHandler'])

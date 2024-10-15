@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class PreviewRouteAjax extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'view_file_name',
+        'route_url',
+        'controller',
+        'get_method',
+        'get_helper_name',
+        'middleware',
+        'post_method',
+        'post_helper_name',
+        'model',
+        'table_name',
+    ];
 }

@@ -13,6 +13,51 @@
         @foreach($route_import_csvs as $route_import_csv)
             <p>
                 <h2>{{$route_import_csv->view_file_name}}</h2>
+                <p>id:               {{$route_import_csv->id}}</p>
+                <p>
+                   個別ページ:
+                    <a href="{{route($route_import_csv->get_helper_name)}}" target="_blank">{{$route_import_csv->view_file_name}}</a>
+                </p>
+                <p>route_url:        {{$route_import_csv->route_url}}</p>
+                @if(($route_import_csv->controller != ""))
+                    <p>controller:       {{$route_import_csv->controller}}</p>
+                @endif
+                @if(($route_import_csv->get_method != ""))
+                    <p>get_method:       {{$route_import_csv->get_method}}</p>
+                @endif
+                @if(($route_import_csv->get_helper_name != ""))
+                    <p>get_helper_name:      {{$route_import_csv->get_helper_name}}</p>
+                @endif
+                @if(($route_import_csv->middleware != ""))
+                    <p>middleware:       {{$route_import_csv->middleware}}</p>
+                @endif
+                @if(($route_import_csv->post_method != ""))
+                    <p>post_method:      {{$route_import_csv->post_method}}</p>
+                @endif
+                @if(($route_import_csv->post_helper_name != ""))
+                    <p>post_helper_name: {{$route_import_csv->post_helper_name}}</p>
+                @endif
+                @if(($route_import_csv->model != ""))
+                    <p>model:            {{$route_import_csv->model}}</p>
+                @endif
+                @if(($route_import_csv->table_name != ""))
+                    <p>table_name:       {{$route_import_csv->table_name}}</p>
+                @endif
+            </p>
+            <iframe src="{{route($route_import_csv->get_helper_name)}}"></iframe>
+        @endforeach
+    @endif
+
+
+
+
+
+
+    {{--
+    @if(isset($route_import_csvs))
+        @foreach($route_import_csvs as $route_import_csv)
+            <p>
+                <h2>{{$route_import_csv->view_file_name}}</h2>
                 <a href="{{route($route_import_csv->helper_name)}}">{{$route_import_csv->view_file_name}}</a>
                 <p>route_url:   {{$route_import_csv->route_url}}</p>
                 <p>controller:  {{$route_import_csv->controller}}</p>
@@ -23,103 +68,11 @@
             <iframe src="{{route($route_import_csv->helper_name)}}"></iframe>
         @endforeach
     @endif
+    --}}
+
+
 
 
     
-    <p>
-        <h2>import-users</h2>
-        <a href="{{route('import-users')}}">import-users</a>
-    </p>
-    <iframe src="{{route('import-users')}}"></iframe>
-
-
-
-    <p>
-        <h2>main-skill-test</h2>
-        <a href="{{route('preview-main-skill-test')}}">main-skill-test</a>
-    </p>
-    <iframe src="{{route('preview-main-skill-test')}}"></iframe>
-
-
-
-    <p>
-        <h2>sub-skill-import-test</h2>
-        <a href="{{route('preview-sub-skill-import-test')}}">sub-skill-import-test</a>
-    </p>
-    <iframe src="{{route('preview-sub-skill-import-test')}}"></iframe>
-
-
-
-    <p>
-        <h2>preview-index-sub-skill-import-test</h2>
-        <a href="{{route('preview-index-sub-skill-import-test')}}">preview-index-sub-skill-import-test</a>
-    </p>
-    <iframe src="{{route('preview-index-sub-skill-import-test')}}"></iframe>
-
-
-
-    <p>
-        <h2>preview-import-csv</h2>
-        <a href="{{route('preview-import-csv')}}">preview-import-csv</a>
-    </p>
-    <iframe src="{{route('preview-import-csv')}}"></iframe>
-
-
-
-    <p>
-        <h2>show-import-csv</h2>
-        <a href="{{route('show-import-csv')}}">show-import-csv</a>
-    </p>
-    <iframe src="{{route('show-import-csv')}}"></iframe>
-
-
-
-    <p>
-        <h2>import-csv-sub</h2>
-        <a href="{{route('preview-import-csv-sub')}}">import-csv-sub</a>
-    </p>
-    <iframe src="{{route('preview-import-csv-sub')}}"></iframe>
-
-
-
-    <p>
-        <h2>show-import-csv-sub</h2>
-        <a href="{{route('show-import-csv-sub')}}">show-import-csv-sub</a>
-    </p>
-    <iframe src="{{route('show-import-csv-sub')}}"></iframe>
-
-
-
-    <p>
-        <h2>import-csv-test</h2>
-        <a href="{{route('preview-import-csv-test')}}">import-csv-test</a>
-    </p>
-    <iframe src="{{route('preview-import-csv-test')}}"></iframe>
-
-
-
-    <p>
-        <h2>show-import-csv-test</h2>
-        <a href="{{route('show-import-csv-test')}}">show-import-csv-test</a>
-    </p>
-    <iframe src="{{route('show-import-csv-test')}}"></iframe>
-
-
-
-    <p>
-        <h2>import-pokemon-name</h2>
-        <a href="{{route('preview-import-pokemon-name')}}">import-pokemon-name</a>
-    </p>
-    <iframe src="{{route('preview-import-pokemon-name')}}"></iframe>
-
-
-
-    <p>
-        <h2>show-import-pokemon-name</h2>
-        <a href="{{route('show-import-pokemon-name')}}">show-import-pokemon-name</a>
-    </p>
-    <iframe src="{{route('show-import-pokemon-name')}}"></iframe>
-
-
-
+    
 </div>

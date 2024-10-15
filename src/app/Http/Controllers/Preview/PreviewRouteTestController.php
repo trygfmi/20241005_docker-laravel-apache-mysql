@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Preview;
 
 use App\Models\Preview\PreviewRouteTest;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class PreviewRouteTestController extends Controller
 {
@@ -15,12 +17,33 @@ class PreviewRouteTestController extends Controller
         //
     }
 
+    public function createIndex(){
+        return view('preview.create-test-preview-top');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        $object = PreviewRouteTest::create([
+            'view_file_name'=>$request->view_file_name,
+            'route_url'=>$request->route_url,
+            'controller'=>$request->controller,
+            'get_method'=>$request->get_method,
+            'get_helper_name'=>$request->get_helper_name,
+            'middleware'=>$request->middleware,
+            'post_method'=>$request->post_method,
+            'post_helper_name'=>$request->post_helper_name,
+            'model'=>$request->model,
+            'table_name'=>$request->table_name,
+        ]);
+
+        $object->save();
+
+
+        return redirect()->back()->with('message', "success");
     }
 
     /**

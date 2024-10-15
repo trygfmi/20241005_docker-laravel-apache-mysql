@@ -16,7 +16,7 @@ class SearchNutController extends Controller
     public function index()
     {
         //
-        return view("search-nut", ['message' => "ok"]);
+        return view("pokemon-sleep.search-nut", ['message' => "ok"]);
     }
 
     /**

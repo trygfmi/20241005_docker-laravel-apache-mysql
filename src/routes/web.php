@@ -69,6 +69,13 @@ Route::get('web-preview-top', function(){
 
 
 
+use App\Http\Controllers\Preview\PreviewRouteWebController;
+Route::get('create-web-preview-top', [PreviewRouteWebController::class, 'createIndex'])
+->name('create-web-preview-top-index');
+Route::post('create-web-preview-top', [PreviewRouteWebController::class, "create"])
+->name('create-web-preview-top');
+
+
 
 
 Route::get('/', function () {

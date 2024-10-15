@@ -18,6 +18,14 @@ Route::get('import-csv-preview-top', function(){
 
 
 
+use App\Http\Controllers\Preview\PreviewRouteImportCsvController;
+Route::get('create-import-csv-preview-top', [PreviewRouteImportCsvController::class, 'createIndex'])
+->name('create-import-csv-preview-top-index');
+Route::post('create-import-csv-preview-top', [PreviewRouteImportCsvController::class, 'create'])
+->name('create-import-csv-preview-top');
+
+
+
 // import-csvフォルダのimport-usersを表示します
 Route::get('/import-users', function(){
     return view('import-csv.import-users');
@@ -74,7 +82,8 @@ Route::get('/import-csv-sub', function(){
     return view('import-csv.import-csv-sub');
 })->name('preview-import-csv-sub');
 // inputでアップロードしたcsvファイルから、ImportSubTestImportクラスで定義した値を取得して、作成したテーブルのカラム名で保存する
-Route::post('/import-csv-sub', [ImportCsvSubController::class, 'import'])->name('import-csv-sub');
+Route::post('/import-csv-sub', [ImportCsvSubController::class, 'import'])
+->name('import-csv-sub');
 // ImportCsvSubで全レコードを取得後、sub_skills変数を通してshow-import-csv-subに表示する
 Route::get('/show-import-csv-sub', [ImportCsvSubController::class, 'show'])
 ->name('show-import-csv-sub');
@@ -86,9 +95,10 @@ Route::get('/import-csv-test', function(){
     return view('import-csv.import-csv-test');
 })->name('preview-import-csv-test');
 // inputでアップロードしたcsvファイルから、ImportCsvTestImportクラスで定義した値を取得し、作成したテーブルのカラム名で保存する
-Route::post('/import-csv-test', [importCsvTestController::class, 'import'])->name('import-csv-test');
+Route::post('/import-csv-test', [ImportCsvTestController::class, 'import'])
+->name('import-csv-test');
 // ImportCsvTestで全レコードを取得後、names変数を通して画面に表示します
-Route::get('/show-import-csv-test', [importCsvTestController::class, 'show'])
+Route::get('/show-import-csv-test', [ImportCsvTestController::class, 'show'])
 ->name('show-import-csv-test');
 
 

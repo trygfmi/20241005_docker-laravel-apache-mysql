@@ -12,6 +12,15 @@ Route::get('ajax-preview-top',function(){
 
 
 
+use App\Http\Controllers\Preview\PreviewRouteAjaxController;
+Route::get('create-ajax-preview-top', [PreviewRouteAjaxController::class, 'createIndex'])
+->name('create-ajax-preview-top-index');
+Route::post('create-ajax-preview-top', [PreviewRouteAjaxController::class, 'create'])
+->name('create-ajax-preview-top');
+
+
+
+
 use App\Http\Controllers\Ajax\HelloAjaxController;
 // ボタンを押したら、ImportOwnPokemonモデルの全データを配列形式のjsonで非同期に受け取る画面を表示します
 Route::get('/index-ajax-hello', function () {
@@ -24,13 +33,19 @@ Route::get('/ajax-hello', [HelloAjaxController::class, 'helloAjax'])->name('ajax
 
 use App\Http\Controllers\Ajax\ForeignIdPokemonController;
 // ForeignIdPokemonモデルにインポートするcsvファイルをアップロードする画面を表示します
-Route::get('import-foreign-id-pokemon', [ForeignIdPokemonController::class, 'index'])->name('index-import-foreign-id-pokemon');
+Route::get('import-foreign-id-pokemon', [ForeignIdPokemonController::class, 'index'])
+->name('index-import-foreign-id-pokemon');
 // ForeignIdPokemonImportを使用してForeignIdPokemonモデルにcsvファイルの内容をインポートして、message変数を通して画面にステータスを表示します
 // インポートするcsvファイルのmain_skill_idがmain_skillsテーブルに存在するidだったらインポートできます
-Route::post('import-foreign-id-pokemon', [ForeignIdPokemonController::class, 'import'])->name('import-foreign-id-pokemon');
-Route::get('show-foreign-id-pokemon', [ForeignIdPokemonController::class, 'show'])->name('show-foreign-id-pokemon');
+Route::post('import-foreign-id-pokemon', [ForeignIdPokemonController::class, 'import'])
+->name('import-foreign-id-pokemon');
+Route::get('show-foreign-id-pokemon', [ForeignIdPokemonController::class, 'show'])
+->name('show-foreign-id-pokemon');
 
 
 
 use App\Http\Controllers\PokemonSleep\SearchNutController;
-Route::get('ajax-import-foreign-id-pokemon', [SearchNutController::class, 'getJson'])->name('ajax-import-foreign-id-pokemon');
+Route::get('ajax-import-foreign-id-pokemon', [SearchNutController::class, 'getJson'])
+->name('ajax-import-foreign-id-pokemon');
+
+

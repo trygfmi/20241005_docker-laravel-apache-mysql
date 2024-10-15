@@ -11,6 +11,14 @@ Route::get('pokemon-sleep-preview-top', function(){
 
 
 
+use App\Http\Controllers\Preview\PreviewRoutePokemonSleepController;
+Route::get('create-pokemon-sleep-preview-top', [PreviewRoutePokemonSleepController::class, 'createIndex'])
+->name('create-pokemon-sleep-preview-top-index');
+Route::post('create-pokemon-sleep-preview-top', [PreviewRoutePokemonSleepController::class, 'create'])
+->name('create-pokemon-sleep-preview-top');
+
+
+
 use App\Http\Controllers\PokemonSleep\FoodController;
 // Foodモデルで全レコードを取得後、foods変数を通して画面に表示
 Route::get('/foods', [FoodController::class, 'index'])->name('preview-foods');
@@ -37,28 +45,35 @@ Route::get('/register-main-skill', function(){
     return view('pokemon-sleep.register-main-skill');
 })->name('preview-register-main-skill');
 // MainSkillモデルに紐づく全レコードを取得後、main_skills変数を通してデータを画面に表示します
-Route::get('/show-registered-main-skills', [MainSkillController::class, 'show'])->name('show-registered-main-skills');
+Route::get('/show-registered-main-skills', [MainSkillController::class, 'show'])
+->name('show-registered-main-skills');
 // inputに入力した値がMainSkillモデルに存在していたら、既に登録されていますと表示し、されていなかったら、MainSkillモデルに紐づくテーブルに保存し、セッション経由でmain_skill変数を画面に表示する
-Route::post('/register-main-skill', [MainSkillController::class, 'store'])->name('register-main-skill');
+Route::post('/register-main-skill', [MainSkillController::class, 'store'])
+->name('register-main-skill');
 
 
 
 use App\Http\Controllers\PokemonSleep\SubSkillController;
 // pokemon-sleepフォルダのregister-sub-skillファイルを表示します
-Route::get('/register-sub-skill', [SubSkillController::class, 'index'])->name('preview-register-sub-skill');
+Route::get('/register-sub-skill', [SubSkillController::class, 'index'])
+->name('preview-register-sub-skill');
 // SubSkillモデルに紐づく全レコードを取得後、sub_skills変数を通してデータを画面に表示します
-Route::get('/show-registered-sub-skills', [SubSkillController::class, 'show'])->name('show-registered-sub-skills');
+Route::get('/show-registered-sub-skills', [SubSkillController::class, 'show'])
+->name('show-registered-sub-skills');
 // inputに入力した値がSubSkillモデルに存在していたら、既に登録されていますと表示し、されていなかったら、SubSkillモデルに紐づくテーブルに保存し、セッション経由でmessage変数のデータを画面に表示します
-Route::post('/register-sub-skill', [SubSkillController::class, 'store'])->name('register-sub-skill');
+Route::post('/register-sub-skill', [SubSkillController::class, 'store'])
+->name('register-sub-skill');
 // pokemon_sleep --------------------------------------------------
 
 
 
 use App\Http\Controllers\PokemonSleep\SearchNutController;
 // 検索ワードを入力するinputと、検索buttonを表示します
-Route::get('search-nut', [SearchNutController::class, 'index'])->name('preview-search-nut');
+Route::get('search-nut', [SearchNutController::class, 'index'])
+->name('preview-search-nut');
 // nputに入力した値で、SubSkillImportTestモデルのsub_skillカラムを検索し、結果をinput変数を通してデータを画面に表示する
-Route::post('search-nut', [SearchNutController::class, 'search'])->name('search-nut');
+Route::post('search-nut', [SearchNutController::class, 'search'])
+->name('search-nut');
 
 
 
@@ -67,32 +82,42 @@ Route::get('import-own-pokemon', function(){
     return view('pokemon-sleep.import-own-pokemon');
 })->name('preview-import-own-pokemon');
 // Importクラスで$row[]配列に指定する文字列は日本語だとうまくいかない
-Route::post('import-own-pokemon', [ImportOwnPokemonController::class, 'import'])->name('import-own-pokemon');
+Route::post('import-own-pokemon', [ImportOwnPokemonController::class, 'import'])
+->name('import-own-pokemon');
 // ImportOwnPokemonモデルに属するデータを全て取得して、ownPokemon変数を通してデータを画面に表示します
-Route::get('show-import-own-pokemon', [ImportOwnPokemonController::class, 'show'])->name('show-import-own-pokemon');
+Route::get('show-import-own-pokemon', [ImportOwnPokemonController::class, 'show'])
+->name('show-import-own-pokemon');
 
 
 
 use App\Http\Controllers\PokemonSleep\ChoicePokemonController;
-Route::get('choice-pokemon', [ChoicePokemonController::class, 'index'])->name('choice-pokemon');
-Route::post('choice-pokemon', [ChoicePokemonController::class, 'store'])->name('save-choice-pokemon');
+Route::get('choice-pokemon', [ChoicePokemonController::class, 'index'])
+->name('choice-pokemon');
+Route::post('choice-pokemon', [ChoicePokemonController::class, 'store'])
+->name('save-choice-pokemon');
 // get-pokemon-template.jsのgetPokemonTemplateメソッド ajax
 Route::get('get-pokemon-template-via-ajax', [ChoicePokemonController::class, 'getPokemonTemplate']);
 
 
 
 use App\Http\Controllers\PokemonSleep\OwnPokemonCompleteController;
-Route::get('/show-own-pokemon-complete', [OwnPokemonCompleteController::class, 'index'])->name('show-own-pokemon-complete');
-Route::get('/search-own-pokemon-complete', [OwnPokemonCompleteController::class, 'searchIndex'])->name('search-own-pokemon-complete');
-Route::post('/search-own-pokemon-complete', [OwnPokemonCompleteController::class, 'search'])->name('search');
+Route::get('/show-own-pokemon-complete', [OwnPokemonCompleteController::class, 'index'])
+->name('show-own-pokemon-complete');
+Route::post('/show-own-pokemon-complete', [OwnPokemonCompleteController::class, 'delete'])
+->name('delete-own-pokemon-complete');
+Route::get('/search-own-pokemon-complete', [OwnPokemonCompleteController::class, 'searchIndex'])
+->name('search-own-pokemon-complete');
+Route::post('/search-own-pokemon-complete', [OwnPokemonCompleteController::class, 'search'])
+->name('search');
 Route::get('/get-json-own-pokemon-complete', [OwnPokemonCompleteController::class, 'getJson']);
-Route::post('/show-own-pokemon-complete', [OwnPokemonCompleteController::class, 'delete'])->name('delete-own-pokemon-complete');
 
 
 
 use App\Http\Controllers\PokemonSleep\BuildOwnPokemonCompleteSeederController;
 // 現在のown_pokemon_completesテーブルに保存されている全レコードをseederで追加できる状態の文字列を出力
-Route::get('build-own-pokemon-complete-seeder', [BuildOwnPokemonCompleteSeederController::class, 'buildSeeder']);
-Route::get('show-own-pokemon-complete-seeder', [BuildOwnPokemonCompleteSeederController::class, 'show']);
+Route::get('build-own-pokemon-complete-seeder', [BuildOwnPokemonCompleteSeederController::class, 'buildSeeder'])
+->name('build-own-pokemon-complete-seeder');
+Route::get('show-own-pokemon-complete-seeder', [BuildOwnPokemonCompleteSeederController::class, 'show'])
+->name('show-own-pokemon-complete-seeder');
 
 

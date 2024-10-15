@@ -9,6 +9,7 @@
 
 <div>
     <!-- An unexamined life is not worth living. - Socrates -->
+    {{--
     @if(isset($route_tests))
         @foreach($route_tests as $route_test)
             <p>
@@ -23,38 +24,49 @@
             <iframe src="{{route($route_test->helper_name)}}"></iframe>
         @endforeach
     @endif
-
-
-    
-    <p>
-        <span>show-read-from-handler</span>
-        <a href="{{route('show-read-from-handler')}}">show-read-from-handler</a>
-    </p>
-    <iframe src="{{route('show-read-from-handler')}}"></iframe>
+    --}}
 
 
 
-    <p>
-        <span>custom-dialog</span>
-        <a href="{{route('custom-dialog')}}">custom-dialog</a>
-    </p>
-    <iframe src="{{route('custom-dialog')}}"></iframe>
+    @if(isset($route_tests))
+        @foreach($route_tests as $route_test)
+            <p>
+                <h2>{{$route_test->view_file_name}}</h2>
+                <p>id:               {{$route_test->id}}</p>
+                <p>
+                   個別ページ:
+                    <a href="{{route($route_test->get_helper_name)}}" target="_blank">{{$route_test->view_file_name}}</a>
+                </p>
+                <p>route_url:        {{$route_test->route_url}}</p>
+                @if(($route_test->controller != ""))
+                    <p>controller:       {{$route_test->controller}}</p>
+                @endif
+                @if(($route_test->get_method != ""))
+                    <p>get_method:       {{$route_test->get_method}}</p>
+                @endif
+                @if(($route_test->get_helper_name != ""))
+                    <p>get_helper_name:      {{$route_test->get_helper_name}}</p>
+                @endif
+                @if(($route_test->middleware != ""))
+                    <p>middleware:       {{$route_test->middleware}}</p>
+                @endif
+                @if(($route_test->post_method != ""))
+                    <p>post_method:      {{$route_test->post_method}}</p>
+                @endif
+                @if(($route_test->post_helper_name != ""))
+                    <p>post_helper_name: {{$route_test->post_helper_name}}</p>
+                @endif
+                @if(($route_test->model != ""))
+                    <p>model:            {{$route_test->model}}</p>
+                @endif
+                @if(($route_test->table_name != ""))
+                    <p>table_name:       {{$route_test->table_name}}</p>
+                @endif
+            </p>
+            <iframe src="{{route($route_test->get_helper_name)}}"></iframe>
+        @endforeach
+    @endif
 
-
-
-    <p>
-        <span>custom-alert</span>
-        <a href="{{route('custom-alert')}}">custom-alert</a>
-    </p>
-    <iframe src="{{route('custom-alert')}}"></iframe>
-
-
-
-    <p>
-        <span>await-custom-dialog</span>
-        <a href="{{route('await-custom-dialog')}}">await-custom-dialog</a>
-    </p>
-    <iframe src="{{route('await-custom-dialog')}}"></iframe>
 
 
 

@@ -16,9 +16,13 @@ return new class extends Migration
             $table->string('view_file_name')->nullable();
             $table->string('route_url')->nullable();
             $table->string('controller')->nullable();
-            $table->string('method')->nullable();
-            $table->string('helper_name')->nullable();
             $table->string('middleware')->nullable();
+            $table->string('get_method')->nullable();
+            $table->string('get_helper_name')->nullable();
+            $table->string('post_method')->nullable();
+            $table->string('post_helper_name')->nullable();
+            $table->string('model')->nullable();
+            $table->string('table_name')->nullable();
             $table->timestamps();
         });
     }

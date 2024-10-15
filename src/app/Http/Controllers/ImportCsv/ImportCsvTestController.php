@@ -42,7 +42,7 @@ class ImportCsvTestController extends Controller
     public function show(importCsvTest $importCsvTest)
     {
         //
-        $names = importCsvTest::all();
+        $names = ImportCsvTest::all();
 
         return view('import-csv.show-import-csv-test', ['names' => $names]);
 
@@ -73,7 +73,7 @@ class ImportCsvTestController extends Controller
     }
 
     public function import(Request $request){
-        Excel::import(new importCsvTestImport, $request->file('file'));
+        Excel::import(new ImportCsvTestImport, $request->file('file'));
 
         return redirect()->back()->with(['message' => 'インポートが成功しました']);
     }
