@@ -11,7 +11,10 @@ pokemon 998 フワンテ ワカクサコーン ピュアなオイル ほっこ�
 pokemon 999 フワライド ワカクサコーン ピュアなオイル ほっこりポテト 80
 main_skill 80 たくわえる
 
-prefix(必ずつけてください) 図鑑番号 ポケモン名 食料lv1 foodlv30 foodlv60 メインスキル
+各prefixの引数の説明(prefixは必ずつけてください)
+pokemon 図鑑番号 ポケモン名 食料lv1 foodlv30 foodlv60 メインスキルid
+main_skill メインスキルid メインスキル名
+
 
 prefixについて
 pokemon:    新規ポケモンを追加したいとき

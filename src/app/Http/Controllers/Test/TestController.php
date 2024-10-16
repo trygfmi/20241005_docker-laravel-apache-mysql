@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
+
     //
     public function showReadFromHandler(Request $request){
         dd(redirect()->back()->withInput());

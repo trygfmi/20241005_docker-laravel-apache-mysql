@@ -38,4 +38,14 @@ Route::get('await-custom-dialog', function(){
 
 
 
+use App\Http\Controllers\Test\TestTestController;
+Route::get('test', [TestTestController::class, 'index'])
+->name('test-index');
+
+
+
+Route::get('pokemon-sleep-test', [TestTestController::class, 'create'])
+->name('pokemon-sleep-test-create');
+
+
 
