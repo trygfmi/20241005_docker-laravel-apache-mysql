@@ -20,18 +20,30 @@ trap 'error_handler "$BASH_COMMAND" "$LINENO"' ERR
 
 
 # ビューファイルを作成し、文字列を追加
+./createViewFile.sh $viewFileName $viewFolderName
+<<createViewFile
 cd ../src
 php artisan make:view $viewFolderName/$viewFileName
 sed -i '' '3i\
     <h1>hello</h1>\
 ' resources/views/$viewFolderName/$viewFileName.blade.php
 cd ../availableWatchingView
+createViewFile
 
 
 
 # コントローラーを作成し、該当するメソッド名にビューを返す文字列を追加
+./createControllerFile.sh $controllerFileName $controllerFolderName
+<<createControllerFile
 cd ../src
 php artisan make:controller $controllerFolderName/$controllerFileName -r
+createControllerFile
+
+
+
+./insertReturnIntoControllerMethod.sh $viewFileName $viewFolderName $controllerFileName $controllerFolderName $controllerMethodName
+<<insertReturnIntoControllerMethod
+cd ../src
 sed -i '' '10i\
 \
 ' app/Http/Controllers/$controllerFolderName/$controllerFileName.php
@@ -60,12 +72,15 @@ else
 ' app/Http/Controllers/$controllerFolderName/$controllerFileName.php
 fi
 cd ../availableWatchingView
+insertReturnIntoControllerMethod
 
 
 
 # ルートファイルに該当するビューファイル名でアクセス可能にする文字列追加
 grep -q 'use App\\Http\\Controllers\\'$controllerFolderName'\\'$controllerFileName';' ../src/routes/$routeFileName.php
 hasUseStatement=$?
+./judgeUseStatementAndInsertGetRoute.sh $viewFileName $controllerFileName $controllerFolderName $controllerMethodName $getHelperName $routeFileName $hasUseStatement
+<<judgeUseStatementAndInsertGetRoute
 if [ -n "$hasUseStatement" ] && [ $hasUseStatement == 0 ]; then
     sed -i '' '$a\
 Route::get('\'$viewFileName\'', ['$controllerFileName'::class, '\'$controllerMethodName\''])\
@@ -78,16 +93,19 @@ Route::get('\'$viewFileName\'', ['$controllerFileName'::class, '\'$controllerMet
 ->name('\'$getHelperName\'');\
 ' ../src/routes/$routeFileName.php
 fi
+judgeUseStatementAndInsertGetRoute
 
 
 
 # 該当ルートファイルに次回の追加に備えて改行追加
+./insertNewLine.sh $routeFileName 3
+<<insertNewLine
 sed -i '' '$a\
 \
 \
 \
 ' ../src/routes/$routeFileName.php
-
+insertNewLine
 
 
 
