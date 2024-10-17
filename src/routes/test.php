@@ -44,8 +44,44 @@ Route::get('test', [TestTestController::class, 'index'])
 
 
 
+Route::get('testtest', [TestTestController::class, 'show'])
+->name('testtest-show');
+
+
+
+Route::get('else-test', [TestTestController::class, 'elseTest'])
+->name('else-test-elseTest');
+
+
+
+Route::get('else-test2', [TestTestController::class, 'elseTest2'])
+->name('else-test2-elseTest2');
+
+
+
+Route::get('insert-input-element-test', [TestTestController::class, 'insertInputElementTest'])
+->name('insert-input-element-test-insertInputElementTest');
+
+
+
 Route::get('pokemon-sleep-test', [TestTestController::class, 'create'])
 ->name('pokemon-sleep-test-create');
+
+
+
+Route::post('pokemon-sleep-test', [TestTestController::class, 'createPost'])
+->name('pokemon-sleep-test-createPost');
+
+
+
+use App\Http\Controllers\Test\StartCreatingViewController;
+Route::get('start-creating-view', [StartCreatingViewController::class, 'index'])
+->name('start-creating-view-index');
+
+
+
+Route::post('start-creating-view', [StartCreatingViewController::class, 'create'])
+->name('start-creating-view-create');
 
 
 

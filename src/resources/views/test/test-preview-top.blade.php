@@ -62,6 +62,9 @@
                 @if(($route_test->table_name != ""))
                     <p>table_name:       {{$route_test->table_name}}</p>
                 @endif
+                @if(($route_test->created_at != ""))
+                    <p>created_at:       {{$route_test->created_at}}</p>
+                @endif
             </p>
             <iframe src="{{route($route_test->get_helper_name)}}"></iframe>
         @endforeach

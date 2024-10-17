@@ -1,9 +1,14 @@
 # エラーメソッドの定義
 error_handler() {
     local errorRowNumber=$2
-    echo $1
-    echo $2
-    if [ $errorRowNumber == 24 ]; then
+    echo '$1:'$0
+    echo '$2:'$1
+    echo '$3:'$2
+
+    if [ $errorRowNumber == 67 ]; then
+        echo "use statementが見つかりませんでした"
+        return    
+    elif [ $errorRowNumber == 24 ]; then
         echo $errorRowNumber"のphp artisanでエラーが発生しました"
     elif [ $errorRowNumber == 27 ]; then
         echo $errorRowNumber"のsedコマンドでエラーが発生しました。"
@@ -15,15 +20,15 @@ error_handler() {
         echo $errorRowNumber"のsedコマンドでエラーが発生しました。"
         rm ../src/resources/views/$viewFolderName/$viewFileName.blade.php
         rm app/Http/Controllers/$controllerFolderName/$controllerFileName.php
-    elif [ $errorRowNumber == 52 ]; then
+    elif [ $errorRowNumber == 61 ]; then
         echo $errorRowNumber"のsedコマンドでエラーが発生しました。"
         rm ../src/resources/views/$viewFolderName/$viewFileName.blade.php
         rm app/Http/Controllers/$controllerFolderName/$controllerFileName.php
-    elif [ $errorRowNumber == 68 ]; then
+    elif [ $errorRowNumber == 80 ]; then
         echo $errorRowNumber"のsedコマンドでエラーが発生しました。"
         rm ../src/resources/views/$viewFolderName/$viewFileName.blade.php
         rm ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
-    elif [ $errorRowNumber == 77 ]; then
+    elif [ $errorRowNumber == 89 ]; then
         echo $errorRowNumber"のsedコマンドでエラーが発生しました。"
         rm ../src/resources/views/$viewFolderName/$viewFileName.blade.php
         rm ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
@@ -33,7 +38,7 @@ error_handler() {
         sed -i '' '$ {N; s/\n//;}' ../src/routes/$routeFileName.php
     fi
     
-    exit
+    # exit
 }
 
 

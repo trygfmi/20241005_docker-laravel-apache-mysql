@@ -1,6 +1,6 @@
 # $1:viewのファイル名 $2:viewのフォルダ名 $3:controllerのファイル名 $4:controllerのフォルダ名
 # $5:controllerのメソッド名 $6:routeのファイル名
-# 実行例：./availableWatchingView.sh test pokemon-sleep TestController PokemonSleep create pokemonSleep
+# 実行例：./availableWatchingView.sh pokemon-sleep-test pokemon-sleep TestTestController Test create test 3 createPost
 
 
 
@@ -38,24 +38,35 @@ sed -i '' '10i\
 if [ $controllerMethodName == "index" ]; then
     insertRowNumber=$(grep -n "public function index()" app/Http/Controllers/$controllerFolderName/$controllerFileName.php | cut -d : -f 1)
     insertRowNumber=$((insertRowNumber+3))
-    echo $insertRowNumber
+    echo "insertRowNumber"$insertRowNumber
     sed -i '' ''$insertRowNumber'i\
         return view('\'$viewFolderName'.'$viewFileName\'');\
-    ' app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+' app/Http/Controllers/$controllerFolderName/$controllerFileName.php
 elif [ $controllerMethodName == "create" ]; then
     insertRowNumber=$(grep -n "public function create()" app/Http/Controllers/$controllerFolderName/$controllerFileName.php | cut -d : -f 1)
     insertRowNumber=$((insertRowNumber+3))
-    echo $insertRowNumber
+    echo "insertRowNumber"$insertRowNumber
     sed -i '' ''$insertRowNumber'i\
         return view('\'$viewFolderName'.'$viewFileName\'');\
-    ' app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+' app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+else
+    insertRowNumber=$(wc -l < app/Http/Controllers/$controllerFolderName/$controllerFileName.php)
+    echo "insertRowNumber"$insertRowNumber
+    sed -i '' ''$insertRowNumber'i\
+\
+    public function '$controllerMethodName'(){\
+        return view('\'$viewFolderName'.'$viewFileName\'');\
+    }\
+' app/Http/Controllers/$controllerFolderName/$controllerFileName.php
 fi
 cd ../availableWatchingView
 
 
 
 # ルートファイルに該当するビューファイル名でアクセス可能にする文字列追加
-if grep -q 'use App\\Http\\Controllers\\'$controllerFolderName'\\'$controllerFileName';' ../src/routes/$routeFileName.php; then
+grep -q 'use App\\Http\\Controllers\\'$controllerFolderName'\\'$controllerFileName';' ../src/routes/$routeFileName.php
+hasUseStatement=$?
+if [ -n "$hasUseStatement" ] && [ $hasUseStatement == 0 ]; then
     sed -i '' '$a\
 Route::get('\'$viewFileName\'', ['$controllerFileName'::class, '\'$controllerMethodName\''])\
 ->name('\'$getHelperName\'');\
@@ -105,3 +116,33 @@ values ("$view_file_name", "$route_url", "$controller", "$get_method",
 "$get_helper_name", "$middleware", "$post_method", "$post_helper_name", 
 "$model", "$table_name");
 EOF
+
+
+
+
+
+inputElementNumber=$7
+postMethod=$8
+./insertInputElement.sh $viewFileName $viewFolderName $inputElementNumber $controllerFileName $controllerFolderName $postMethod $routeFileName
+
+
+
+resultString=$(mysql -h 127.0.0.1 -P 3306 -u user -ppassword laravel --skip-column-names <<EOF
+select route_url from preview_route_tests where route_url="$viewFileName";
+EOF
+)
+
+
+
+
+
+
+# <<aaa
+if [ -n "$resultString" ] && [ $resultString == "$viewFileName" ]; then
+    mysql -h 127.0.0.1 -P 3306 -u user -ppassword laravel --skip-column-names <<EOF
+update preview_route_tests set post_method="$postMethod" where route_url="$viewFileName";
+update preview_route_tests set post_helper_name="$viewFileName-$postMethod" where route_url="$viewFileName";
+EOF
+fi
+# aaa
+

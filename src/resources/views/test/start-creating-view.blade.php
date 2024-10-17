@@ -1,7 +1,7 @@
 <div>
-    <!-- Order your soul. Reduce your wants. - Augustine -->
+    <!-- The best way to take care of the future is to take care of the present moment. - Thich Nhat Hanh -->
     <h1>hello</h1>
-    <form action="{{route('pokemon-sleep-test-createPost')}}" method="post">
+    <form action="{{route('start-creating-view-create')}}" method="post">
         @csrf
         <p>
             <label>
@@ -19,6 +19,12 @@
             <label>
                 test3
                 <input type="text" name="test3">
+            </label>
+        </p>
+        <p>
+            <label>
+                test4
+                <input type="text" name="test4">
             </label>
         </p>
 

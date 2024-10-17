@@ -1,7 +1,7 @@
 <div>
-    <!-- Order your soul. Reduce your wants. - Augustine -->
+    <!-- If you do not have a consistent goal in life, you can not live it in a consistent way. - Marcus Aurelius -->
     <h1>hello</h1>
-    <form action="{{route('pokemon-sleep-test-createPost')}}" method="post">
+    <form action="{{route('else-test2-elseTest2')}}" method="get">
         @csrf
         <p>
             <label>
@@ -21,7 +21,5 @@
                 <input type="text" name="test3">
             </label>
         </p>
-
-        <button type="submit">登録</button>
     </form>
 </div>

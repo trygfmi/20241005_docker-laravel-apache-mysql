@@ -5,9 +5,8 @@ namespace App\Http\Controllers\Test;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TestTestController extends Controller
+class StartCreatingViewController extends Controller
 {
-
 
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class TestTestController extends Controller
     public function index()
     {
         //
-        return view('test.test');
+        return view('test.start-creating-view');
     }
 
     /**
@@ -24,7 +23,7 @@ class TestTestController extends Controller
     public function create()
     {
         //
-        return view('pokemon-sleep.pokemon-sleep-test');
+        return "hello";
     }
 
     /**
@@ -38,10 +37,9 @@ class TestTestController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(string $id)
     {
         //
-        return view('test.testtest');
     }
 
     /**
@@ -66,21 +64,5 @@ class TestTestController extends Controller
     public function destroy(string $id)
     {
         //
-    }
-
-    public function elseTest(){
-        return view('test.else-test');
-    }
-
-    public function elseTest2(){
-        return view('test.else-test2');
-    }
-
-    public function insertInputElementTest(){
-        return view('test.insert-input-element-test');
-    }
-
-    public function createPost(){
-        return "hello";
     }
 }
