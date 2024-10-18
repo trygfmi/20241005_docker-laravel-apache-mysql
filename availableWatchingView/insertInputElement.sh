@@ -11,8 +11,8 @@ inputElementNumber=$3
 controllerFileName=$4
 controllerFolderName=$5
 postMethod=$6 
-postHelperName=$viewFileName-$postMethod
-routeName=$7
+postHelperName=$7
+routeName=$8
 
 
 
@@ -23,7 +23,6 @@ sed -i '' ''$insertRowNumber'i\
     </form>\
 ' ../src/resources/views/$viewFileFolderName/$viewFileName.blade.php
 insertRowNumber=$((insertRowNumber+2))
-echo $insertRowNumber
 
 
 
@@ -33,17 +32,14 @@ dataFile=labelTypeAndName.txt
 
 last_char=$(tail -c 1 "$dataFile")
 if [ -n "$last_char" ] && [ $last_char != "\n" ]; then
-    echo "データファイルの末尾に改行を追加しました"
-    sed -i '' '$a\
-    \
-' $dataFile
+  insertNewLineAtLastRow.sh $dataFile
 fi
 
 
 
 count=0
 while read line && [ $count != $inputElementNumber ]; do
-    echo $count:$line
+    echo $count:name=$line
 
     dataArray=($line)
     sed -i '' ''$insertRowNumber'i\
@@ -86,7 +82,6 @@ sed -i '' '$a\
 
 
 insertRowNumber=$(wc -l < ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php)
-    echo "insertRowNumber"$insertRowNumber
     sed -i '' ''$insertRowNumber'i\
 \
     public function '$postMethod'(Request $request){\

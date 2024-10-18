@@ -9,6 +9,9 @@ class TestTestController extends Controller
 {
 
 
+
+
+
     /**
      * Display a listing of the resource.
      */
@@ -81,6 +84,22 @@ class TestTestController extends Controller
     }
 
     public function createPost(){
+        return "hello";
+    }
+
+    public function create1(){
+        return view('pokemon-sleep.pokemon-sleep-test1');
+    }
+
+    public function createPost1(Request $request){
+        return "hello";
+    }
+
+    public function create2(){
+        return view('pokemon-sleep.pokemon-sleep-test2');
+    }
+
+    public function createPost2(Request $request){
         return "hello";
     }
 }

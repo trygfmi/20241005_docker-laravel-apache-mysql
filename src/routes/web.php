@@ -174,3 +174,14 @@ require __DIR__."/ajax.php";
 
 
 
+use App\Http\Controllers\ShellScript\RegisterShellScriptController;
+Route::get('register-shell-script', [RegisterShellScriptController::class, 'index'])
+->name('register-shell-script-index');
+
+
+
+Route::post('register-shell-script', [RegisterShellScriptController::class, 'register'])
+->name('register-shell-script-register');
+
+
+

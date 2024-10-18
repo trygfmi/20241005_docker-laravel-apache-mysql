@@ -3,7 +3,6 @@ error_handler() {
     local errorRowNumber=$2
     echo '$1:'$0
     echo '$2:'$1
-    echo '$3:'$2
 
     if [ $errorRowNumber == 67 ]; then
         echo "use statementが見つかりませんでした"

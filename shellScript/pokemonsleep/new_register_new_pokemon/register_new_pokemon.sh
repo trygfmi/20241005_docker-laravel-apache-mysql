@@ -24,12 +24,8 @@ originFile=$1
 # 読み込むファイルの末尾が改行でなければ、改行を挿入して全ての行を読めるようにします
 last_char=$(tail -c 1 "$originFile")
 if [ -n "$last_char" ] && [ "$last_char" != "\n" ]; then
-    echo "読み込んだファイルの末尾に改行を追加しました"
-    sed -i '' '$a\
-\
-' $originFile
+    insertNewLineAtLastRow.sh $originFile
 fi
-
 
 
 # foodlv1 foodlv30 foodlv60 template template2 main_skill template3 choice sub_skill personality ownpokemon

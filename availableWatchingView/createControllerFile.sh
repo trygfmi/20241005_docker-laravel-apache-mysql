@@ -8,4 +8,4 @@ controllerFolderName=$2
 
 
 cd ../src
-php artisan make:controller $controllerFolderName/$controllerFileName -r
+php artisan make:controller $controllerFolderName/$controllerFileName

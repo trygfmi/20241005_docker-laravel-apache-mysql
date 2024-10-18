@@ -85,3 +85,49 @@ Route::post('start-creating-view', [StartCreatingViewController::class, 'create'
 
 
 
+Route::get('pokemon-sleep-test1', [TestTestController::class, 'create1'])
+->name('pokemon-sleep-test1-create1');
+
+
+
+Route::post('pokemon-sleep-test1', [TestTestController::class, 'createPost1'])
+->name('pokemon-sleep-test1-createPost1');
+
+
+
+Route::get('pokemon-sleep-test2', [TestTestController::class, 'create2'])
+->name('pokemon-sleep-test2-create2');
+
+
+
+Route::post('pokemon-sleep-test2', [TestTestController::class, 'createPost2'])
+->name('pokemon-sleep-test2-createPost2');
+
+
+
+use App\Http\Controllers\Test\Test2Controller;
+Route::get('test2', [Test2Controller::class, 'test2index'])
+->name('test2-test2index');
+
+
+
+Route::post('test2', [Test2Controller::class, 'test2create'])
+->name('test2-test2create');
+
+
+
+Route::get('test3', [Test2Controller::class, 'test3index'])
+->name('test3-test3index');
+
+
+
+Route::post('test3', [Test2Controller::class, 'test3create'])
+->name('test3-test3create');
+
+
+
+Route::get('test-show', [Test2Controller::class, 'show'])
+->name('test-show-show');
+
+
+
