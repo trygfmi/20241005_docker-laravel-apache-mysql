@@ -1,10 +1,9 @@
 <div>
-    <!-- Order your soul. Reduce your wants. - Augustine -->
+    <!-- If you do not have a consistent goal in life, you can not live it in a consistent way. - Marcus Aurelius -->
     <h1>hello</h1>
     @if(isset($message))
         <table>
             <thead>
-                <th>id</th>
                 <th>shell_script_file_name</th>
                 <th>argument</th>
                 <th>shell_script_code</th>
@@ -15,7 +14,6 @@
             <tbody>
             @foreach($message as $m)
                 <tr>
-                    <td>{{$m->id}}</td>
                     <td>{{$m->shell_script_file_name}}</td>
                     <td>{{$m->argument}}</td>
                     <td>{{$m->shell_script_code}}</td>

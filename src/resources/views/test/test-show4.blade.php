@@ -1,0 +1,36 @@
+<div>
+    <!-- Waste no more time arguing what a good man should be, be one. - Marcus Aurelius -->
+    <h1>hello</h1>
+    @if(isset($message))
+        <table>
+            <thead>
+                <th>view_file_name</th>
+                <th>route_url</th>
+                <th>controller</th>
+                <th>get_method</th>
+                <th>get_helper_name</th>
+                <th>middleware</th>
+                <th>post_method</th>
+                <th>post_helper_name</th>
+                <th>table_name</th>
+                <th>model</th>
+            </thead>
+            <tbody>
+            @foreach($message as $m)
+                <tr>
+                    <td>{{$m->view_file_name}}</td>
+                    <td>{{$m->route_url}}</td>
+                    <td>{{$m->controller}}</td>
+                    <td>{{$m->get_method}}</td>
+                    <td>{{$m->get_helper_name}}</td>
+                    <td>{{$m->middleware}}</td>
+                    <td>{{$m->post_method}}</td>
+                    <td>{{$m->post_helper_name}}</td>
+                    <td>{{$m->table_name}}</td>
+                    <td>{{$m->model}}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    @endif
+</div>

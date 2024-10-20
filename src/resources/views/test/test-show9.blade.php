@@ -1,0 +1,52 @@
+<div>
+    <!-- Well begun is half done. - Aristotle -->
+    <h1>hello</h1>
+    @if(isset($message))
+        <table>
+            <thead>
+                <th>id</th>
+                <th>own_pokemon_name</th>
+                <th>nickname</th>
+                <th>sp</th>
+                <th>lv</th>
+                <th>food_lv1</th>
+                <th>food_lv30</th>
+                <th>food_lv60</th>
+                <th>main_skill</th>
+                <th>sub_skill_lv1</th>
+                <th>sub_skill_lv25</th>
+                <th>sub_skill_lv50</th>
+                <th>sub_skill_lv75</th>
+                <th>sub_skill_lv100</th>
+                <th>personality</th>
+                <th>remarks</th>
+                <th>image_path</th>
+                <th>shiny_image_path</th>
+            </thead>
+            <tbody>
+            @foreach($message as $m)
+                <tr>
+                    <td>{{$m->id}}</td>
+                    <td>{{$m->own_pokemon_name}}</td>
+                    <td>{{$m->nickname}}</td>
+                    <td>{{$m->sp}}</td>
+                    <td>{{$m->lv}}</td>
+                    <td>{{$m->food_lv1}}</td>
+                    <td>{{$m->food_lv30}}</td>
+                    <td>{{$m->food_lv60}}</td>
+                    <td>{{$m->main_skill}}</td>
+                    <td>{{$m->sub_skill_lv1}}</td>
+                    <td>{{$m->sub_skill_lv25}}</td>
+                    <td>{{$m->sub_skill_lv50}}</td>
+                    <td>{{$m->sub_skill_lv75}}</td>
+                    <td>{{$m->sub_skill_lv100}}</td>
+                    <td>{{$m->personality}}</td>
+                    <td>{{$m->remarks}}</td>
+                    <td><img src="{{asset('storage')}}/{{$m->image_path}}"></td>
+                    <td><img src="{{asset('storage')}}/{{$m->shiny_image_path}}" alt="{{$m->own_pokemon_name}}"></td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    @endif
+</div>

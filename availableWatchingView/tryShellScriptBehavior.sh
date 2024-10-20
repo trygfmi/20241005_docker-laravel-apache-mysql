@@ -1,1 +1,1 @@
-./startCreatingShowView.sh test-show2 test Test2Controller Test RegisterShellScript ShellScript test laravel register_shell_scripts user password
+rm error_log1.txt

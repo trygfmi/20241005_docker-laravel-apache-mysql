@@ -2,14 +2,24 @@
 
 
 
+trap 'echo $0 > error_log1.txt; echo "testtest"; exit 1' ERR
+
+
+
 viewFileName=$1
 viewFolderName=$2
 
 
 
+# false
+# exit 1
 cd ../src
 php artisan make:view $viewFolderName/$viewFileName
+cd ../availableWatchingView
 sed -i '' '3i\
     <h1>hello</h1>\
-' resources/views/$viewFolderName/$viewFileName.blade.php
-cd ../availableWatchingView
+' ../src/resources/views/$viewFolderName/$viewFileName.blade.php
+# false
+# exit 1
+sleep 3
+# exit 1

@@ -126,8 +126,53 @@ Route::post('test3', [Test2Controller::class, 'test3create'])
 
 
 
-Route::get('test-show', [Test2Controller::class, 'show'])
-->name('test-show-show');
+Route::get('test-show2', [Test2Controller::class, 'testshow2Show'])
+->name('test-show2-show');
+
+
+
+Route::get('test-show3', [Test2Controller::class, 'testshow3Show'])
+->name('test-show3-show');
+
+
+
+Route::get('test-show4', [Test2Controller::class, 'testshow4Show'])
+->name('test-show4-show');
+
+
+
+Route::get('test-show5', [Test2Controller::class, 'testshow5Show'])
+->name('test-show5-show');
+
+
+
+Route::get('test-show6', [Test2Controller::class, 'testshow6Show'])
+->name('test-show6-show');
+
+
+
+Route::get('test6-show', [Test2Controller::class, 'test6showShow'])
+->name('test6-show-show');
+
+
+
+Route::get('test-show7', [Test2Controller::class, 'testshow7Show'])
+->name('test-show7-show');
+
+
+
+Route::get('test-show8', [Test2Controller::class, 'testshow8Show'])
+->name('test-show8-show');
+
+
+
+Route::get('test-show9', [Test2Controller::class, 'testshow9Show'])
+->name('test-show9-show');
+
+
+
+Route::get('test-show10', [Test2Controller::class, 'testshow10Show'])
+->name('test-show10-show');
 
 
 

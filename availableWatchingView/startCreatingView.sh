@@ -18,7 +18,7 @@ postHelperName=$viewFileName-$postMethod
 
 
 # 各コマンドでエラーが起きたとき、作成したファイルを削除したり、追加した文字列を削除して元の状態に戻します
-source ./defineErrorHandler.sh
+source ./errorInStartCreatingView.sh
 # trap 'error_handler "$LINENO"' ERR
 
 

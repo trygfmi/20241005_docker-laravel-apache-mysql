@@ -1,8 +1,8 @@
 # エラーメソッドの定義
 error_handler() {
-    local errorRowNumber=$2
-    echo '$1:'$0
-    echo '$2:'$1
+    local errorRowNumber=$1
+    echo '$0:'$0
+    echo '$1:'$1
 
     if [ $errorRowNumber == 67 ]; then
         echo "use statementが見つかりませんでした"
@@ -37,7 +37,7 @@ error_handler() {
         sed -i '' '$ {N; s/\n//;}' ../src/routes/$routeFileName.php
     fi
     
-    # exit
+    exit
 }
 
 
