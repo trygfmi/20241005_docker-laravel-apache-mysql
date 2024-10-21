@@ -17,4 +17,4 @@ sed -i '' '$a\
 Route::get('\'$viewFileName\'', ['$controllerFileName'::class, '\'$controllerMethodName\''])\
 ->name('\'$getHelperName\'');\
 ' ../src/routes/$routeFileName.php
-false
+# false

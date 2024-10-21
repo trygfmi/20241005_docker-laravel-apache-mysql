@@ -1,6 +1,11 @@
 # ./mysqlInsertViewData.sh laravel preview_route_tests user password test-show test-show Test2Controller show test-show-show "" "" "" "" "" preview_route_tests PreviewRouteTest
 
 
+
+trap 'echo $0 > error_log1.txt; exit 1' ERR
+
+
+
 databaseName=$1
 tableName=$2
 user=$3
@@ -18,6 +23,7 @@ table_name=${13}
 model=${14}
 
 
+# false
 # exit 1
 mysql -h 127.0.0.1 -P 3306 -u $user -p$password $databaseName <<EOF
 insert into $tableName 
@@ -25,4 +31,4 @@ insert into $tableName
 values ("$view_file_name.blade.php", "$route_url", "$controller", "$get_method", "$get_helper_name", "$table_name", "$model");
 EOF
 # exit 1
-
+# false

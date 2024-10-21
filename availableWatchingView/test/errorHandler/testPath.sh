@@ -1,0 +1,5 @@
+cd ../..
+
+./tryShellScriptBehavior.sh
+
+

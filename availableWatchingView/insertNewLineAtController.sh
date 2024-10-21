@@ -18,5 +18,5 @@ for i in $(seq $repeatNumber); do
 \
 ' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
 done
-# false
-# exit 1
+
+

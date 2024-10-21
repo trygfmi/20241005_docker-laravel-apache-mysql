@@ -112,4 +112,10 @@ class Test2Controller extends Controller
         
         return view('test.test-show10', ['message'=>$result]);
     }
+
+    public function testshow11Show(){
+        $result = OwnPokemonComplete::all();
+
+        return view('test.test-show11', ['message'=>$result]);
+    }
 }

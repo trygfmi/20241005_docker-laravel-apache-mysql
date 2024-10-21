@@ -1,6 +1,7 @@
 # エラーメソッドの定義
 deleteCreateViewFile(){
-    rm ../src/resources/views/$viewFolderName/$viewFileName.blade.php
+    sleep 3
+    rm -f ../src/resources/views/$viewFolderName/$viewFileName.blade.php
 }
 
 deleteInsertShowResult(){
@@ -10,13 +11,23 @@ deleteInsertShowResult(){
 deleteInsertControllerShowMethod(){
     deleteInsertShowResult
     if [ ! -f "error_log2_insertControllerShowMethod.txt" ]; then
-        sed -i '' '/public function '$controllerMethodName'(){/,/}/d' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
-        sleep 3
-        insertRowNumber=$(($(wc -l < ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php)-1))
-        sed -i '' ''$insertRowNumber'd' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+        if grep -q 'public function '$controllerMethodName'(){' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php; then
+            sed -i '' '/public function '$controllerMethodName'(){/,/}/d' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+            sleep 3
+            insertRowNumber=$(($(wc -l < ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php)-1))
+            sed -i '' ''$insertRowNumber'd' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+        fi
     else
-        echo "error_log2_insertMethodAtController.txtが存在したので実行しませんでした"
+        echo "error_log2_insertControllerShowMethod.txtが存在したので実行しませんでした"
     fi
+
+    if grep -q 'use App\\Models\\'$modelFolderName'\\'$modelFileName';' <(sed -n '8p' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php); then
+        for i in $(seq 4); do
+            sed -i '' '8d' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+        done
+    fi
+
+    sleep 3
 }
 
 deleteInsertRouteGet(){
@@ -26,15 +37,17 @@ deleteInsertRouteGet(){
 }
 
 deleteInsertNewLine(){
-    deleteInsertRouteGet $1
+    deleteInsertRouteGet
+}
+
+deleteMysqlInsertViewData(){
+    sleep 3
     repeatNumber=$1
     for i in $(seq $repeatNumber); do
         sed -i '' '$d' ../src/routes/$routeFileName.php
     done
-}
-
-deleteMysqlInsertViewData(){
-    deleteInsertNewLine $1
+    deleteInsertNewLine
+    # exit 1
     selectedRouteUrlId=$(mysql -h 127.0.0.1 -P 3306 -u $user -p$password $databaseName --skip-column-names <<EOF
 select id from $previewRouteTableName where route_url="$viewFileName";
 EOF
@@ -74,10 +87,12 @@ error_handler() {
     elif [ $errorShellScript == "./insertRouteGet.sh" ]; then
         echo "insertRouteGet.shでエラーが発生しました。"
         deleteInsertRouteGet
-    elif [ $errorRowNumber == 46 ]; then
+    # elif [ $errorRowNumber == 46 ]; then
+    elif [ $errorShellScript == "./insertNewLine.sh" ]; then
         echo "insertNewLine.shでエラーが発生しました。"
-        deleteInsertNewLine 3
-    elif [ $errorRowNumber == 50 ]; then
+        deleteInsertNewLine
+    # elif [ $errorRowNumber == 50 ]; then
+    elif [ $errorShellScript == "./mysqlInsertViewData.sh" ]; then
         echo "mysqlInsertViewData.shでエラーが発生しました。"
         deleteMysqlInsertViewData 3
     fi
@@ -85,6 +100,7 @@ error_handler() {
     
     
     rm -f error_log1.txt
+    rm -f error_log2_insertShowResult.txt
     rm -f error_log2_insertControllerShowMethod.txt
 
     exit 1

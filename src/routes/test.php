@@ -176,3 +176,8 @@ Route::get('test-show10', [Test2Controller::class, 'testshow10Show'])
 
 
 
+Route::get('test-show11', [Test2Controller::class, 'testshow11Show'])
+->name('test-show11-show');
+
+
+

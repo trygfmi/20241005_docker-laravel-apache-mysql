@@ -1,11 +1,12 @@
 # ./startCreatingShowView.sh test-show4 test Test2Controller Test PreviewRouteTest Preview test laravel preview_route_tests user password preview_route_tests
 # ./startCreatingShowView.sh test-show5 test Test2Controller Test Foodlv60 PokemonSleep test laravel preview_route_tests user password foodlv60s;
 # ./startCreatingShowView.sh test-show7 test Test2Controller Test Personality PokemonSleep test laravel preview_route_tests user password personalities
+# ./startCreatingShowView.sh test-show11 test Test2Controller Test OwnPokemonComplete PokemonSleep test laravel preview_route_tests user password own_pokemon_completes
 
 
 
 source ./errorInStartCreatingShowView.sh
-trap 'error_handler "$LINENO" $(cat error_log1.txt)' ERR 
+trap 'error_handler "$LINENO" $(cat error_log1.txt); exit' ERR 
 # trap 'rm -f error_log1.txt' EXIT
 
 
@@ -25,6 +26,16 @@ password=${11}
 showTableName=${12}
 # $viewFileNameからハイフンを取り除いてShowと結合
 controllerMethodName=$(echo $viewFileName | tr -d '-')Show
+
+
+
+# 既にファイルが存在してエラーを起こした場合、ファイルを削除するので以下のコードで回避
+if [ -f "../src/resources/views/$viewFolderName/$viewFileName.blade.php" ]; then
+    echo $viewFileName".blade.phpが存在したので終了します"
+    exit 0
+else
+    echo "作成を開始します"
+fi
 
 
 
