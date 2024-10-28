@@ -181,3 +181,13 @@ Route::get('test-show11', [Test2Controller::class, 'testshow11Show'])
 
 
 
+Route::get('create-template3s-show', [Test2Controller::class, 'createtemplate3sshowShow'])
+->name('create-template3s-show-show');
+
+
+
+Route::get('main-skill', [Test2Controller::class, 'mainskillShow'])
+->name('main-skill-show');
+
+
+

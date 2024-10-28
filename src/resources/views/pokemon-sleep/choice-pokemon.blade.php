@@ -10,6 +10,7 @@
     @include('components.test.loading')
     @include('components.test.custom-alert-register')
     @include('components.test.custom-dialog')
+    @include('components.test.custom-alert-remove')
 
 
 

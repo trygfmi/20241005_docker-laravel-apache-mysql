@@ -2,7 +2,7 @@
 
 
 
-cd ..
+cd ../..
 
 
 sed -i '' 's/trap '\''error_handler "$LINENO" $(cat error_log1.txt); exit'\'' ERR //' startCreatingShowView.sh

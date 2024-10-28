@@ -22,9 +22,11 @@ deleteInsertControllerShowMethod(){
     fi
 
     if grep -q 'use App\\Models\\'$modelFolderName'\\'$modelFileName';' <(sed -n '8p' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php); then
-        for i in $(seq 4); do
-            sed -i '' '8d' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
-        done
+        if ! grep -q ''$modelFileName'::all();' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php; then
+            for i in $(seq 4); do
+                sed -i '' '8d' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+            done
+        fi
     fi
 
     sleep 3
@@ -47,7 +49,9 @@ deleteMysqlInsertViewData(){
         sed -i '' '$d' ../src/routes/$routeFileName.php
     done
     deleteInsertNewLine
-    # exit 1
+    
+
+    
     selectedRouteUrlId=$(mysql -h 127.0.0.1 -P 3306 -u $user -p$password $databaseName --skip-column-names <<EOF
 select id from $previewRouteTableName where route_url="$viewFileName";
 EOF
@@ -82,6 +86,7 @@ error_handler() {
     # elif [ $errorRowNumber == 38 ]; then
     elif [ $errorShellScript == "./insertControllerShowMethod.sh" ]; then
         echo "insertControllerShowMethod.shでエラーが発生しました"
+        exit 1
         deleteInsertControllerShowMethod
     # elif [ $errorRowNumber == 42 ]; then
     elif [ $errorShellScript == "./insertRouteGet.sh" ]; then

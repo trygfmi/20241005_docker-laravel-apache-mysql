@@ -1,0 +1,13 @@
+startCreatingShowView
+		createViewFile
+				mysqlGetTableColumns
+		insertControllerShowMethod
+				insertNewLineAtController
+				insertUseStatementAtController
+				insertMethoodAtController
+		insertRouteGet
+		insertNewLine
+		mysqlInsertViewData
+        
+        
+

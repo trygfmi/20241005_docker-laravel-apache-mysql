@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\PokemonSleep\Foodlv1;
 use App\Models\PokemonSleep\Foodlv30;
 use App\Models\PokemonSleep\Foodlv60;
-use App\Models\MainSkill;
+use App\Models\PokemonSleep\MainSkill;
 
 class CreatePokemonTemplate3 extends Model
 {

@@ -10,6 +10,7 @@ class OwnPokemonComplete extends Model
     use HasFactory;
 
     protected $fillable = [
+        'encyclopedia_number',
         'own_pokemon_name',
         'nickname',
         'sp',

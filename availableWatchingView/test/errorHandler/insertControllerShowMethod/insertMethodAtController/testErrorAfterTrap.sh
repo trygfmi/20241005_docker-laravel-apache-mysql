@@ -1,4 +1,5 @@
-# ./testErrorLine19.sh
+# cd availableWatchingView/test/errorHandler/insertControllerShowMethod/insertMethodAtController
+# ./testErrorAfterTrap.sh
 
 
 
@@ -29,7 +30,7 @@ false\
 
 
 
-./startCreatingShowView.sh test-show12 test $controllerFileName $controllerFolderName $modelFileName $modelFolderName test laravel preview_route_tests user password own_pokemon_completes
+./startCreatingShowView.sh test-show1000 test $controllerFileName $controllerFolderName $modelFileName $modelFolderName test laravel preview_route_tests user password own_pokemon_completes
 
 
 

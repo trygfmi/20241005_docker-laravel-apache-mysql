@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\PokemonSleep;
 
 use App\Http\Controllers\Controller;
-use App\Models\MainSkill;
+use App\Models\PokemonSleep\MainSkill;
 use Illuminate\Http\Request;
 
 class MainSkillController extends Controller

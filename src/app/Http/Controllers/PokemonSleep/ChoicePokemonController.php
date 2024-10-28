@@ -9,7 +9,7 @@ use App\Models\PokemonSleep\ChoicePokemon;
 use App\Models\PokemonSleep\ChoicePokemonConstrained;
 use App\Models\PokemonSleep\CreatePokemonTemplate;
 use App\Models\PokemonSleep\Foodlv1;
-use App\Models\SubSkill;
+use App\Models\PokemonSleep\SubSkill;
 use App\Models\PokemonSleep\Personality;
 use App\Models\PokemonSleep\OwnPokemonComplete;
 
@@ -122,6 +122,7 @@ class ChoicePokemonController extends Controller
 
 
             $createdPokemon = OwnPokemonComplete::create([
+                'encyclopedia_number'=>$id,
                 'own_pokemon_name'=>$own_pokemon_name,
                 'nickname'=>$nickname,
                 'sp'=>$sp,

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\PokemonSleep;
 
 use App\Http\Controllers\Controller;
-use App\Models\SubSkill;
+use App\Models\PokemonSleep\SubSkill;
 use Illuminate\Http\Request;
 
 class SubSkillController extends Controller

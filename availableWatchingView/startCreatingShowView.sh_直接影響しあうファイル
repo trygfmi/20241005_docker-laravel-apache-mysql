@@ -1,0 +1,18 @@
+startCreatingShowView
+- error_log1.txt
+- errorInStartCreatingShowView.sh
+		createViewFile
+				mysqlGetTableColumns
+				
+		insertControllerShowMethod
+				insertNewLineAtController
+				insertUseStatementAtController
+				insertMethoodAtController
+		insertRouteGet
+		- error_log1.txt
+		- src/routes/test.php
+		insertNewLine
+		mysqlInsertViewData
+        
+        
+

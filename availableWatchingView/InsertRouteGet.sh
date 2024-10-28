@@ -12,9 +12,11 @@ controllerMethodName=$3
 getHelperName=$4
 routeFileName=$5
 
-# false
+
+
 sed -i '' '$a\
 Route::get('\'$viewFileName\'', ['$controllerFileName'::class, '\'$controllerMethodName\''])\
 ->name('\'$getHelperName\'');\
 ' ../src/routes/$routeFileName.php
-# false
+
+

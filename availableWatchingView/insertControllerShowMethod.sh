@@ -17,7 +17,7 @@ controllerMethodName=$7
 
 
 
-# ルートファイルに該当するビューファイル名でアクセス可能にする文字列追加
+# コントローラーファイルに指定したモデルのuse文を宣言する文字列追加
 # grep -q 'use sApp\\Http\\Controllers\\'$controllerFolderName'\\'$controllerFileName';' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
 # hasUseStatement=$?
 # if [ -n "$hasUseStatement" ] && [ $hasUseStatement != 0 ]; then

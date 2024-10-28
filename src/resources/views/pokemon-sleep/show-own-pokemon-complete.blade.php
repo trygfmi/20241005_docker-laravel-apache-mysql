@@ -9,7 +9,7 @@
             @csrf
             <table>
                 <tr>
-                    <th>削除選択</th><th>id</th><th>画像</th><th>ポケモン名</th><th>ニックネーム</th><th>sp</th><th>lv</th><th>食材lv1</th><th>食材lv30</th><th>食材lv60</th><th>メインスキル</th><th>サブスキルlv1</th><th>サブスキルlv25</th><th>サブスキルlv50</th><th>サブスキルlv75</th><th>サブスキルlv100</th><th>性格</th><th>備考</th>
+                    <th>削除選択</th><th>id</th><th>画像</th><th>図鑑番号</th><th>ポケモン名</th><th>ニックネーム</th><th>sp</th><th>lv</th><th>食材lv1</th><th>食材lv30</th><th>食材lv60</th><th>メインスキル</th><th>サブスキルlv1</th><th>サブスキルlv25</th><th>サブスキルlv50</th><th>サブスキルlv75</th><th>サブスキルlv100</th><th>性格</th><th>備考</th>
                 </tr>
                 @foreach($result as $r)
                     <tr>
@@ -20,6 +20,7 @@
                         @else
                             <td><img src="{{asset('storage')}}/{{$r->image_path}}" alt="{{$r->own_pokemon_name}}"></td>
                         @endif
+                        <td>{{$r->encyclopedia_number}}</td>
                         <td>{{$r->own_pokemon_name}}</td>
                         <td>{{$r->nickname}}</td>
                         <td>{{$r->sp}}</td>
@@ -45,7 +46,7 @@
 
 
     @if(session('success-delete'))
-        <script src="{{asset('js/custom-alert.js')}}">
+        <script src="{{asset('js/custom-alert-remove.js')}}">
             
         </script>
     @endif

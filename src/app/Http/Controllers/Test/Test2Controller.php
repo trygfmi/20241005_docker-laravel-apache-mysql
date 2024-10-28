@@ -5,6 +5,14 @@ namespace App\Http\Controllers\Test;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\PokemonSleep\MainSkill;
+
+
+
+use App\Models\PokemonSleep\CreatePokemonTemplate3;
+
+
+
 use App\Models\PokemonSleep\OwnPokemonComplete;
 
 
@@ -14,10 +22,6 @@ use App\Models\PokemonSleep\OwnPokemonCompleteSeeders;
 
 
 use App\Models\PokemonSleep\Personality;
-
-
-
-use App\Models\MainSkill;
 
 
 
@@ -117,5 +121,17 @@ class Test2Controller extends Controller
         $result = OwnPokemonComplete::all();
 
         return view('test.test-show11', ['message'=>$result]);
+    }
+
+    public function createtemplate3sshowShow(){
+        $result = CreatePokemonTemplate3::all();
+
+        return view('test.create-template3s-show', ['message'=>$result]);
+    }
+
+    public function mainskillShow(){
+        $result = MainSkill::all();
+
+        return view('test.main-skill', ['message'=>$result]);
     }
 }

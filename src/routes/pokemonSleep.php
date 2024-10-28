@@ -122,3 +122,13 @@ Route::get('show-own-pokemon-complete-seeder', [BuildOwnPokemonCompleteSeederCon
 
 
 
+Route::get('own-pokemon-complete-edit-pokemon-sleep', [OwnPokemonCompleteController::class, 'editIndex'])
+->name('own-pokemon-complete-edit-pokemon-sleep-editIndex');
+
+
+
+Route::post('own-pokemon-complete-edit-pokemon-sleep', [OwnPokemonCompleteController::class, 'edit'])
+->name('own-pokemon-complete-edit-pokemon-sleep-edit');
+
+
+

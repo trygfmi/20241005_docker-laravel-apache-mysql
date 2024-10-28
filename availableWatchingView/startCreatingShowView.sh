@@ -6,7 +6,7 @@
 
 
 source ./errorInStartCreatingShowView.sh
-trap 'error_handler "$LINENO" $(cat error_log1.txt); exit' ERR 
+trap 'error_handler "$LINENO" $(cat error_log1.txt); exit 1' ERR 
 # trap 'rm -f error_log1.txt' EXIT
 
 
@@ -60,6 +60,5 @@ fi
 
 
 ./mysqlInsertViewData.sh $databaseName $previewRouteTableName $user $password $viewFileName $viewFileName $controllerFileName $controllerMethodName $getHelperName "" "" "" $previewRouteTableName $modelFileName
-
 
 

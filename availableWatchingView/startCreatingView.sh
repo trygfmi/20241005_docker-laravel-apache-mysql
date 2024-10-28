@@ -1,11 +1,11 @@
 # $1:viewのファイル名 $2:viewのフォルダ名 $3:controllerのファイル名 $4:controllerのフォルダ名
 # $5:controllerのメソッド名 $6:routeのファイル名
-# 実行例：./startCreatingView.sh pokemon-sleep-test2 pokemon-sleep TestTestController Test create2 test 4 createPost2
+# 実行例：./startCreatingView.sh pokemon-sleep-test2 pokemon-sleep TestTestController Test create2 test 4 createPost2 preview_route_tests
 
 
 
-viewFileName=$1
 viewFolderName=$2
+viewFileName=$1-$viewFolderName
 controllerFileName=$3
 controllerFolderName=$4
 controllerMethodName=$5
@@ -14,6 +14,7 @@ routeFileName=$6
 inputElementNumber=$7
 postMethod=$8
 postHelperName=$viewFileName-$postMethod
+previewTableName=$9
 
 
 
@@ -75,18 +76,18 @@ password="password"
 
 
 # プレビュー画面に表示するためのデータをテーブルに格納
-./mysqlInsertWatchingViewData.sh "$view_file_name" "$route_url" "$controller" "$get_method" "$get_helper_name" "$middleware" "$post_method" "$post_helper_name" "$model" "$table_name" "$routeFileName"s "$user" "$password"
+./mysqlInsertWatchingViewData.sh "$view_file_name" "$route_url" "$controller" "$get_method" "$get_helper_name" "$middleware" "$post_method" "$post_helper_name" "$model" "$table_name" "$previewTableName" "$user" "$password"
 
 
 
 # 指定したビューファイルが存在した場合、ビューファイル名を取得
-resultString=$(./mysqlGetRouteUrl.sh "$viewFileName" "$routeFileName"s "$user" "$password")
+resultString=$(./mysqlGetRouteUrl.sh "$viewFileName" "$previewTableName" "$user" "$password")
 
 
 
 if [ -n "$resultString" ] && [ $resultString == "$viewFileName" ]; then
     # 指定したビューファイル名の行に、post関連のデータをテーブルに格納
-    ./mysqlUpdateColumnPost.sh "$viewFileName" "$postMethod" "$routeFileName"s "$user" "$password"
+    ./mysqlUpdateColumnPost.sh "$viewFileName" "$postMethod" "$previewTableName" "$user" "$password"
 else
     echo "該当するビューファイルが見つからなかったので、post_methodとpost_helper_nameをテーブルに追加できませんでした"
 fi

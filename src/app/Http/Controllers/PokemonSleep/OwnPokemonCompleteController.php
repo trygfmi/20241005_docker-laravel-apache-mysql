@@ -6,7 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\PokemonSleep\OwnPokemonComplete;
-use App\Models\SubSkill;
+use App\Models\PokemonSleep\SubSkill;
+use App\Models\PokemonSleep\Personality;
+
+use Illuminate\Support\Facades\DB;
+
 
 class OwnPokemonCompleteController extends Controller
 {
@@ -60,14 +64,6 @@ class OwnPokemonCompleteController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
     {
         //
     }
@@ -156,5 +152,53 @@ class OwnPokemonCompleteController extends Controller
             'sub_skill_lv1_id_array'=>$sub_skill_lv1_id_array,
         ]);
 
+    }
+
+    public function editIndex(){
+        $allPokemonList = OwnPokemonComplete::all();
+        $foodlv30s = DB::table('own_pokemon_completes')
+                        ->join('foodlv30s', 'own_pokemon_completes.encyclopedia_number', '=', 'foodlv30s.id')
+                        ->select('own_pokemon_completes.*', 'foodlv30s.*')
+                        ->get();
+        $foodlv60s = DB::table('own_pokemon_completes')
+                        ->join('foodlv60s', 'own_pokemon_completes.encyclopedia_number', '=', 'foodlv60s.id')
+                        ->select('own_pokemon_completes.*', 'foodlv60s.*')
+                        ->get();
+        $allSubSkills = SubSkill::orderBy("sub_skill", "asc")->get();
+        $allPersonalities = Personality::orderBy("personality", "asc")->get();
+        // dd($foodlv30s);
+        return view('pokemon-sleep.own-pokemon-complete-edit-pokemon-sleep', [
+                                                                                "allPokemonList"=>$allPokemonList,
+                                                                                "allSubSkills"=>$allSubSkills,
+                                                                                "allPersonalities"=>$allPersonalities,
+                                                                                "foodlv30s"=>$foodlv30s,
+                                                                                "foodlv60s"=>$foodlv60s,
+                                                                            ]);
+    }
+
+    public function edit(Request $request){
+        // dd($request);
+
+        for($i=0; $i<count($request->id); $i++){
+            $id = $request->id[$i];
+            $pokemon = OwnPokemonComplete::find($id);
+
+            $pokemon->nickname = $request->nickname[$i];
+            $pokemon->sp = $request->sp[$i];
+            $pokemon->lv = $request->lv[$i];
+            $pokemon->food_lv30 = $request->food_lv30[$i];
+            $pokemon->food_lv60 = $request->food_lv60[$i];
+            $pokemon->sub_skill_lv1 = $request->sub_skill_lv1[$i];
+            $pokemon->sub_skill_lv25 = $request->sub_skill_lv25[$i];
+            $pokemon->sub_skill_lv50 = $request->sub_skill_lv50[$i];
+            $pokemon->sub_skill_lv75 = $request->sub_skill_lv75[$i];
+            $pokemon->sub_skill_lv100 = $request->sub_skill_lv100[$i];
+            $pokemon->remarks = $request->remarks[$i];
+
+            $pokemon->save();
+            // dd($pokemon);
+        };
+        
+        return redirect()->back();
     }
 }

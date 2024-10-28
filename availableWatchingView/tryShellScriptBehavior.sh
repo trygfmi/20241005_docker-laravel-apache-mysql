@@ -1,8 +1,4 @@
-if grep -q '^.*aaa.*$' <(sed -n '8p' ../src/app/Http/Controllers/Test/Test2Controller.php); then echo "こんにちは"; fi
+trap 'echo "hello"' ERR
 
-
-if ! grep -q 'use ' <(sed -n '8p' ../src/app/Http/Controllers/Test/Test2Controller.php); then
-    echo "こんにちは";
-else
-    echo "aaa"
-fi
+cd ../src
+php artisan make:view test/test-show11

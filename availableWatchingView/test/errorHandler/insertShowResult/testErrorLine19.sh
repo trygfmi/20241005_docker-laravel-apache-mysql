@@ -1,3 +1,4 @@
+# cd availableWatchingView/test/errorHandler/insertShowResult
 # ./testErrorLine19.sh
 
 
@@ -12,7 +13,7 @@ false\
 
 
 
-./startCreatingShowView.sh test-show12 test Test2Controller Test OwnPokemonComplete PokemonSleep test laravel preview_route_tests user password own_pokemon_completes
+./startCreatingShowView.sh test-show1000 test Test2Controller Test OwnPokemonComplete PokemonSleep test laravel preview_route_tests user password own_pokemon_completes
 
 
 

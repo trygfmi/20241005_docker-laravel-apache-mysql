@@ -1,0 +1,9 @@
+errorInStartCreatingShowView
+- ../src/resources/views/$viewFolderName/$viewFileName.blade.php
+- ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+- ../src/routes/$routeFileName.php
+- error_log1.txt
+- error_log2_insertShowResult.txt
+- error_log2_insertControllerShowMethod.txt       
+
+

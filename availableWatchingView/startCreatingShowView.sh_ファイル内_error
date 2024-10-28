@@ -1,0 +1,67 @@
+startCreatingShowView
+- errorInStartCreatingShowView
+- trap
+$ error_handler
+$ LINENO
+$ (cat error_log1.txt)
+$ exit 1
+k ERR
+	createViewFile
+        - trap 
+        $ (echo $0 > error_log1.txt)
+        k ERR
+        insertShowResult
+        - errorInInsertShowResult
+        - trap
+        $ error_handler
+        $ LINENO
+        $ (cat error_log2_insertShowResult.txt)
+        $ (echo $0 > error_log1.txt)
+        $ exit 1
+        k ERR
+		mysqlGetTableColumns
+                - trap
+                $ (echo error_log2_insertShowResult.txt)
+                $ exit 1
+                k ERR
+	insertControllerShowMethod
+        - errorInInsertControllerShowMethod
+        - trap
+        $ error_handler_2
+        $ LINENO
+        $ (cat error_log2_insertControllerShowMethod.txt)
+        $ (echo $0 > error_log1.txt)
+        $ exit 1
+        k ERR
+	        insertNewLineAtController
+                - trap
+                $ (echo $0 > error_log2_insertControllerShowMethod.txt
+                $ exit 1
+                k ERR
+		insertUseStatementAtController
+                - trap
+                $ (echo $0 > error_log2_insertControllerShowMethod.txt
+                $ exit 1
+                k ERR
+		insertMethoodAtController
+                - trap
+                $ (echo $0 > error_log2_insertControllerShowMethod.txt
+                $ exit 1
+                k ERR
+	insertRouteGet
+        - trap
+        $ (echo $0 > error_log1.txt)
+        $ exit 1
+        k ERR
+	insertNewLine
+        - trap
+        $ (echo $0 > error_log1.txt)
+        $ exit 1
+        k ERR
+	mysqlInsertViewData
+        - trap
+        $ (echo $0 > error_log1.txt)
+        $ exit 1
+        k ERR
+        
+

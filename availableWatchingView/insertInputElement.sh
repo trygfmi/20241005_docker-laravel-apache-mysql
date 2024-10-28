@@ -1,7 +1,8 @@
 # $1:ビューファイル名 $2:ビューフォルダ名 $3:inputの要素数 
-# $4:コントローラーのファイル名 $5:postのメソッド名 $6:post_helper_nameの名前
-# $7:ルートファイル名 $8:コントローラーのフォルダ名
-# 実行例：./insertInputElement.sh pokemon-sleep-test pokemon-sleep 4 TestTestController Test createPost test
+# $4:コントローラーのファイル名 $5:コントローラーのフォルダ名
+# $6:postのメソッド名 $7:post_helper_nameの名前
+# $8:ルートファイル名 
+# 実行例：./insertInputElement.sh pokemon-sleep-test pokemon-sleep 4 TestTestController Test createPost pokemon-sleep-test-createPost test
 
 
 

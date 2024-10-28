@@ -223,12 +223,13 @@ function createButtonElement(tableRowCount, partOfElementId, buttonInnerHTML, td
     button.innerHTML = buttonInnerHTML;
     document.getElementById(td_id).appendChild(button);
 
-    document.getElementById(button.id).addEventListener('click', async function(){
+    testFunction = document.getElementById(button.id).addEventListener('click', async function(){
         // if(confirm('選択した行を削除しますか？')){
         result = await showDialog();
         console.log(result);
         if(result){
             document.getElementById(this.parentElement.parentElement.id).remove();
+            customAlertRemove();
         }
     })
 }
@@ -256,6 +257,33 @@ function showDialog() {
             }
         });
     });
+}
+
+function customAlertRemove(){
+    const alertBox = document.getElementById('customAlertRemove');
+
+    // 削除されました要素が消えたときにイベント発生
+    alertBox.addEventListener('transitionend', function(event){
+        if(event.propertyName === "opacity"){
+            alertBox.style.display = 'none';
+        }
+    });
+
+    // アラートを表示
+    alertBox.style.display = 'block';
+    // transition中の要素をリセット
+    alertBox.style.transition = "none";
+    alertBox.style.opacity = 1;
+
+
+    // 1秒後にフェードアウト開始
+    setTimeout(function() {
+        alertBox.style.transition = "opacity 1s ease-out";
+        alertBox.style.opacity = 0;
+        // alertBox.classList.add('fade-out');
+
+    }, 1000);
+    
 }
 
 function createTrElement(tableRowCount, tbody_element_id, tbody_element_firstChild){

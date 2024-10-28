@@ -19,7 +19,7 @@ password=${13}
 
 
 mysql -h 127.0.0.1 -P 3306 -u $user -p$password laravel --skip-column-names <<EOF
-insert into preview_route_$routeFileName (view_file_name, route_url, controller, get_method,
+insert into $routeFileName (view_file_name, route_url, controller, get_method,
 get_helper_name, middleware, post_method, post_helper_name, model, table_name) 
 values ("$view_file_name", "$route_url", "$controller", "$get_method", 
 "$get_helper_name", "$middleware", "$post_method", "$post_helper_name", 

@@ -1,0 +1,59 @@
+startCreatingShowView
+- errorInStartCreatingShowView.sh
+- error_log1.txt
+- ../src/resources/views/$viewFolderName/$viewFileName.blade.php
+- createViewFile.sh
+- insertShowResult.sh
+- insertControllerShowMethod.sh
+- insertRouteGet.sh
+- insertNewLine.sh
+- mysqlInsertViewData.sh
+
+createViewFile
+- error_log1.txt
+- ../src/resources/views/$viewFolderName/$viewFileName.blade.php
+
+insertShowResult.sh
+- errorInInsertShowResult.sh
+- error_log1.txt
+- error_log2_insertShowResult.txt
+- ../src/resources/views/$viewFolderName/$viewFileName.blade.php
+
+mysqlGetTableColumns
+- error_log2_insertShowResult.sh
+				
+insertControllerShowMethod
+- errorInInsertControllerShowMethod.sh
+- error_log1.txt
+- error_log2_insertControllerShowMethod.sh
+- ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+- insertNewLineAtController.sh
+- insertUseStatementAtController.sh
+- insertMethodAtController.sh
+
+insertNewLineAtController
+- error_log2_insertControllerShowMethod.txt
+- ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+
+insertUseStatementAtController
+- error_log2_insertControllerShowMethod.txt
+- ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+
+insertMethoodAtController
+- error_log2_insertControllerShowMethod.txt
+- ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
+
+insertRouteGet
+- error_log1.txt
+- ../src/routes/$routeFileName.php
+
+insertNewLine
+- error_log1.txt
+- ../src/routes/$routeFileName.php
+
+mysqlInsertViewData
+- error_log1.txt
+        
+        
+
+

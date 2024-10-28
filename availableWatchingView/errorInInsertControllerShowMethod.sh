@@ -3,7 +3,7 @@ deleteInsertNewLineAtController(){
     repeatNumber=$1
     insertRowNumber=$2
     sleep 3
-    if ! grep -q 'use ' <(sed -n '8p' ../src/app/Http/Controllers/Test/Test2Controller.php); then
+    if ! grep -q 'use ' <(sed -n '8p' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php); then
         for i in $(seq $repeatNumber); do
         sed -i '' ''$insertRowNumber'd' ../src/app/Http/Controllers/$controllerFolderName/$controllerFileName.php
         done
@@ -40,7 +40,7 @@ error_handler_2() {
     # local errorRowNumber=$1
     echo '$0:エラーが発生したシェルスクリプトの呼び出し元:'$0
     echo '$1:'$1
-    echo '$2-エラーが発生したシェルスクリプト:'$2
+    echo '$2:エラーが発生したシェルスクリプト:'$2
     errorShellScript=$2
 
     if [ "$errorShellScript" == "./insertNewLineAtController.sh" ]; then

@@ -1,0 +1,55 @@
+startCreatingShowView
+- source
+- trap
+- echo
+        - tr
+- echo
+- exit 1
+- echo 
+	createViewFile
+        - trap
+        - cd
+        - php artisan
+        - cd
+        - sed
+        insertShowResult
+        - source
+        - trap
+		mysqlGetTableColumns
+                - trap
+                - mysql
+        - seq
+        - echo
+        - sed
+        - sed
+        - sed
+        - sed
+        - sed
+	insertControllerShowMethod
+        - source
+        - trap
+        - grep
+        - echo
+	        insertNewLineAtController
+                - trap
+                - seq
+                - sed
+		insertUseStatementAtController
+                - trap
+                - sed
+                -wc
+		insertMethoodAtController
+                - trap
+                - sed
+	insertRouteGet
+        - trap
+        - sed
+	insertNewLine
+        - trap
+        - seq
+        - sed
+	mysqlInsertViewData
+        - trap
+        - mysql
+        
+
