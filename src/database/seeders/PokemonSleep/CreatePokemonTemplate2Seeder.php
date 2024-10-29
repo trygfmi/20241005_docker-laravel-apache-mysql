@@ -16,6 +16,20 @@ class CreatePokemonTemplate2Seeder extends Seeder
     {
         //
         /*
+        // 20241029に追加
+        DB::table('create_pokemon_template2s')->insert([
+            ['id'=>778,'food_lv1_id'=>778,'food_lv30_id'=>778,'food_lv60_id'=>778,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241029に追加
+        DB::table('create_pokemon_template2s')->insert([
+            ['id'=>778,'food_lv1_id'=>778,'food_lv30_id'=>778,'food_lv60_id'=>778,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241015に追加
         DB::table('create_pokemon_template2s')->insert([
             ['id'=>996,'food_lv1_id'=>996,'food_lv30_id'=>996,'food_lv60_id'=>996,'created_at'=>now(),'updated_at'=>now()],

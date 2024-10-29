@@ -16,6 +16,20 @@ class ChoicePokemonConstrainedSeeder extends Seeder
     {
         //
         /*
+        // 20241029に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>778,'name'=>'ミミッキュ','create_pokemon_template_id'=>778,'create_pokemon_template2_id'=>778,'create_pokemon_template3_id'=>778,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241029に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>778,'name'=>'ミミッキュ','create_pokemon_template_id'=>778,'create_pokemon_template2_id'=>778,'create_pokemon_template3_id'=>778,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241015に追加
         DB::table('choice_pokemon_constraineds')->insert([
             ['id'=>996,'name'=>'aaa','create_pokemon_template_id'=>996,'create_pokemon_template2_id'=>996,'create_pokemon_template3_id'=>996,'created_at'=>now(),'updated_at'=>now()],

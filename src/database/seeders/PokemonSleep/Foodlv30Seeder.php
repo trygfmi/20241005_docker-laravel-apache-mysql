@@ -16,6 +16,20 @@ class Foodlv30Seeder extends Seeder
     {
         //
         /*
+        // 20241029に追加
+        DB::table('foodlv30s')->insert([
+            ['id'=>778,'food1'=>'とくせんリンゴ','food2'=>'めざましコーヒー','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241029に追加
+        DB::table('foodlv30s')->insert([
+            ['id'=>778,'food1'=>'とくせんリンゴ','food2'=>'めざましコーヒー','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241015に追加
         DB::table('foodlv30s')->insert([
             ['id'=>996,'food1'=>'マメミート','food2'=>'めざましコーヒー','created_at'=>now(),'updated_at'=>now()],

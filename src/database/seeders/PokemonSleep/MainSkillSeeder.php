@@ -16,6 +16,22 @@ class MainSkillSeeder extends Seeder
     {
         //
         /*
+        // 20241029に追加
+        DB::table('main_skills')->insert([
+            ['id'=>16,'main_skill'=>'ばけのかわ(きのみバースト)','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>17,'main_skill'=>'つきのひかり(げんきチャージS)','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241029に追加
+        DB::table('main_skills')->insert([
+            ['id'=>16,'main_skill'=>'ばけのかわ(きのみバースト)','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>17,'main_skill'=>'つきのひかり(げんきチャージS)','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241015に追加
         DB::table('main_skills')->insert([
             ['id'=>80,'main_skill'=>'たくわえる','created_at'=>now(),'updated_at'=>now()],

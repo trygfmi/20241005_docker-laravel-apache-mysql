@@ -1,7 +1,15 @@
+<style>
+    body{
+        margin: 0;
+    }
+</style>
+
+
+
 <div>
     <!-- Simplicity is an acquired taste. - Katharine Gerould -->
-    <div id="bbb" class="aaaWrapper" style="width: 98vw; height: 80vh; background: #dddddd; position: absolute; display: none; overflow-y: auto; overflow-x: auto;" onclick="bbbWrapper(this)">
-        <div id="aaa" style="width: 80%; height: 80%; position: absolute; z-index: 100; display: none;"></div>
+    <div id="bbb" class="aaaWrapper" style="padding: 2%; width: 100vw; height: 90vh; background: #dddddd; position: absolute; display: none; overflow-y: auto; overflow-x: auto;" onclick="bbbWrapper(this)">
+        <div id="aaa" style="position: absolute; z-index: 100; display: none; background: green;"></div>
     </div>
     
     @if(isset($allPokemonList))
@@ -25,7 +33,7 @@
                             <td><img src="{{asset('storage')}}/{{$apl->image_path}}" alt="{{$apl->own_pokemon_name}}"></td>
                         @endif
                         <td>{{$apl->own_pokemon_name}}</td>
-                        <td onclick="test(this)"><input type="text" value="{{$apl->nickname}}" style="width: 80px;" name="nickname[]"></td>
+                        <td><input type="text" value="{{$apl->nickname}}" style="width: 80px;" name="nickname[]"></td>
                         <td><input type="text" value="{{$apl->sp}}" style="width: 50px" name="sp[]"></td>
                         <td><input type="text" value="{{$apl->lv}}" style="width:30px;" name="lv[]"></td>
                         <td>{{$apl->food_lv1}}</td>
@@ -136,8 +144,8 @@
                     </tr>
                 @endforeach
             </table>
-            <div onclick="confirmTest()" style="position: fixed; bottom: 5%; right: 20%; background: red;">更新確認</div>
-            <button id="updateButton" type="submit" style="position: fixed; bottom: 5%; right: 5%;">更新</button>
+            <div onclick="confirmTest()" style="position: fixed; bottom: 5%; right: 20%; background: red; z-index: 10000;">更新確認</div>
+            <button id="updateButton" type="submit" onclick="test(event)" style="position: fixed; bottom: 5%; right: 5%; z-index: 10001;">更新</button>
         </form>
     @endif
 </div>
@@ -201,7 +209,10 @@
         confirmBlockElementbbb = document.getElementById('bbb');
         confirmBlockElementbbb.style.display = "block";
         confirmBlockElement = document.getElementById('aaa');
-        confirmBlockElement.style.display = "block";
+        confirmBlockElement.innerHTML = "";
+        confirmBlockElement.style.display = "flex";
+        confirmBlockElement.style.justifyContent = "space-around";
+        confirmBlockElement.style.flexWrap = "wrap";
 
         testtest = document.querySelectorAll('input[type="checkbox"]:checked');
         
@@ -218,21 +229,78 @@
 
 
             
+            rowSelect = testtest[i].parentNode.parentElement.querySelectorAll("td select");
+
+            rowSelect0 = rowSelect[0];
+            rowSelect1 = rowSelect[1];
+            rowSelect2 = rowSelect[2];
+            rowSelect3 = rowSelect[3];
+            rowSelect4 = rowSelect[4];
+            rowSelect5 = rowSelect[5];
+            rowSelect6 = rowSelect[6];
+            rowSelect7 = rowSelect[7];
+            rowSelect8 = rowSelect[8];
 
 
-            id = "<p>id:"+rowSelectedOption[0].innerText+"</p>";
-            nickname = "<p>nickname:"+rowInput[1].value+"</p>";
-            sp = "<p>sp:"+rowInput[2].value+"</p>";
-            lv = "<p>lv:"+rowInput[3].value+"</p>";
-            food_lv30 = "<p>food_lv30:"+rowSelectedOption[1].innerText+"</p>";
-            food_lv60 = "<p>food_lv60:"+rowSelectedOption[2].innerText+"</p>";
-            sub_skill_lv1 = "<p>sub_skill_lv1:"+rowSelectedOption[3].innerText+"</p>";
-            sub_skill_lv25 = "<p>sub_skill_lv25:"+rowSelectedOption[4].innerText+"</p>";
-            sub_skill_lv50 = "<p>sub_skill_lv50:"+rowSelectedOption[5].innerText+"</p>";
-            sub_skill_lv75 = "<p>sub_skill_lv75:"+rowSelectedOption[6].innerText+"</p>";
-            sub_skill_lv100 = "<p>sub_skill_lv100:"+rowSelectedOption[7].innerText+"</p>";
-            personality = "<p>personality:"+rowSelectedOption[8].innerText+"</p>";
-            remarks = "<p>remarks:"+rowInput[4].value+"</p>";
+
+            divWrapper = document.createElement("div");
+            divWrapper.style.width = "40%";
+            divWrapper.style.color = "white";
+            divWrapper.style.background = "blue";
+
+
+
+            // divtest = document.createElement("div");
+            // divtest.appendChild(rowSelect[0]);
+            // divWrapper.appendChild(divtest);
+            // divtest = document.createElement("div");
+            // divtest.appendChild(rowImgElement);
+            // divWrapper.appendChild(divtest);
+            // for(j=1; j<4; j++){
+            //     divtest = document.createElement("div");
+            //     divtest.appendChild(rowInput[j]);
+            //     divWrapper.appendChild(divtest);
+            // }
+            // for(j=1; j<9; j++){
+            //     divtest = document.createElement("div");
+            //     divtest.appendChild(rowSelect[j]);
+            //     divWrapper.appendChild(divtest);
+            // }
+            // divtest = document.createElement("div");
+            // divtest.appendChild(rowInput[4]);
+            // divWrapper.appendChild(divtest);
+
+            // confirmBlockElement.appendChild(divWrapper);
+
+
+
+            // id = "<p>id:"+rowSelectedOption[0].innerText+"</p>";
+            // nickname = "<p>nickname:"+rowInput[1].value+"</p>";
+            // sp = "<p>sp:"+rowInput[2].value+"</p>";
+            // lv = "<p>lv:"+rowInput[3].value+"</p>";
+            // food_lv30 = "<p>food_lv30:"+rowSelectedOption[1].innerText+"</p>";
+            // food_lv60 = "<p>food_lv60:"+rowSelectedOption[2].innerText+"</p>";
+            // sub_skill_lv1 = "<p>sub_skill_lv1:"+rowSelectedOption[3].innerText+"</p>";
+            // sub_skill_lv25 = "<p>sub_skill_lv25:"+rowSelectedOption[4].innerText+"</p>";
+            // sub_skill_lv50 = "<p>sub_skill_lv50:"+rowSelectedOption[5].innerText+"</p>";
+            // sub_skill_lv75 = "<p>sub_skill_lv75:"+rowSelectedOption[6].innerText+"</p>";
+            // sub_skill_lv100 = "<p>sub_skill_lv100:"+rowSelectedOption[7].innerText+"</p>";
+            // personality = "<p>personality:"+rowSelectedOption[8].innerText+"</p>";
+            // remarks = "<p>remarks:"+rowInput[4].value+"</p>";
+            id = rowSelectedOption[0].innerText;
+            nickname = rowInput[1].value;
+            sp = rowInput[2].value;
+            lv = rowInput[3].value;
+            food_lv30 = rowSelectedOption[1].innerText;
+            food_lv60 = rowSelectedOption[2].innerText;
+            sub_skill_lv1 = rowSelectedOption[3].innerText;
+            sub_skill_lv25 = rowSelectedOption[4].innerText;
+            sub_skill_lv50 = rowSelectedOption[5].innerText;
+            sub_skill_lv75 = rowSelectedOption[6].innerText;
+            sub_skill_lv100 = rowSelectedOption[7].innerText;
+            personality = rowSelectedOption[8].innerText;
+            remarks = rowInput[4].value;
+
 
             
             console.log("id:"+rowSelectedOption[0].innerText);
@@ -253,19 +321,56 @@
             console.log("");
 
 
-            confirmBlockElement.appendChild(testtest[i].parentNode.parentNode);
+
+            divtestId = document.createElement("div");
+            divtestId.appendChild(document.createTextNode("id:"+id));
+            divWrapper.appendChild(divtestId);
+            divtestImg = document.createElement("div");
+            divtestImg.appendChild(rowImgElement);
+            divWrapper.appendChild(divtestImg);
+            
+            divtestNickname = document.createElement("div");
+            divtestNickname.appendChild(document.createTextNode("nickname:"+nickname));
+            divWrapper.appendChild(divtestNickname);
+            divtestSp = document.createElement("div");
+            divtestSp.appendChild(document.createTextNode("sp:"+sp));
+            divWrapper.appendChild(divtestSp);
+            divtestLv = document.createElement("div");
+            divtestLv.appendChild(document.createTextNode("lv:"+lv));
+            divWrapper.appendChild(divtestLv);
+            
+            divtestFoodlv30 = document.createElement("div");
+            divtestFoodlv30.appendChild(document.createTextNode("food_lv30:"+food_lv30));
+            divWrapper.appendChild(divtestFoodlv30);
+            divtestFoodlv60 = document.createElement("div");
+            divtestFoodlv60.appendChild(document.createTextNode("food_lv60:"+food_lv60));
+            divWrapper.appendChild(divtestFoodlv60);
+            divtestSubSkillLv1 = document.createElement("div");
+            divtestSubSkillLv1.appendChild(document.createTextNode("sub_skill_lv1:"+sub_skill_lv1));
+            divWrapper.appendChild(divtestSubSkillLv1);
+            divtestSubSkillLv25 = document.createElement("div");
+            divtestSubSkillLv25.appendChild(document.createTextNode("sub_skill_lv25:"+sub_skill_lv25));
+            divWrapper.appendChild(divtestSubSkillLv25);
+            divtestSubSkillLv50 = document.createElement("div");
+            divtestSubSkillLv50.appendChild(document.createTextNode("sub_skill_lv50:"+sub_skill_lv50));
+            divWrapper.appendChild(divtestSubSkillLv50);
+            divtestSubSkillLv75 = document.createElement("div");
+            divtestSubSkillLv75.appendChild(document.createTextNode("sub_skill_lv75:"+sub_skill_lv75));
+            divWrapper.appendChild(divtestSubSkillLv75);
+            divtestSubSkillLv100 = document.createElement("div");
+            divtestSubSkillLv100.appendChild(document.createTextNode("sub_skill_lv100:"+sub_skill_lv100));
+            divWrapper.appendChild(divtestSubSkillLv100);
+            divtestPersonality = document.createElement("div");
+            divtestPersonality.appendChild(document.createTextNode("personality:"+personality));
+            divWrapper.appendChild(divtestPersonality);
+        
+            divtestRemarks = document.createElement("div");
+            divtestRemarks.appendChild(document.createTextNode("remarks:"+remarks));
+            divWrapper.appendChild(divtestRemarks);
+
+            confirmBlockElement.appendChild(divWrapper);
 
 
-            // confirmBlockElement.appendChild(testtest[i].parentNode.parentNode);
-            // confirmBlockElement.appendChild(rowImgElement);
-
-
-            pElement = document.createElement('p');
-            pElement.innerHTML = id+" "+nickname+" "+sp+" "+lv+" "+food_lv30+" "+food_lv60
-                                   +" "+sub_skill_lv1+" "+sub_skill_lv25+" "+sub_skill_lv50
-                                   +" "+sub_skill_lv75+" "+sub_skill_lv100+" "
-                                   +personality+" "+remarks;
-            // confirmBlockElement.appendChild(pElement);
         }
         
     }
@@ -296,10 +401,11 @@
     });
 
     document.getElementById('bbb').addEventListener('click', function(event){
+        console.log(event.target);
         if(event.target === this){
-            
-        }else{
             document.getElementById('bbb').style.display = "none";
+        }else{
+            
         }
     });
 </script>
