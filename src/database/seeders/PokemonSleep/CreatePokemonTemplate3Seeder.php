@@ -16,6 +16,46 @@ class CreatePokemonTemplate3Seeder extends Seeder
     {
         //
         /*
+        // 20241225に追加
+        DB::table('create_pokemon_template3s')->insert([
+            ['id'=>921,'food_lv1_id'=>921,'food_lv30_id'=>921,'food_lv60_id'=>921,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food_lv1_id'=>922,'food_lv30_id'=>922,'food_lv60_id'=>922,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food_lv1_id'=>923,'food_lv30_id'=>923,'food_lv60_id'=>923,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241225に追加
+        DB::table('create_pokemon_template3s')->insert([
+            ['id'=>37,'food_lv1_id'=>37,'food_lv30_id'=>37,'food_lv60_id'=>37,'main_skill_id'=>5,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>38,'food_lv1_id'=>38,'food_lv30_id'=>38,'food_lv60_id'=>38,'main_skill_id'=>5,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>921,'food_lv1_id'=>921,'food_lv30_id'=>921,'food_lv60_id'=>921,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food_lv1_id'=>922,'food_lv30_id'=>922,'food_lv60_id'=>922,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food_lv1_id'=>923,'food_lv30_id'=>923,'food_lv60_id'=>923,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241217に追加
+        DB::table('create_pokemon_template3s')->insert([
+        ]);
+        */
+
+        /*
+        // 20241217に追加
+        DB::table('create_pokemon_template3s')->insert([
+        ]);
+        */
+
+        /*
+        // 20241204に追加
+        DB::table('create_pokemon_template3s')->insert([
+            ['id'=>215,'food_lv1_id'=>215,'food_lv30_id'=>215,'food_lv60_id'=>215,'main_skill_id'=>14,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>461,'food_lv1_id'=>461,'food_lv30_id'=>461,'food_lv60_id'=>461,'main_skill_id'=>14,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241029に追加
         DB::table('create_pokemon_template3s')->insert([
             ['id'=>778,'food_lv1_id'=>778,'food_lv30_id'=>778,'food_lv60_id'=>778,'main_skill_id'=>16,'created_at'=>now(),'updated_at'=>now()],

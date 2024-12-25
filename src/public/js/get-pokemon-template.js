@@ -361,9 +361,9 @@ function createInputElement(input_id, type, input_name, td_id, width, hasRequire
             img_element = this_table_row_element.children[2].children[0];
 
             if(input_value == "色違い"){
-                img_element.src = "storage/images/shiny/" + pokemon_id + ".png";
+                img_element.src = "images/shiny/" + pokemon_id + ".png";
             }else{
-                img_element.src = "storage/images/" + pokemon_id + ".png";
+                img_element.src = "images/" + pokemon_id + ".png";
             }
         });
     }

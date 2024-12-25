@@ -39,7 +39,7 @@ Route::post('/auth-test-name-email', [AuthTestController::class, 'authLoginNameE
 
 // ログインしているユーザの情報を得て、inputに初期設定します　ログインしていなかったらエラーが出ます
 Route::get('/edit-user-information', [AuthTestController::class, 'editUserInformationIndex'])
-->name('edit-user-information');
+->name('edit-user-information-index');
 // idが3のユーザーインスタンスを取得して、inputに入力されたnameとemailをセットして保存し、userとmessage変数を返します
 Route::post('/edit-user-information', [AuthTestController::class, 'editUserInformationUpdate'])
 ->name('edit-user-information');

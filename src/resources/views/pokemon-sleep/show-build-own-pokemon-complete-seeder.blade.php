@@ -10,7 +10,7 @@
                 @foreach($ownPokemonCompleteSeeder as $opcs)
                     <tr>
                         <td>{{$opcs->id}}</td>
-                        <td><img src="{{asset('storage')}}/{{$opcs->image_path}}"></td>
+                        <td><img src="{{$opcs->image_path}}"></td>
                         <td>{{$opcs->own_pokemon_name}}</td>
                         <td>{{$opcs->nickname}}</td>
                         <td>{{$opcs->sp}}</td>

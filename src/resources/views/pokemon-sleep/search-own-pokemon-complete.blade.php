@@ -1,8 +1,16 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/get-json-own-pokemon-complete.js"></script>
+
+
+<!-- Bootstrap CSS（<head>内に追加）-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap JavaScript（<body>閉じタグの直前に追加） -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <div>
     <div id="loading" style="height: 100vh; width:100vw; background-color: gray; opacity: 50%; display: none; position: fixed;">
         <h1>Loading中</h1>
+        <div class="spinner-border" role="status"></div>
     </div>
     <!-- Waste no more time arguing what a good man should be, be one. - Marcus Aurelius -->
     <form action="{{route('search')}}" method="post" >

@@ -16,6 +16,46 @@ class ChoicePokemonConstrainedSeeder extends Seeder
     {
         //
         /*
+        // 20241225に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>921,'name'=>'パモ','create_pokemon_template_id'=>921,'create_pokemon_template2_id'=>921,'create_pokemon_template3_id'=>921,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'name'=>'パモット','create_pokemon_template_id'=>922,'create_pokemon_template2_id'=>922,'create_pokemon_template3_id'=>922,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'name'=>'パーモット','create_pokemon_template_id'=>923,'create_pokemon_template2_id'=>923,'create_pokemon_template3_id'=>923,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241225に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>37,'name'=>'ロコン(アローラ)','create_pokemon_template_id'=>37,'create_pokemon_template2_id'=>37,'create_pokemon_template3_id'=>37,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>38,'name'=>'キュウコン(アローラ)','create_pokemon_template_id'=>38,'create_pokemon_template2_id'=>38,'create_pokemon_template3_id'=>38,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>921,'name'=>'パモ','create_pokemon_template_id'=>921,'create_pokemon_template2_id'=>921,'create_pokemon_template3_id'=>921,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'name'=>'パモット','create_pokemon_template_id'=>922,'create_pokemon_template2_id'=>922,'create_pokemon_template3_id'=>922,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'name'=>'パーモット','create_pokemon_template_id'=>923,'create_pokemon_template2_id'=>923,'create_pokemon_template3_id'=>923,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241217に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+        ]);
+        */
+
+        /*
+        // 20241217に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+        ]);
+        */
+
+        /*
+        // 20241204に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>215,'name'=>'ニューラ','create_pokemon_template_id'=>215,'create_pokemon_template2_id'=>215,'create_pokemon_template3_id'=>215,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>461,'name'=>'マニューラ','create_pokemon_template_id'=>461,'create_pokemon_template2_id'=>461,'create_pokemon_template3_id'=>461,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241029に追加
         DB::table('choice_pokemon_constraineds')->insert([
             ['id'=>778,'name'=>'ミミッキュ','create_pokemon_template_id'=>778,'create_pokemon_template2_id'=>778,'create_pokemon_template3_id'=>778,'created_at'=>now(),'updated_at'=>now()],

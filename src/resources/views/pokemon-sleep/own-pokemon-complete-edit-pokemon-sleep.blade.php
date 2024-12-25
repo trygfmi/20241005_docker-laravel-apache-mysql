@@ -12,13 +12,12 @@
 
 <!-- Bootstrap CSS（<head>内に追加）-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <!-- Bootstrap JavaScript（<body>閉じタグの直前に追加） -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
-<div>
+<div style="background: rgba(0,169,232,1);">
     <!-- Simplicity is an acquired taste. - Katharine Gerould -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog custom-modal-dialog">
@@ -28,7 +27,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
                 </div>
                 <div class="modal-body">
-                    <div id="aaa" class="row mx-auto" style="width: 100%;  height: 100%; background: green;">
+                    <div id="aaa" class="row mx-auto" style="width: 100%;  height: 100%; background: rgba(0,169,232,1);;">
                         
                     </div>
                 </div>
@@ -39,150 +38,162 @@
     @if(isset($allPokemonList))
         <form action="{{route('own-pokemon-complete-edit-pokemon-sleep-edit')}}" method="post">
             @csrf
-            <table>
-                <tr>
-                    <th>編集済み</th><th>id</th><th>画像</th><th>ポケモン名</th><th>ニックネーム</th><th>sp</th><th>lv</th><th>食材lv1</th><th>食材lv30</th><th>食材lv60</th><th>メインスキル</th><th>サブスキルlv1</th><th>サブスキルlv25</th><th>サブスキルlv50</th><th>サブスキルlv75</th><th>サブスキルlv100</th><th>性格</th><th>備考</th>
-                </tr>
-                @foreach($allPokemonList as $apl)
-                    <tr id="tr{{$loop->index}}">
-                        <td><input id="edit{{$loop->index}}" type="checkbox" ></td>
-                        <td>
-                            <select name="id[]">
-                                <option selected>{{$apl->id}}</option>
-                            </select>
-                        </td>
-                        @if($apl->remarks == "色違い")
-                            <td><img src="{{asset('storage')}}/{{$apl->shiny_image_path}}" alt="{{$apl->own_pokemon_name}}"></td>
-                        @else
-                            <td><img src="{{asset('storage')}}/{{$apl->image_path}}" alt="{{$apl->own_pokemon_name}}"></td>
-                        @endif
-                        <td>{{$apl->own_pokemon_name}}</td>
-                        <td><input type="text" value="{{$apl->nickname}}" style="width: 80px;" name="nickname[]"></td>
-                        <td><input type="text" value="{{$apl->sp}}" style="width: 50px" name="sp[]"></td>
-                        <td><input type="text" value="{{$apl->lv}}" style="width:30px;" name="lv[]"></td>
-                        <td>{{$apl->food_lv1}}</td>
-                        <td>
-                            <select name="food_lv30[]">
-                                <option>{{$apl->food_lv30}}</option>
-                                @if($foodlv30s[$loop->index]->food1 == $apl->food_lv30)
-                                    
-                                @else
-                                    <option>{{$foodlv30s[$loop->index]->food1}}</option>
-                                @endif
 
-                                @if($foodlv30s[$loop->index]->food2 == $apl->food_lv30)
-                                    
-                                @else
-                                    <option>{{$foodlv30s[$loop->index]->food2}}</option>
-                                    
-                                @endif
-                            </select>
-                        </td>
-                        <td>
-                            <select name="food_lv60[]">
-                                <option>{{$apl->food_lv60}}</option>
-                                @if($foodlv60s[$loop->index]->food1 == $apl->food_lv60)
-                                    
-                                @else
-                                    <option>{{$foodlv60s[$loop->index]->food1}}</option>
-                                @endif
+            <div class="container">
+                <div class="row">
+                    @foreach($allPokemonList as $apl)
+                        <div class="col-md-6">
+                            <div class="card" style="background: rgba()">
+                                <div>
+                                    <span>編集済み:</span>
+                                    <input id="edit{{$loop->index}}" type="checkbox" >
+                                </div>
+                                <div>
+                                    <span>id</span>
+                                    <select name="id[]" class="form-select-sm">
+                                        <option selected>{{$apl->id}}</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <span>画像:</span>
+                                    @if($apl->remarks == "色違い")
+                                        <img src="{{$apl->shiny_image_path}}" alt="{{$apl->own_pokemon_name}}">
+                                    @else
+                                        <img src="{{$apl->image_path}}" alt="{{$apl->own_pokemon_name}}">
+                                    @endif
+                                </div>
+                                <div>
+                                <span>ポケモン名:</span>
+                                    {{$apl->own_pokemon_name}}
+                                </div>
+                                <div>
+                                <span>ニックネーム:</span>
+                                    <input type="text" value="{{$apl->nickname}}" style="width: 80px;" name="nickname[]">
+                                </div>
+                                <div>
+                                    <span>sp:</span>
+                                    <input type="text" value="{{$apl->sp}}" style="width: 50px" name="sp[]">
+                                </div>
+                                <div>
+                                    <span>lv:</span>
+                                    <input type="text" value="{{$apl->lv}}" style="width:30px;" name="lv[]">
+                                </div>
+                                <div>{{$apl->food_lv1}}</div>
+                                <div>
+                                    <span>食料lv30:</span>
+                                    <select name="food_lv30[]" class="form-select-sm">
+                                        <option>{{$apl->food_lv30}}</option>
+                                        @if($foodlv30s[$loop->index]->food1 != $apl->food_lv30)
+                                            <option>{{$foodlv30s[$loop->index]->food1}}</option>
+                                        @endif
 
-                                @if($foodlv60s[$loop->index]->food2 == $apl->food_lv60)
-                                    
-                                @else
-                                    <option>{{$foodlv60s[$loop->index]->food2}}</option>
-                                @endif
+                                        @if($foodlv30s[$loop->index]->food2 != $apl->food_lv30)
+                                            <option>{{$foodlv30s[$loop->index]->food2}}</option>
+                                        @endif
+                                    </select>
+                                </div>
+                                <div>
+                                    <span>食料lv60:</span>
+                                    <select name="food_lv60[]" class="form-select-sm">
+                                        <option>{{$apl->food_lv60}}</option>
+                                        @if($foodlv60s[$loop->index]->food1 != $apl->food_lv60)
+                                            <option>{{$foodlv60s[$loop->index]->food1}}</option>
+                                        @endif
 
-                                @if($foodlv60s[$loop->index]->food3 == $apl->food_lv60)
-                                    
-                                @else
-                                    <option>{{$foodlv60s[$loop->index]->food3}}</option>
-                                @endif
-                            </select>
-                        </td>
-                        <td>{{$apl->main_skill}}</td>
-                        <td>
-                            <select name="sub_skill_lv1[]">
-                            <option>{{$apl->sub_skill_lv1}}</option>
-                                @foreach($allSubSkills as $allss)
-                                    @if($allss->sub_skill == $apl->sub_skill_lv1)
-                                        
-                                    @else
-                                        <option>{{$allss->sub_skill}}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                        </td>
-                        <td>
-                            <select name="sub_skill_lv25[]">
-                                <option>{{$apl->sub_skill_lv25}}</option>
-                                @foreach($allSubSkills as $allss)
-                                    @if($allss->sub_skill == $apl->sub_skill_lv25)
-                                        
-                                    @else
-                                        <option>{{$allss->sub_skill}}</option>
-                                    @endif
-                                @endforeach
-                            </select>    
-                        </td>
-                        <td>
-                            <select name="sub_skill_lv50[]">
-                                <option>{{$apl->sub_skill_lv50}}</option>
-                                @foreach($allSubSkills as $allss)
-                                    @if($allss->sub_skill == $apl->sub_skill_lv50)
-                                        
-                                    @else
-                                        <option>{{$allss->sub_skill}}</option>
-                                    @endif
-                                @endforeach
-                            </select>    
-                        </td>
-                        <td>
-                            <select name="sub_skill_lv75[]">
-                                <option>{{$apl->sub_skill_lv75}}</option>
-                                @foreach($allSubSkills as $allss)
-                                    @if($allss->sub_skill == $apl->sub_skill_lv75)
-                                        
-                                    @else
-                                        <option>{{$allss->sub_skill}}</option>
-                                    @endif
-                                @endforeach
-                            </select>    
-                        </td>
-                        <td>
-                            <select name="sub_skill_lv100[]">
-                                <option>{{$apl->sub_skill_lv100}}</option>
-                                @foreach($allSubSkills as $allss)
-                                    @if($allss->sub_skill == $apl->sub_skill_lv100)
-                                        
-                                    @else
-                                        <option>{{$allss->sub_skill}}</option>
-                                    @endif
-                                @endforeach
-                            </select>    
-                        </td>
-                        <td>
-                            <select name="personality[]">
-                                <option>{{$apl->personality}}</option>
-                                @foreach($allPersonalities as $ap)
-                                    @if($ap->personality == $apl->personality)
-                                        
-                                    @else
-                                    <option>{{$ap->personality}}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                        </td>
-                        <td><input type="text" value="{{$apl->remarks}}" name="remarks[]"></td>
-                    </tr>
-                @endforeach
-            </table>
+                                        @if($foodlv60s[$loop->index]->food2 != $apl->food_lv60)
+                                            <option>{{$foodlv60s[$loop->index]->food2}}</option>
+                                        @endif
+
+                                        @if($foodlv60s[$loop->index]->food3 != $apl->food_lv60)
+                                            <option>{{$foodlv60s[$loop->index]->food3}}</option>
+                                        @endif
+                                    </select>
+                                </div>
+                                <div>
+                                    <span>メインスキル:</span>
+                                    {{$apl->main_skill}}</div>
+                                <div>
+                                    <span>サブスキルlv1</span>
+                                    <select name="sub_skill_lv1[]" class="form-select-sm" >
+                                    <option>{{$apl->sub_skill_lv1}}</option>
+                                        @foreach($allSubSkills as $allss)
+                                            @if($allss->sub_skill != $apl->sub_skill_lv1)
+                                                <option>{{$allss->sub_skill}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div>
+                                    <span>サブスキルlv25:</span>
+                                    <select name="sub_skill_lv25[]" class="form-select-sm">
+                                        <option>{{$apl->sub_skill_lv25}}</option>
+                                        @foreach($allSubSkills as $allss)
+                                            @if($allss->sub_skill != $apl->sub_skill_lv25)
+                                                <option>{{$allss->sub_skill}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>    
+                                </div>
+                                <div>
+                                    <span>サブスキルlv50:</span>
+                                    <select name="sub_skill_lv50[]" class="form-select-sm">
+                                        <option>{{$apl->sub_skill_lv50}}</option>
+                                        @foreach($allSubSkills as $allss)
+                                            @if($allss->sub_skill != $apl->sub_skill_lv50)
+                                                <option>{{$allss->sub_skill}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>    
+                                </div>
+                                <div>
+                                    <span>サブスキルlv75:</span>
+                                    <select name="sub_skill_lv75[]" class="form-select-sm">
+                                        <option>{{$apl->sub_skill_lv75}}</option>
+                                        @foreach($allSubSkills as $allss)
+                                            @if($allss->sub_skill != $apl->sub_skill_lv75)
+                                                <option>{{$allss->sub_skill}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>    
+                                </div>
+                                <div>
+                                    <span>サブスキルlv100:</span>
+                                    <select name="sub_skill_lv100[]" class="form-select-sm">
+                                        <option>{{$apl->sub_skill_lv100}}</option>
+                                        @foreach($allSubSkills as $allss)
+                                            @if($allss->sub_skill != $apl->sub_skill_lv100)
+                                                <option>{{$allss->sub_skill}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>    
+                                </div>
+                                <div>
+                                    <span>性格:</span>
+                                    <select name="personality[]" class="form-select-sm">
+                                        <option>{{$apl->personality}}</option>
+                                        @foreach($allPersonalities as $ap)
+                                            @if($ap->personality != $apl->personality)
+                                            <option>{{$ap->personality}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div>
+                                    <span>備考:</span>
+                                    <input type="text" value="{{$apl->remarks}}" name="remarks[]">
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
             <!-- ボタン：モーダルを開くトリガー -->
-            <button type="button" onclick="confirmTest2()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="position: fixed; bottom: 5%; right: 20%; background: red; z-index: 10000;">
+            <button id="openCustomModal" type="button" onclick="confirmTest2(this)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="position: fixed; bottom: 5%; right: 20%; background: red; z-index: 10000;">
                 ダイアログを開く
             </button>
-            <!-- <button type="button" onclick="confirmTest2()" style="position: fixed; bottom: 5%; right: 20%; background: red; z-index: 10000;">更新確認</button> -->
-            <button id="updateButton" type="submit" onclick="test()" style="position: fixed; bottom: 5%; right: 5%; z-index: 10001;">更新</button>
+
+            <button id="updateButton" type="submit" onclick="test()" style="position: fixed; bottom: 5%; right: 5%; z-index: 10001;" disabled>更新</button>
         </form>
     @endif
 </div>
@@ -197,9 +208,11 @@
         
         rowInput = document.querySelectorAll("input");
         rowInputNumber = rowInput.length;
+        rowInputCheckbox = -1;
         console.log(rowInput.length);
+
         // /*
-        for(i=1, j=0, rowNumber=1; i<=rowInputNumber-1; i++, j++, rowNumber++){
+        for(i=1, j=0, rowNumber=1; i<=rowInputNumber-rowInputCheckbox; i++, j++, rowNumber++){
             if(rowInput[i].checked != true){
                 console.log(rowNumber+"行目のcheckboxはチェックされていません");
                 rowInput[i].disabled = true;
@@ -244,8 +257,7 @@
 
 
 
-    function confirmTest2(){
-        confirmBlockElementWrapper = document.getElementById('containerWrapper');
+    function confirmTest2(element){
         confirmBlockElement = document.getElementById('aaa');
 
 
@@ -254,15 +266,18 @@
 
 
 
-        testtest = document.querySelectorAll('input[type="checkbox"]:checked');
-        console.log(testtest[0].parentNode.parentNode)
+        checkedBoxList = document.querySelectorAll('input[type="checkbox"]:checked');
 
 
-        for(i=0; i<testtest.length; i++){
-            rowInput = testtest[i].parentNode.parentElement.querySelectorAll("td input");
-            rowSelect = testtest[i].parentNode.parentElement.querySelectorAll("td select");
+
+        for(i=0; i<checkedBoxList.length; i++){
+            // rowInput = checkedBoxList[i].parentNode.parentElement.querySelectorAll("div input");
+            // rowSelect = checkedBoxList[i].parentNode.parentElement.querySelectorAll("div select");
+            rowInput = checkedBoxList[i].parentNode.parentElement.querySelectorAll("div input");
+            rowSelect = checkedBoxList[i].parentNode.parentElement.querySelectorAll("div select");
             
-            rowImg = testtest[i].parentNode.parentElement.querySelector("td img");
+            
+            rowImg = checkedBoxList[i].parentNode.parentElement.querySelector("div img");
             console.log(rowImg.currentSrc);
             rowImgElement = document.createElement('img');
             rowImgElement.src = rowImg.currentSrc;
@@ -386,27 +401,46 @@
             // console.log(select.parentNode.parentNode.querySelector('input').id);
             editId = select.parentNode.parentNode.querySelector('input').id;
             document.getElementById(editId).checked = true;
-            
+            document.getElementById('updateButton').disabled = false;
         });
 
     });
 
     document.querySelectorAll('input').forEach(function(input){
 
-        input.addEventListener("click", function(){
-            // console.log(select.parentNode.parentNode.querySelector('input').id);
-            editId = input.parentNode.parentNode.querySelector('input').id;
-            document.getElementById(editId).checked = true;
-            
+        if(input.type != "checkbox"){
+            input.addEventListener("click", function(){
+                // console.log(select.parentNode.parentNode.querySelector('input').id);
+                editId = input.parentNode.parentNode.querySelector('input').id;
+                document.getElementById(editId).checked = true;
+                document.getElementById('updateButton').disabled = false;
+            });
+        }
+        
+    });
+
+    document.querySelector('.modal').addEventListener('show.bs.modal', function () {
+        document.getElementById('openCustomModal').innerText = "ダイアログを閉じる";
+        // document.getElementById('openCustomModal').style.display = "none";
+        // document.getElementById('updateButton').style.display = "block";
+    });
+
+    document.querySelector('.modal').addEventListener('hide.bs.modal', function () {
+        document.getElementById('openCustomModal').innerText = "ダイアログを開く";
+        // document.getElementById('openCustomModal').style.display = "block";
+        // document.getElementById('updateButton').style.display = "none";
+    });    
+
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(check){
+        check.addEventListener('change', function(){
+            checkedboxCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            showUpdateButton = document.getElementById('updateButton');
+            if(checkedboxCount == 0){
+                showUpdateButton.disabled = true;
+            }else{
+                showUpdateButton.disabled = false;
+            }
         });
     });
 
-    document.getElementById('containerWrapper').addEventListener('click', function(event){
-        console.log(event.target);
-        if(event.target === this){
-            document.getElementById('containerWrapper').style.display = "none";
-        }else{
-            
-        }
-    });
 </script>

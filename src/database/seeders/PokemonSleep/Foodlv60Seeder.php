@@ -16,6 +16,46 @@ class Foodlv60Seeder extends Seeder
     {
         //
         /*
+        // 20241225に追加
+        DB::table('foodlv60s')->insert([
+            ['id'=>921,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','food3'=>'とくせんエッグ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','food3'=>'とくせんエッグ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','food3'=>'とくせんエッグ','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241225に追加
+        DB::table('foodlv60s')->insert([
+            ['id'=>37,'food1'=>'ワカクサ大豆','food2'=>'ワカクサコーン','food3'=>'ほっこりポテト','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>38,'food1'=>'ワカクサ大豆','food2'=>'ワカクサコーン','food3'=>'ほっこりポテト','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>921,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','food3'=>'とくせんエッグ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','food3'=>'とくせんエッグ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','food3'=>'とくせんエッグ','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241217に追加
+        DB::table('foodlv60s')->insert([
+        ]);
+        */
+
+        /*
+        // 20241217に追加
+        DB::table('foodlv60s')->insert([
+        ]);
+        */
+
+        /*
+        // 20241204に追加
+        DB::table('foodlv60s')->insert([
+            ['id'=>215,'food1'=>'マメミート','food2'=>'とくせんエッグ','food3'=>'ワカクサ大豆','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>461,'food1'=>'マメミート','food2'=>'とくせんエッグ','food3'=>'ワカクサ大豆','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241029に追加
         DB::table('foodlv60s')->insert([
             ['id'=>778,'food1'=>'とくせんリンゴ','food2'=>'めざましコーヒー','food3'=>'あじわいキノコ','created_at'=>now(),'updated_at'=>now()],

@@ -16,9 +16,9 @@
                         <td><input class="test" type="checkbox" name="deleteId[]" value="{{$r->id}}"></td>
                         <td>{{$r->id}}</td>
                         @if($r->remarks == "色違い")
-                            <td><img src="{{asset('storage')}}/{{$r->shiny_image_path}}" alt="{{$r->own_pokemon_name}}"></td>
+                            <td><img src="{{$r->shiny_image_path}}" alt="{{$r->own_pokemon_name}}"></td>
                         @else
-                            <td><img src="{{asset('storage')}}/{{$r->image_path}}" alt="{{$r->own_pokemon_name}}"></td>
+                            <td><img src="{{$r->image_path}}" alt="{{$r->own_pokemon_name}}"></td>
                         @endif
                         <td>{{$r->encyclopedia_number}}</td>
                         <td>{{$r->own_pokemon_name}}</td>

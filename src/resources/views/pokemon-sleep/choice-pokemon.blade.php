@@ -45,7 +45,7 @@
     <!-- document.createElementメソッドを実行したときのid名設定用 -->
     <input id="tableRowCount" type="hidden" name="hiddenCount" value="0">
     <!-- 画像のsrc用 -->
-    <input id="tableImgSrc" type="hidden" value="{{asset('storage/images/')}}"/>
+    <input id="tableImgSrc" type="hidden" value="images"/>
     
 
 

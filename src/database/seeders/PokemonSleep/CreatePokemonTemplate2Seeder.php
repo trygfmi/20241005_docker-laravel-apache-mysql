@@ -16,6 +16,46 @@ class CreatePokemonTemplate2Seeder extends Seeder
     {
         //
         /*
+        // 20241225に追加
+        DB::table('create_pokemon_template2s')->insert([
+            ['id'=>921,'food_lv1_id'=>921,'food_lv30_id'=>921,'food_lv60_id'=>921,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food_lv1_id'=>922,'food_lv30_id'=>922,'food_lv60_id'=>922,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food_lv1_id'=>923,'food_lv30_id'=>923,'food_lv60_id'=>923,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241225に追加
+        DB::table('create_pokemon_template2s')->insert([
+            ['id'=>37,'food_lv1_id'=>37,'food_lv30_id'=>37,'food_lv60_id'=>37,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>38,'food_lv1_id'=>38,'food_lv30_id'=>38,'food_lv60_id'=>38,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>921,'food_lv1_id'=>921,'food_lv30_id'=>921,'food_lv60_id'=>921,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food_lv1_id'=>922,'food_lv30_id'=>922,'food_lv60_id'=>922,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food_lv1_id'=>923,'food_lv30_id'=>923,'food_lv60_id'=>923,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241217に追加
+        DB::table('create_pokemon_template2s')->insert([
+        ]);
+        */
+
+        /*
+        // 20241217に追加
+        DB::table('create_pokemon_template2s')->insert([
+        ]);
+        */
+
+        /*
+        // 20241204に追加
+        DB::table('create_pokemon_template2s')->insert([
+            ['id'=>215,'food_lv1_id'=>215,'food_lv30_id'=>215,'food_lv60_id'=>215,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>461,'food_lv1_id'=>461,'food_lv30_id'=>461,'food_lv60_id'=>461,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241029に追加
         DB::table('create_pokemon_template2s')->insert([
             ['id'=>778,'food_lv1_id'=>778,'food_lv30_id'=>778,'food_lv60_id'=>778,'created_at'=>now(),'updated_at'=>now()],

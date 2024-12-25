@@ -132,3 +132,13 @@ Route::post('own-pokemon-complete-edit-pokemon-sleep', [OwnPokemonCompleteContro
 
 
 
+Route::get('own-pokemon-complete-edit2-pokemon-sleep', [OwnPokemonCompleteController::class, 'editIndex2'])
+->name('own-pokemon-complete-edit2-pokemon-sleep-editIndex2');
+
+
+
+Route::post('own-pokemon-complete-edit2-pokemon-sleep', [OwnPokemonCompleteController::class, 'edit2'])
+->name('own-pokemon-complete-edit2-pokemon-sleep-edit2');
+
+
+
