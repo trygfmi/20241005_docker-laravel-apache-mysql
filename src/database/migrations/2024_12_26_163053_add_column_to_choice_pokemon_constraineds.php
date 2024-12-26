@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('choice_pokemon_constraindes', function (Blueprint $table) {
+        Schema::table('choice_pokemon_constraineds', function (Blueprint $table) {
             //
             $table->string('image_path')->nullable();
         });
