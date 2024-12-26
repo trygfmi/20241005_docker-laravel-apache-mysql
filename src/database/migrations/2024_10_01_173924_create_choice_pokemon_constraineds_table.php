@@ -15,9 +15,9 @@ return new class extends Migration
             $table->unsignedBigInteger('id')->primary();
             $table->string('name')->colattion('utf8mb4_bin');
             $table->unique(['id', 'name']);
-            $table->foreignid('create_pokemon_template_id')->constrained('create_pokemon_templates')->onDelete('cascade');
-            $table->foreignid('create_pokemon_template2_id')->constrained('create_pokemon_template2s')->onDelete('cascade');
-            $table->foreignid('create_pokemon_template3_id')->constrained('create_pokemon_template3s')->onDelete('cascade');
+            // $table->foreignid('create_pokemon_template_id')->constrained('create_pokemon_templates')->onDelete('cascade');
+            // $table->foreignid('create_pokemon_template2_id')->constrained('create_pokemon_template2s')->onDelete('cascade');
+            // $table->foreignid('create_pokemon_template3_id')->constrained('create_pokemon_template3s')->onDelete('cascade');
             $table->timestamps();
         });
     }

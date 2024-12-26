@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('choice_pokemon', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->unique(['id', 'name']);
-            // $table->foreignid('create_pokemon_template_id')->constrained('create_pokemon_templates');
-            $table->timestamps();
+        Schema::table('choice_pokemon_constraindes', function (Blueprint $table) {
+            //
+            $table->string('image_path')->nullable();
         });
     }
 
@@ -25,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('choice_pokemon');
+        Schema::table('choice_pokemon_constrainds', function (Blueprint $table) {
+            //
+        });
     }
 };
