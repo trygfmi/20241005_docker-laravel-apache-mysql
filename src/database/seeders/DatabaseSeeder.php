@@ -47,5 +47,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(PersonalitySeeder::class);
         // $this->call(OwnPokemonCompleteSeeder::class);
         // $this->call(OwnPokemonCompleteSeederSeeder::class);
+        // $this->call(BackupSeeder::class)
     }
 }
