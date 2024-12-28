@@ -179,7 +179,7 @@ class BackupSeeder extends Seeder
         ]);
 
 
-        
+
         DB::table('foodlv30s')->insert([
             ['id'=>921,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
             ['id'=>922,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
@@ -1035,14 +1035,14 @@ class BackupSeeder extends Seeder
 
 
         DB::table('choice_pokemon_constraineds')->insert([
-            ['id'=>921,'name'=>'パモ','create_pokemon_template_id'=>921,'create_pokemon_template2_id'=>921,'create_pokemon_template3_id'=>921,'created_at'=>now(),'updated_at'=>now()],
-            ['id'=>922,'name'=>'パモット','create_pokemon_template_id'=>922,'create_pokemon_template2_id'=>922,'create_pokemon_template3_id'=>922,'created_at'=>now(),'updated_at'=>now()],
-            ['id'=>923,'name'=>'パーモット','create_pokemon_template_id'=>923,'create_pokemon_template2_id'=>923,'create_pokemon_template3_id'=>923,'created_at'=>now(),'updated_at'=>now()],
-            ['id'=>215,'name'=>'ニューラ','create_pokemon_template_id'=>215,'create_pokemon_template2_id'=>215,'create_pokemon_template3_id'=>215,'created_at'=>now(),'updated_at'=>now()],
-            ['id'=>461,'name'=>'マニューラ','create_pokemon_template_id'=>461,'create_pokemon_template2_id'=>461,'create_pokemon_template3_id'=>461,'created_at'=>now(),'updated_at'=>now()],
-            ['id'=>778,'name'=>'ミミッキュ','create_pokemon_template_id'=>778,'create_pokemon_template2_id'=>778,'create_pokemon_template3_id'=>778,'created_at'=>now(),'updated_at'=>now()],
-            ['id'=>425,'name'=>'フワンテ','create_pokemon_template_id'=>425,'create_pokemon_template2_id'=>425,'create_pokemon_template3_id'=>425,'created_at'=>now(),'updated_at'=>now()],
-            ['id'=>426,'name'=>'フワライド','create_pokemon_template_id'=>426,'create_pokemon_template2_id'=>426,'create_pokemon_template3_id'=>426,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>921,'name'=>'パモ', 'image_path'=>'images/921.png', 'create_pokemon_template_id'=>921,'create_pokemon_template2_id'=>921,'create_pokemon_template3_id'=>921,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'name'=>'パモット', 'image_path'=>'images/922.png', 'create_pokemon_template_id'=>922,'create_pokemon_template2_id'=>922,'create_pokemon_template3_id'=>922,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'name'=>'パーモット', 'image_path'=>'images/923.png', 'create_pokemon_template_id'=>923,'create_pokemon_template2_id'=>923,'create_pokemon_template3_id'=>923,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>215,'name'=>'ニューラ', 'image_path'=>'images/215.png', 'create_pokemon_template_id'=>215,'create_pokemon_template2_id'=>215,'create_pokemon_template3_id'=>215,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>461,'name'=>'マニューラ', 'image_path'=>'images/461.png', 'create_pokemon_template_id'=>461,'create_pokemon_template2_id'=>461,'create_pokemon_template3_id'=>461,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>778,'name'=>'ミミッキュ', 'image_path'=>'images/778.png', 'create_pokemon_template_id'=>778,'create_pokemon_template2_id'=>778,'create_pokemon_template3_id'=>778,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>425,'name'=>'フワンテ', 'image_path'=>'images/425.png', 'create_pokemon_template_id'=>425,'create_pokemon_template2_id'=>425,'create_pokemon_template3_id'=>425,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>426,'name'=>'フワライド', 'image_path'=>'images/426.png', 'create_pokemon_template_id'=>426,'create_pokemon_template2_id'=>426,'create_pokemon_template3_id'=>426,'created_at'=>now(),'updated_at'=>now()],
             ['id'=>1, 'name'=>'フシギダネ', 'image_path'=>'images/1.png', 'create_pokemon_template_id'=>1, 'create_pokemon_template2_id'=>1,  'create_pokemon_template3_id'=>1, 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>2, 'name'=>'フシギソウ', 'image_path'=>'images/2.png', 'create_pokemon_template_id'=>2, 'create_pokemon_template2_id'=>2,  'create_pokemon_template3_id'=>2, 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>3, 'name'=>'フシギバナ', 'image_path'=>'images/3.png', 'create_pokemon_template_id'=>3, 'create_pokemon_template2_id'=>3,  'create_pokemon_template3_id'=>3, 'created_at'=>now(), 'updated_at'=>now()],

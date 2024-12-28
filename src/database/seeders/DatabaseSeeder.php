@@ -18,6 +18,7 @@ use Database\Seeders\PokemonSleep\OwnPokemonCompleteSeeder;
 use Database\Seeders\PokemonSleep\CreatePokemonTemplateSeeder;
 use Database\Seeders\PokemonSleep\CreatePokemonTemplate2Seeder;
 use Database\Seeders\PokemonSleep\OwnPokemonCompleteSeederSeeder;
+use Database\Seeders\PokemonSleep\BackupSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -47,6 +48,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(PersonalitySeeder::class);
         // $this->call(OwnPokemonCompleteSeeder::class);
         // $this->call(OwnPokemonCompleteSeederSeeder::class);
-        // $this->call(BackupSeeder::class)
+        // $this->call(BackupSeeder::class);
     }
 }
