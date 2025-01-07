@@ -6,6 +6,15 @@
 
 
 
+trap 'exit 1' ERR 
+
+
+
+# echo "input_main_skill_file.sh"
+# false
+
+
+
 # 読み込むファイル名
 inputFileName=$1
 
@@ -23,20 +32,8 @@ fi
 
 
 
-startLineNumber=18
-insertLineNumber=18
 # today=$(date +"%Y-%m-%d")
 today=$2
-writingFile=$(readlink main_skill_seeder_symbolic)
-
-
-
-sed -i '' ''$insertLineNumber'i\
-        // '$today'に追加\
-        DB::table('\'main_skills\'')->insert([\
-' $writingFile
-# 最後に挿入した文字列全体をコメントアウトするために追加した行数分、数をプラスしています
-insertLineNumber=$((insertLineNumber+2))
 
 
 
@@ -45,40 +42,7 @@ while read -r line; do
   array=($line)
 #   newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}", \\'food1\\'=>\\'"${array[1]}"\\', \\'food2\\'=>\\'"${array[2]}"\\', \\'created_at\\'=>now(), \\'updated_at\\'=>now()],")
   newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}",\\'main_skill\\'=>\\'"${array[1]}"\\',\\'created_at\\'=>now(),\\'updated_at\\'=>now()],")
-  sed -i '' ''$insertLineNumber'i\
-            '$newPokemonRow'\
-' $writingFile
-  insertLineNumber=$((insertLineNumber+1))
+  echo $newPokemonRow >> $today/insertDataToSeeder/main_skill.txt
 done < $inputFileName
-
-
-
-sed -i '' ''$insertLineNumber'i\
-        ]);\
-' $writingFile
-insertLineNumber=$((insertLineNumber+1))
-
-
-
-# <<test
-cd ../../../src
-php artisan db:seed
-cd ../shellscript/pokemonsleep/new_register_new_pokemon
-# test
-
-
-
-sed -i '' ''$startLineNumber'i\
-        /*\
-' $writingFile
-insertLineNumber=$((insertLineNumber+1))
-
-
-
-sed -i '' ''$insertLineNumber'i\
-        */\
-\
-' $writingFile
-
 
 

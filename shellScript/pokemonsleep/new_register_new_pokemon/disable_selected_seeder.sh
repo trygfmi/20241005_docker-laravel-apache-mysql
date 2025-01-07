@@ -37,6 +37,15 @@ function change(){
 
 
 
+trap 'exit 1' ERR 
+
+
+
+# echo "disable_selected_seedersh"
+# false
+
+
+
 echo $@
 echo $#
 

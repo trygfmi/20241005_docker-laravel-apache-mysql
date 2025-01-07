@@ -1,3 +1,10 @@
+
+
+
+trap 'exit 1' ERR 
+
+
+
 function change(){
 
     if [ $1 == 1 ] && [ $2 == true ]; then
@@ -37,13 +44,14 @@ function change(){
 }
 
 
+argumentList=$@
+argumentNumber=$#
+echo $argumentList
+echo $argumentNumber
 
-echo $@
-echo $#
 
 
-
-for((i=1; i <= $#; i++)); do
+for((i=1; i <= $argumentNumber; i++)); do
     if [ ${!i} == true ]; then
         change $i ${!i}
     else

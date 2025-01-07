@@ -3,20 +3,28 @@
 
 
 
+# エラーが起きた時に参照するファイルを宣言
+source ./errorTest.sh
+# trap '参照するメソッド 引数; 終了後の処理' トラップの種類
+trap 'error_handler $today; exit 1' ERR 
+
+
+
 # originFile.txtから抽出したデータを格納するフォルダが無ければ作成します
 # today=$(date +%Y%m%d)
 today=$2
 # echo $today
-if [ -d "$2" ]; then
+if [ -d "$today" ]; then
     echo "フォルダは既に作成済み"
 else
-    echo "$2フォルダを作成"
-    mkdir $2
+    echo $today"フォルダを作成"
+    mkdir $today
+    mkdir $today/insertDataToSeeder
 fi
 
 
 
-# シェルの引数からファイル名を代入
+# シェルの引数からファイル名を取得
 originFile=$1
 
 
@@ -28,8 +36,12 @@ if [ -n "$last_char" ] && [ "$last_char" != "\n" ]; then
 fi
 
 
+
 # foodlv1 foodlv30 foodlv60 template template2 main_skill template3 choice sub_skill personality ownpokemon
-isSelectedSeeder=(true true true true true false true true false false false)
+isSelectedSeeder=(false false false false false false false false false false false)
+isPokemonSelected=false
+isMainSkillSelected=false
+
 # 読み込んだファイルから1行ずつ読み出して、参照するデータをファイルに書き込みます
 while read line; do
     array=($line)
@@ -44,11 +56,25 @@ while read line; do
         echo "${array[1]} ${array[3]} ${array[4]}" >> $today/food_lv30_data.txt
         echo "${array[1]} ${array[3]} ${array[4]} ${array[5]}" >> $today/food_lv60_data.txt
 
+        if [ $isPokemonSelected == false ]; then
+            isSelectedSeeder[0]=true
+            isSelectedSeeder[1]=true
+            isSelectedSeeder[2]=true
+            isSelectedSeeder[3]=true
+            isSelectedSeeder[4]=true
+            isSelectedSeeder[6]=true
+            isSelectedSeeder[7]=true
+
+            isPokemonSelected=true
+        fi
+
     elif [ ${array[0]} == "main_skill" ]; then
         echo "${array[1]} ${array[2]} " >> $today/main_skill_data.txt
 
-        if [ "${isSelectedSeeder[5]}" == false ]; then
+        if [ $isMainSkillSelected == false ]; then
             isSelectedSeeder[5]=true
+
+            isMainSkillSelected=true
         fi
     fi
 
@@ -58,11 +84,44 @@ done < $originFile
 
 
 echo ${isSelectedSeeder[@]}
+
+
+
+
+# 引数のデータファイルを利用して、seederファイルに書き込むための文字列を生成します
+# <<test
+./input_food_lv1_file.sh  $today/food_lv1_data.txt $today
+./input_food_lv30_file.sh $today/food_lv30_data.txt $today
+./input_food_lv60_file.sh $today/food_lv60_data.txt $today
+./input_create_pokemon_template_file.sh $today/create_pokemon_template_data.txt $today
+./input_create_pokemon_template2_file.sh $today/create_pokemon_template2_data.txt $today
+if [ ${isSelectedSeeder[5]} == true ]; then
+    ./input_main_skill_file.sh $today/main_skill_data.txt $today
+fi
+./input_create_pokemon_template3_file.sh $today/create_pokemon_template3_data.txt $today
+./input_choice_pokemon_constrained_file.sh $today/choice_pokemon_constrained_data.txt $today
+# test
+
+
+
+databaseName=laravel
+user=user
+password=password
+
+./makeTestPreTables.sh $databaseName $user $password $today
+trap 'error_handler_after_makeTestPreTables "register_new_pokemon.sh" "after_makeTestPreTables.sh"; exit 1' ERR
+./makeTestPreTablesSeeder.sh
+trap 'error_handler_after_makeTestPreTablesSeeder "register_new_pokemon.sh" "after_makeTestPreTablesSeeder.sh"; exit 1' ERR
+./insertTestPreTablesSeeder.sh $today ${isSelectedSeeder[@]}
+./insertTestPreTables.sh
+./deleteTestPreTablesSeeder.sh
+./dropTestPreTables.sh
+
+
+
 ./enable_selected_seeder.sh ${isSelectedSeeder[@]}
+trap 'error_handler_after_enable_selected_seeder "register_new_pokemon.sh" "enable_selected_seeder.sh"; exit 1' ERR
 
-
-
-sleep 3
 
 
 sed -i '' 's|DB_HOST=laravel_db2|# DB_HOST=laravel_db2|g' ../../../src/.env
@@ -70,19 +129,12 @@ sed -i '' 's|# DB_HOST=127.0.0.1|DB_HOST=127.0.0.1|g' ../../../src/.env
 
 
 
-# 参照したデータファイルを利用してseederファイルに書き込んで、ウェブ上で利用できるよう反映します
-# <<test
-./input_food_lv1_file.sh  $2/food_lv1_data.txt $2
-./input_food_lv30_file.sh $2/food_lv30_data.txt $2
-./input_food_lv60_file.sh $2/food_lv60_data.txt $2
-./input_create_pokemon_template_file.sh $2/create_pokemon_template_data.txt $2
-./input_create_pokemon_template2_file.sh $2/create_pokemon_template2_data.txt $2
-if [ ${isSelectedSeeder[5]} == true ]; then
-    ./input_main_skill_file.sh $2/main_skill_data.txt $2
-fi
-./input_create_pokemon_template3_file.sh $2/create_pokemon_template3_data.txt $2
-./input_choice_pokemon_constrained_file.sh $2/choice_pokemon_constrained_data.txt $2
-# test
+# テストテーブルで検証したので、エラーが発生しない
+./outputFoodlv1DataIntoSeeder.sh $today/insertDataToSeeder/foodlv1.txt $today
+trap 'error_handler_after_outputFoodlv1 "register_new_pokemon.sh" "outputFoodlv1"; exit 1' ERR
+./outputFoodlv30DataIntoSeeder.sh $today/insertDataToSeeder/foodlv30.txt $today
+false
+exit 1
 
 
 

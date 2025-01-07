@@ -5,8 +5,19 @@
 # ../../../src/database/seeders/PokemonSleep/Foodlv30Seeder.php
 
 
+
+trap 'exit 1' ERR 
+
+
+
+# echo "input_food_lv30_file.sh"
+# false
+
+
+
 # 読み込むファイル名
 inputFileName=$1
+
 
 
 # 読み込むファイルの末尾に改行がないと最後の行が読み込まれないので改行を入れる処理を記述しています
@@ -22,20 +33,8 @@ fi
 
 
 
-startLineNumber=18
-insertLineNumber=18
 # today=$(date +"%Y-%m-%d")
 today=$2
-writingFile=$(readlink food_lv30_seeder_symbolic)
-
-
-
-sed -i '' ''$insertLineNumber'i\
-        // '$today'に追加\
-        DB::table('\'foodlv30s\'')->insert([\
-' $writingFile
-# 最後に挿入した文字列全体をコメントアウトするために追加した行数分、数をプラスしています
-insertLineNumber=$((insertLineNumber+2))
 
 
 
@@ -44,40 +43,7 @@ while read -r line; do
   array=($line)
 #   newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}", \\'food1\\'=>\\'"${array[1]}"\\', \\'food2\\'=>\\'"${array[2]}"\\', \\'created_at\\'=>now(), \\'updated_at\\'=>now()],")
   newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}",\\'food1\\'=>\\'"${array[1]}"\\',\\'food2\\'=>\\'"${array[2]}"\\',\\'created_at\\'=>now(),\\'updated_at\\'=>now()],")
-  sed -i '' ''$insertLineNumber'i\
-            '$newPokemonRow'\
-' $writingFile
-  insertLineNumber=$((insertLineNumber+1))
+  echo $newPokemonRow >> $today/insertDataToSeeder/foodlv30.txt
 done < $inputFileName
-
-
-
-sed -i '' ''$insertLineNumber'i\
-        ]);\
-' $writingFile
-insertLineNumber=$((insertLineNumber+1))
-
-
-
-# <<test
-cd ../../../src
-php artisan db:seed
-cd ../shellscript/pokemonsleep/new_register_new_pokemon
-# test
-
-
-
-sed -i '' ''$startLineNumber'i\
-        /*\
-' $writingFile
-insertLineNumber=$((insertLineNumber+1))
-
-
-
-sed -i '' ''$insertLineNumber'i\
-        */\
-\
-' $writingFile
-
 
 

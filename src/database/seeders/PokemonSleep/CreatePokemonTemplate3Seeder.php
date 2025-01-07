@@ -16,6 +16,51 @@ class CreatePokemonTemplate3Seeder extends Seeder
     {
         //
         /*
+        // 20241229に追加
+        DB::table('create_pokemon_template3s')->insert([
+            ['id'=>921,'food_lv1_id'=>921,'food_lv30_id'=>921,'food_lv60_id'=>921,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food_lv1_id'=>922,'food_lv30_id'=>922,'food_lv60_id'=>922,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food_lv1_id'=>923,'food_lv30_id'=>923,'food_lv60_id'=>923,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('create_pokemon_template3s')->insert([
+            ['id'=>921,'food_lv1_id'=>921,'food_lv30_id'=>921,'food_lv60_id'=>921,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food_lv1_id'=>922,'food_lv30_id'=>922,'food_lv60_id'=>922,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food_lv1_id'=>923,'food_lv30_id'=>923,'food_lv60_id'=>923,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('create_pokemon_template3s')->insert([
+            ['id'=>921,'food_lv1_id'=>921,'food_lv30_id'=>921,'food_lv60_id'=>921,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food_lv1_id'=>922,'food_lv30_id'=>922,'food_lv60_id'=>922,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food_lv1_id'=>923,'food_lv30_id'=>923,'food_lv60_id'=>923,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('create_pokemon_template3s')->insert([
+            ['id'=>921,'food_lv1_id'=>921,'food_lv30_id'=>921,'food_lv60_id'=>921,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food_lv1_id'=>922,'food_lv30_id'=>922,'food_lv60_id'=>922,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food_lv1_id'=>923,'food_lv30_id'=>923,'food_lv60_id'=>923,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('create_pokemon_template3s')->insert([
+            ['id'=>921,'food_lv1_id'=>921,'food_lv30_id'=>921,'food_lv60_id'=>921,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food_lv1_id'=>922,'food_lv30_id'=>922,'food_lv60_id'=>922,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food_lv1_id'=>923,'food_lv30_id'=>923,'food_lv60_id'=>923,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241225に追加
         DB::table('create_pokemon_template3s')->insert([
             ['id'=>921,'food_lv1_id'=>921,'food_lv30_id'=>921,'food_lv60_id'=>921,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],

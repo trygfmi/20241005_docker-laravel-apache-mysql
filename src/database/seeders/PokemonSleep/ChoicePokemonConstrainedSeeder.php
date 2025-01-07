@@ -16,6 +16,51 @@ class ChoicePokemonConstrainedSeeder extends Seeder
     {
         //
         /*
+        // 20241229に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>921,'name'=>'パモ','create_pokemon_template_id'=>921,'create_pokemon_template2_id'=>921,'create_pokemon_template3_id'=>921,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/921.png],
+            ['id'=>922,'name'=>'パモット','create_pokemon_template_id'=>922,'create_pokemon_template2_id'=>922,'create_pokemon_template3_id'=>922,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/922.png],
+            ['id'=>923,'name'=>'パーモット','create_pokemon_template_id'=>923,'create_pokemon_template2_id'=>923,'create_pokemon_template3_id'=>923,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/923.png],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>921,'name'=>'パモ','create_pokemon_template_id'=>921,'create_pokemon_template2_id'=>921,'create_pokemon_template3_id'=>921,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/921.png],
+            ['id'=>922,'name'=>'パモット','create_pokemon_template_id'=>922,'create_pokemon_template2_id'=>922,'create_pokemon_template3_id'=>922,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/922.png],
+            ['id'=>923,'name'=>'パーモット','create_pokemon_template_id'=>923,'create_pokemon_template2_id'=>923,'create_pokemon_template3_id'=>923,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/923.png],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>921,'name'=>'パモ','create_pokemon_template_id'=>921,'create_pokemon_template2_id'=>921,'create_pokemon_template3_id'=>921,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/921.png],
+            ['id'=>922,'name'=>'パモット','create_pokemon_template_id'=>922,'create_pokemon_template2_id'=>922,'create_pokemon_template3_id'=>922,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/922.png],
+            ['id'=>923,'name'=>'パーモット','create_pokemon_template_id'=>923,'create_pokemon_template2_id'=>923,'create_pokemon_template3_id'=>923,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/923.png],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>921,'name'=>'パモ','create_pokemon_template_id'=>921,'create_pokemon_template2_id'=>921,'create_pokemon_template3_id'=>921,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/921.png],
+            ['id'=>922,'name'=>'パモット','create_pokemon_template_id'=>922,'create_pokemon_template2_id'=>922,'create_pokemon_template3_id'=>922,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/922.png],
+            ['id'=>923,'name'=>'パーモット','create_pokemon_template_id'=>923,'create_pokemon_template2_id'=>923,'create_pokemon_template3_id'=>923,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/923.png],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('choice_pokemon_constraineds')->insert([
+            ['id'=>921,'name'=>'パモ','create_pokemon_template_id'=>921,'create_pokemon_template2_id'=>921,'create_pokemon_template3_id'=>921,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/921.png],
+            ['id'=>922,'name'=>'パモット','create_pokemon_template_id'=>922,'create_pokemon_template2_id'=>922,'create_pokemon_template3_id'=>922,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/922.png],
+            ['id'=>923,'name'=>'パーモット','create_pokemon_template_id'=>923,'create_pokemon_template2_id'=>923,'create_pokemon_template3_id'=>923,'created_at'=>now(),'updated_at'=>now(),'image_path'=>images/923.png],
+        ]);
+        */
+
+        /*
         // 20241225に追加
         DB::table('choice_pokemon_constraineds')->insert([
             ['id'=>921,'name'=>'パモ','create_pokemon_template_id'=>921,'create_pokemon_template2_id'=>921,'create_pokemon_template3_id'=>921,'created_at'=>now(),'updated_at'=>now()],

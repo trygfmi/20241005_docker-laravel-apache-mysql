@@ -6,8 +6,18 @@
 
 
 
+trap 'exit 1' ERR 
+
+
+
+# echo "input_choice_pokemon_constrained_file.sh"
+# false
+
+
+
 # 読み込むファイル名
 inputFileName=$1
+
 
 
 # 読み込むファイルの末尾に改行がないと最後の行が読み込まれないので改行を入れる処理を記述しています
@@ -23,20 +33,8 @@ fi
 
 
 
-startLineNumber=18
-insertLineNumber=18
 # today=$(date +"%Y-%m-%d")
 today=$2
-writingFile=$(readlink choice_pokemon_constrained_seeder_symbolic)
-
-
-
-sed -i '' ''$insertLineNumber'i\
-        // '$today'に追加\
-        DB::table('\'choice_pokemon_constraineds\'')->insert([\
-' $writingFile
-# 最後に挿入した文字列全体をコメントアウトするために追加した行数分、数をプラスしています
-insertLineNumber=$((insertLineNumber+2))
 
 
 
@@ -44,39 +42,8 @@ insertLineNumber=$((insertLineNumber+2))
 while read -r line; do
   array=($line)
 #   newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}", \\'food1\\'=>\\'"${array[1]}"\\', \\'food2\\'=>\\'"${array[2]}"\\', \\'created_at\\'=>now(), \\'updated_at\\'=>now()],")
-  newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}",\\'name\\'=>\\'"${array[1]}"\\',\\'create_pokemon_template_id\\'=>"${array[2]}",\\'create_pokemon_template2_id\\'=>"${array[3]}",\\'create_pokemon_template3_id\\'=>"${array[4]}",\\'created_at\\'=>now(),\\'updated_at\\'=>now()],")
-  sed -i '' ''$insertLineNumber'i\
-            '$newPokemonRow'\
-' $writingFile
-  insertLineNumber=$((insertLineNumber+1))
+  newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}",\\'name\\'=>\\'"${array[1]}"\\',\\'create_pokemon_template_id\\'=>"${array[2]}",\\'create_pokemon_template2_id\\'=>"${array[3]}",\\'create_pokemon_template3_id\\'=>"${array[4]}",\\'created_at\\'=>now(),\\'updated_at\\'=>now(),\\'image_path\\'=>"images/${array[0]}.png"],")
+  echo $newPokemonRow >> $today/insertDataToSeeder/choice_pokemon_constrained.txt
 done < $inputFileName
-
-
-
-sed -i '' ''$insertLineNumber'i\
-        ]);\
-' $writingFile
-insertLineNumber=$((insertLineNumber+1))
-
-
-# <<test
-cd ../../../src
-php artisan db:seed
-cd ../shellscript/pokemonsleep/new_register_new_pokemon
-# test
-
-
-
-sed -i '' ''$startLineNumber'i\
-        /*\
-' $writingFile
-insertLineNumber=$((insertLineNumber+1))
-
-
-
-sed -i '' ''$insertLineNumber'i\
-        */\
-\
-' $writingFile
 
 

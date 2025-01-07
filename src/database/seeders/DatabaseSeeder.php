@@ -19,6 +19,7 @@ use Database\Seeders\PokemonSleep\CreatePokemonTemplateSeeder;
 use Database\Seeders\PokemonSleep\CreatePokemonTemplate2Seeder;
 use Database\Seeders\PokemonSleep\OwnPokemonCompleteSeederSeeder;
 use Database\Seeders\PokemonSleep\BackupSeeder;
+use Database\Seeders\PokemonSleep\TestPreTablesSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -49,5 +50,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(OwnPokemonCompleteSeeder::class);
         // $this->call(OwnPokemonCompleteSeederSeeder::class);
         // $this->call(BackupSeeder::class);
+        // $this->call(TestPreTablesSeeder::class);
     }
 }

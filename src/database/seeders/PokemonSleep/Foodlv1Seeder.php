@@ -16,6 +16,51 @@ class Foodlv1Seeder extends Seeder
     {
         //
         /*
+        // 20241229に追加
+        DB::table('foodlv1s')->insert([
+            ['id'=>921,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('foodlv1s')->insert([
+            ['id'=>921,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('foodlv1s')->insert([
+            ['id'=>921,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('foodlv1s')->insert([
+            ['id'=>921,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('foodlv1s')->insert([
+            ['id'=>921,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241225に追加
         DB::table('foodlv1s')->insert([
             ['id'=>921,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],

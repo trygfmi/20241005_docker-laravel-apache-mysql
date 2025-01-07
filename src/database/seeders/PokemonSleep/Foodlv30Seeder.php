@@ -16,6 +16,51 @@ class Foodlv30Seeder extends Seeder
     {
         //
         /*
+        // 20241229に追加
+        DB::table('foodlv30s')->insert([
+            ['id'=>921,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('foodlv30s')->insert([
+            ['id'=>921,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('foodlv30s')->insert([
+            ['id'=>921,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('foodlv30s')->insert([
+            ['id'=>921,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20241229に追加
+        DB::table('foodlv30s')->insert([
+            ['id'=>921,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>922,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+            ['id'=>923,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241225に追加
         DB::table('foodlv30s')->insert([
             ['id'=>921,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','created_at'=>now(),'updated_at'=>now()],
