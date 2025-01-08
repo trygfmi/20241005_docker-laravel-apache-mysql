@@ -15,6 +15,7 @@ class PersonalitySeeder extends Seeder
     public function run(): void
     {
         //
+        /*
         DB::table('personalities')->insert([
             ['id'=>1, 'personality'=>'さみしがり', 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>2, 'personality'=>'いじっぱり', 'created_at'=>now(), 'updated_at'=>now()],
@@ -42,5 +43,6 @@ class PersonalitySeeder extends Seeder
             ['id'=>24, 'personality'=>'きまぐれ', 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>25, 'personality'=>'まじめ', 'created_at'=>now(), 'updated_at'=>now()],
         ]);
+        */
     }
 }

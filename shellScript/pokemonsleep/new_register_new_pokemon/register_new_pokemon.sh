@@ -90,16 +90,39 @@ echo ${isSelectedSeeder[@]}
 
 # 引数のデータファイルを利用して、seederファイルに書き込むための文字列を生成します
 # <<test
-./input_food_lv1_file.sh  $today/food_lv1_data.txt $today
-./input_food_lv30_file.sh $today/food_lv30_data.txt $today
-./input_food_lv60_file.sh $today/food_lv60_data.txt $today
-./input_create_pokemon_template_file.sh $today/create_pokemon_template_data.txt $today
-./input_create_pokemon_template2_file.sh $today/create_pokemon_template2_data.txt $today
+if [ ${isSelectedSeeder[0]} == true ]; then
+    ./input_food_lv1_file.sh  $today/food_lv1_data.txt $today
+fi
+if [ ${isSelectedSeeder[1]} == true ]; then
+    ./input_food_lv30_file.sh $today/food_lv30_data.txt $today
+fi
+if [ ${isSelectedSeeder[2]} == true ]; then
+    ./input_food_lv60_file.sh $today/food_lv60_data.txt $today
+fi
+if [ ${isSelectedSeeder[3]} == true ]; then
+    ./input_create_pokemon_template_file.sh $today/create_pokemon_template_data.txt $today
+fi
+if [ ${isSelectedSeeder[4]} == true ]; then
+    ./input_create_pokemon_template2_file.sh $today/create_pokemon_template2_data.txt $today
+fi
 if [ ${isSelectedSeeder[5]} == true ]; then
     ./input_main_skill_file.sh $today/main_skill_data.txt $today
 fi
-./input_create_pokemon_template3_file.sh $today/create_pokemon_template3_data.txt $today
-./input_choice_pokemon_constrained_file.sh $today/choice_pokemon_constrained_data.txt $today
+if [ ${isSelectedSeeder[6]} == true ]; then
+    ./input_create_pokemon_template3_file.sh $today/create_pokemon_template3_data.txt $today
+fi
+if [ ${isSelectedSeeder[7]} == true ]; then
+    ./input_choice_pokemon_constrained_file.sh $today/choice_pokemon_constrained_data.txt $today
+fi
+if [ ${isSelectedSeeder[8]} == true ]; then
+    ./input_sub_skill_file.sh $today/sub_skill_data.txt $today
+fi
+if [ ${isSelectedSeeder[9]} == true ]; then
+    ./input_personality_file.sh $today/personality_data.txt $today
+fi
+if [ ${isSelectedSeeder[10]} == true ]; then
+    ./input_own_pokemon_file.sh $today/own_pokemon_data.txt $today
+fi
 # test
 
 
@@ -130,11 +153,40 @@ sed -i '' 's|# DB_HOST=127.0.0.1|DB_HOST=127.0.0.1|g' ../../../src/.env
 
 
 # テストテーブルで検証したので、エラーが発生しない
-./outputFoodlv1DataIntoSeeder.sh $today/insertDataToSeeder/foodlv1.txt $today
-trap 'error_handler_after_outputFoodlv1 "register_new_pokemon.sh" "outputFoodlv1"; exit 1' ERR
-./outputFoodlv30DataIntoSeeder.sh $today/insertDataToSeeder/foodlv30.txt $today
-false
-exit 1
+if [ ${isSelectedSeeder[0]} == true ]; then
+    ./outputFoodlv1DataIntoSeeder.sh $today/insertDataToSeeder/foodlv1.txt $today
+    trap 'error_handler_after_outputFoodlv1 "register_new_pokemon.sh" "outputFoodlv1"; exit 1' ERR
+fi
+if [ ${isSelectedSeeder[1]} == true ]; then
+    ./outputFoodlv30DataIntoSeeder.sh $today/insertDataToSeeder/foodlv30.txt $today
+fi
+if [ ${isSelectedSeeder[2]} == true ]; then
+    ./outputFoodlv60DataIntoSeeder.sh $today/insertDataToSeeder/foodlv60.txt $today
+fi
+if [ ${isSelectedSeeder[3]} == true ]; then
+    ./outputCreatePokemonTemplateDataIntoSeeder.sh $today/insertDataToSeeder/create_pokemon_template.txt $today
+fi
+if [ ${isSelectedSeeder[4]} == true ]; then
+    ./outputCreatePokemonTemplate2DataIntoSeeder.sh $today/insertDataToSeeder/create_pokemon_template2.txt $today
+fi
+if [ ${isSelectedSeeder[5]} == true ]; then
+    ./outputMainSkillDataIntoSeeder.sh $today/main_skill.txt $today
+fi
+if [ ${isSelectedSeeder[6]} == true ]; then
+    ./outputCreatePokemonTemplate3DataIntoSeeder.sh $today/insertDataToSeeder/create_pokemon_template3.txt $today
+fi
+if [ ${isSelectedSeeder[7]} == true ]; then
+    ./outputChoicePokemonConstrainedDataIntoSeeder.sh $today/insertDataToSeeder/choice_pokemon_constrained.txt $today
+fi
+if [ ${isSelectedSeeder[8]} == true ]; then
+    ./outputSubSkillDataIntoSeeder.sh $today/sub_skill.txt $today
+fi
+if [ ${isSelectedSeeder[9]} == true ]; then
+    ./outputPersonalityDataIntoSeeder.sh $today/personality.txt $today
+fi
+if [ ${isSelectedSeeder[10]} == true ]; then
+    ./outputOwnPokemonDataIntoSeeder.sh $today/own_pokemon.txt $today
+fi
 
 
 

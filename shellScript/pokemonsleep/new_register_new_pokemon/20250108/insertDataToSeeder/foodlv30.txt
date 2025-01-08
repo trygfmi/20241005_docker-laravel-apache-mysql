@@ -1,0 +1,1 @@
+[\'id\'=>1000,\'food1\'=>\'aaa\',\'food2\'=>\'aaa\',\'created_at\'=>now(),\'updated_at\'=>now()],

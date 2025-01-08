@@ -15,6 +15,7 @@ class SubSkillSeeder extends Seeder
     public function run(): void
     {
         //
+        /*
         DB::table('sub_skills')->insert([
             ['id'=>1, 'sub_skill'=>'スキル確率アップS', 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>2, 'sub_skill'=>'おてつだいスピードS', 'created_at'=>now(), 'updated_at'=>now()],
@@ -34,5 +35,6 @@ class SubSkillSeeder extends Seeder
             ['id'=>16, 'sub_skill'=>'リサーチEXPボーナス', 'created_at'=>now(), 'updated_at'=>now()],
             ['id'=>17, 'sub_skill'=>'ゆめのかけらボーナス', 'created_at'=>now(), 'updated_at'=>now()],
         ]);
+        */
     }
 }

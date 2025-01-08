@@ -54,7 +54,9 @@ insertLineNumber=$((insertLineNumber+1))
 
 
 
-# php artisan db:seed
+cd ../../../src
+php artisan db:seed
+cd ../shellScript/pokemonsleep/new_register_new_pokemon
 
 
 
@@ -70,5 +72,4 @@ sed -i '' ''$insertLineNumber'i\
 \
 ' $writingFile
 
-false
-exit 1
+

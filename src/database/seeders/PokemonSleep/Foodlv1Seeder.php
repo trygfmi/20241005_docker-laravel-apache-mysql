@@ -16,6 +16,13 @@ class Foodlv1Seeder extends Seeder
     {
         //
         /*
+        // 20250108に追加
+        DB::table('foodlv1s')->insert([
+            ['id'=>1000,'food1'=>'aaa','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241229に追加
         DB::table('foodlv1s')->insert([
             ['id'=>921,'food1'=>'リラックスカカオ','created_at'=>now(),'updated_at'=>now()],

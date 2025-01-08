@@ -16,6 +16,13 @@ class Foodlv60Seeder extends Seeder
     {
         //
         /*
+        // 20250108に追加
+        DB::table('foodlv60s')->insert([
+            ['id'=>1000,'food1'=>'aaa','food2'=>'aaa','food3'=>'aaa','created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20241229に追加
         DB::table('foodlv60s')->insert([
             ['id'=>921,'food1'=>'リラックスカカオ','food2'=>'モーモーミルク','food3'=>'とくせんエッグ','created_at'=>now(),'updated_at'=>now()],

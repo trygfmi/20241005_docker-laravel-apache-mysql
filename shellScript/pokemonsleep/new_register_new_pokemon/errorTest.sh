@@ -206,8 +206,8 @@ error_handler_output_foodlv1(){
     echo "insertLineNumber:"$insertLineNumber
 
 
-    sleep 2
     echo $targetFile
+    sleep 2
     sed -i '' ''$startLineNumber','$insertLineNumber'd' $targetFile
     sed -i '' '18d' $targetFile
 }
@@ -217,7 +217,6 @@ error_handler_output_foodlv30(){
     targetFile=$(readlink food_lv30_seeder_symbolic)
 
 
-    sleep 2
     echo "error"
     echo "エラーが起きたシェルスクリプト:"$placeOfErrorShellScript
     echo "startLineNumber:"$startLineNumber
@@ -225,8 +224,182 @@ error_handler_output_foodlv30(){
 
 
     echo $targetFile
+    sleep 2
     sed -i '' ''$startLineNumber','$insertLineNumber'd' $targetFile
     sed -i '' '18d' $targetFile
 
     error_handler_output_foodlv1
 }
+
+error_handler_output_foodlv60(){
+    placeOfErrorShellScript=$1
+    targetFile=$(readlink food_lv60_seeder_symbolic)
+
+
+    echo "error"
+    echo "エラーが起きたシェルスクリプト:"$placeOfErrorShellScript
+    echo "startLineNumber:"$startLineNumber
+    echo "insertLineNumber:"$insertLineNumber
+
+
+    echo $targetFile
+    sleep 2
+    sed -i '' ''$startLineNumber','$insertLineNumber'd' $targetFile
+    sed -i '' '18d' $targetFile
+
+    error_handler_output_foodlv30
+}
+
+error_handler_output_create_pokemon_template(){
+    placeOfErrorShellScript=$1
+    targetFile=$(readlink create_pokemon_template_seeder_symbolic)
+
+
+    echo "error"
+    echo "エラーが起きたシェルスクリプト:"$placeOfErrorShellScript
+    echo "startLineNumber:"$startLineNumber
+    echo "insertLineNumber:"$insertLineNumber
+
+
+    echo $targetFile
+    sleep 2
+    sed -i '' ''$startLineNumber','$insertLineNumber'd' $targetFile
+    sed -i '' '18d' $targetFile
+
+    error_handler_output_foodlv60
+}
+
+error_handler_output_create_pokemon_template2(){
+    placeOfErrorShellScript=$1
+    targetFile=$(readlink create_pokemon_template2_seeder_symbolic)
+
+
+    echo "error"
+    echo "エラーが起きたシェルスクリプト:"$placeOfErrorShellScript
+    echo "startLineNumber:"$startLineNumber
+    echo "insertLineNumber:"$insertLineNumber
+
+
+    echo $targetFile
+    sleep 2
+    sed -i '' ''$startLineNumber','$insertLineNumber'd' $targetFile
+    sed -i '' '18d' $targetFile
+
+    error_handler_output_create_pokemon_template
+}
+
+error_handler_output_main_skill(){
+    placeOfErrorShellScript=$1
+    targetFile=$(readlink main_skill_seeder_symbolic)
+
+
+    echo "error"
+    echo "エラーが起きたシェルスクリプト:"$placeOfErrorShellScript
+    echo "startLineNumber:"$startLineNumber
+    echo "insertLineNumber:"$insertLineNumber
+
+
+    echo $targetFile
+    sleep 2
+    sed -i '' ''$startLineNumber','$insertLineNumber'd' $targetFile
+    sed -i '' '18d' $targetFile
+
+    error_handler_output_create_pokemon_template2
+}
+
+error_handler_output_create_pokemon_template3(){
+    placeOfErrorShellScript=$1
+    targetFile=$(readlink create_pokemon_template3_seeder_symbolic)
+
+
+    echo "error"
+    echo "エラーが起きたシェルスクリプト:"$placeOfErrorShellScript
+    echo "startLineNumber:"$startLineNumber
+    echo "insertLineNumber:"$insertLineNumber
+
+
+    echo $targetFile
+    sleep 2
+    sed -i '' ''$startLineNumber','$insertLineNumber'd' $targetFile
+    sed -i '' '18d' $targetFile
+
+    error_handler_output_create_pokemon_template2
+}
+
+error_handler_output_choice_pokemon_constrained(){
+    placeOfErrorShellScript=$1
+    targetFile=$(readlink choice_pokemon_constrained_seeder_symbolic)
+
+
+    echo "error"
+    echo "エラーが起きたシェルスクリプト:"$placeOfErrorShellScript
+    echo "startLineNumber:"$startLineNumber
+    echo "insertLineNumber:"$insertLineNumber
+
+
+    echo $targetFile
+    sleep 2
+    sed -i '' ''$startLineNumber','$insertLineNumber'd' $targetFile
+    sed -i '' '18d' $targetFile
+
+    error_handler_output_create_pokemon_template3
+}
+
+error_handler_output_sub_skill(){
+    placeOfErrorShellScript=$1
+    targetFile=$(readlink sub_skill_seeder_symbolic)
+
+
+    echo "error"
+    echo "エラーが起きたシェルスクリプト:"$placeOfErrorShellScript
+    echo "startLineNumber:"$startLineNumber
+    echo "insertLineNumber:"$insertLineNumber
+
+
+    echo $targetFile
+    sleep 2
+    sed -i '' ''$startLineNumber','$insertLineNumber'd' $targetFile
+    sed -i '' '18d' $targetFile
+
+    error_handler_output_choice_pokemon_constrained
+}
+
+error_handler_output_personality(){
+    placeOfErrorShellScript=$1
+    targetFile=$(readlink personality_seeder_symbolic)
+
+
+    echo "error"
+    echo "エラーが起きたシェルスクリプト:"$placeOfErrorShellScript
+    echo "startLineNumber:"$startLineNumber
+    echo "insertLineNumber:"$insertLineNumber
+
+
+    echo $targetFile
+    sleep 2
+    sed -i '' ''$startLineNumber','$insertLineNumber'd' $targetFile
+    sed -i '' '18d' $targetFile
+
+    error_handler_output_sub_skill
+}
+
+error_handler_output_own_pokemon(){
+    placeOfErrorShellScript=$1
+    targetFile=$(readlink own_pokemon_seeder_symbolic)
+
+
+    echo "error"
+    echo "エラーが起きたシェルスクリプト:"$placeOfErrorShellScript
+    echo "startLineNumber:"$startLineNumber
+    echo "insertLineNumber:"$insertLineNumber
+
+
+    echo $targetFile
+    sleep 2
+    sed -i '' ''$startLineNumber','$insertLineNumber'd' $targetFile
+    sed -i '' '18d' $targetFile
+
+    error_handler_output_personality
+}
+
+

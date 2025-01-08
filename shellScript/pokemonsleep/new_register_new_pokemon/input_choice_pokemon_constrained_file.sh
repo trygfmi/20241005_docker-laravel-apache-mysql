@@ -42,7 +42,7 @@ today=$2
 while read -r line; do
   array=($line)
 #   newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}", \\'food1\\'=>\\'"${array[1]}"\\', \\'food2\\'=>\\'"${array[2]}"\\', \\'created_at\\'=>now(), \\'updated_at\\'=>now()],")
-  newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}",\\'name\\'=>\\'"${array[1]}"\\',\\'create_pokemon_template_id\\'=>"${array[2]}",\\'create_pokemon_template2_id\\'=>"${array[3]}",\\'create_pokemon_template3_id\\'=>"${array[4]}",\\'created_at\\'=>now(),\\'updated_at\\'=>now(),\\'image_path\\'=>"images/${array[0]}.png"],")
+  newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}",\\'name\\'=>\\'"${array[1]}"\\',\\'create_pokemon_template_id\\'=>"${array[2]}",\\'create_pokemon_template2_id\\'=>"${array[3]}",\\'create_pokemon_template3_id\\'=>"${array[4]}",\\'created_at\\'=>now(),\\'updated_at\\'=>now()],")
   echo $newPokemonRow >> $today/insertDataToSeeder/choice_pokemon_constrained.txt
 done < $inputFileName
 
