@@ -27,14 +27,14 @@ if [ -n "$isFoodlv1Selected" ] && [ $isFoodlv1Selected == true ] ; then
     insertFoodlv1SeedRowNumber=$((insertFoodlv1SeedRowNumber+1))
 
     while read -r line; do
-    array=($line)
-    
-    # echo $array
+        array=($line)
+        
+        # echo $array
 
-    sed -i '' ''$insertFoodlv1SeedRowNumber'i\
-                '$array'\
-    ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
-    insertFoodlv1SeedRowNumber=$((insertFoodlv1SeedRowNumber+1))
+        sed -i '' ''$insertFoodlv1SeedRowNumber'i\
+                    '$array'\
+        ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
+        insertFoodlv1SeedRowNumber=$((insertFoodlv1SeedRowNumber+1))
     done < $today/insertDataToSeeder/foodlv1.txt
 fi
 
@@ -47,14 +47,14 @@ if [ -n "$isFoodlv30Selected" ] && [ $isFoodlv30Selected == true ]; then
     insertFoodlv30SeedRowNumber=$((insertFoodlv30SeedRowNumber+1))
 
     while read -r line; do
-    array=($line)
-    
-    # echo $array
+        array=($line)
+        
+        # echo $array
 
-    sed -i '' ''$insertFoodlv30SeedRowNumber'i\
-                '$array'\
-    ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
-    insertFoodlv30SeedRowNumber=$((insertFoodlv30SeedRowNumber+1))
+        sed -i '' ''$insertFoodlv30SeedRowNumber'i\
+                    '$array'\
+        ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
+        insertFoodlv30SeedRowNumber=$((insertFoodlv30SeedRowNumber+1))
     done < $today/insertDataToSeeder/foodlv30.txt
 fi
 
@@ -68,14 +68,14 @@ if [ -n "$isFoodlv60Selected" ] && [ $isFoodlv60Selected == true ]; then
     insertFoodlv60SeedRowNumber=$((insertFoodlv60SeedRowNumber+1))
 
     while read -r line; do
-    array=($line)
-    
-    # echo $array
+        array=($line)
+        
+        # echo $array
 
-    sed -i '' ''$insertFoodlv60SeedRowNumber'i\
-                '$array'\
-    ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
-    insertFoodlv60SeedRowNumber=$((insertFoodlv60SeedRowNumber+1))
+        sed -i '' ''$insertFoodlv60SeedRowNumber'i\
+                    '$array'\
+        ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
+        insertFoodlv60SeedRowNumber=$((insertFoodlv60SeedRowNumber+1))
     done < $today/insertDataToSeeder/foodlv60.txt
 fi
 
@@ -88,15 +88,15 @@ if [ -n "$isCreatePokemonTemplateSelected" ] && [ $isCreatePokemonTemplateSelect
     insertCreatePokemonTemplateSeedRowNumber=$((insertCreatePokemonTemplateSeedRowNumber+1))
 
     while read -r line; do
-    array=($line)
-    
-    # echo $array
+        array=($line)
+        
+        # echo $array
 
-    sed -i '' ''$insertCreatePokemonTemplateSeedRowNumber'i\
-                '$array'\
-    ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
-    insertCreatePokemonTemplateSeedRowNumber=$((insertCreatePokemonTemplateSeedRowNumber+1))
-    # done < $inputFileName
+        sed -i '' ''$insertCreatePokemonTemplateSeedRowNumber'i\
+                    '$array'\
+        ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
+        insertCreatePokemonTemplateSeedRowNumber=$((insertCreatePokemonTemplateSeedRowNumber+1))
+        # done < $inputFileName
     done < $today/insertDataToSeeder/create_pokemon_template.txt
 fi
 
@@ -110,15 +110,15 @@ if [ -n "$isCreatePokemonTemplate2Selected" ] && [ $isCreatePokemonTemplate2Sele
     insertCreatePokemonTemplate2SeedRowNumber=$((insertCreatePokemonTemplate2SeedRowNumber+1))
 
     while read -r line; do
-    array=($line)
-    
-    # echo $array
+        array=($line)
+        
+        # echo $array
 
-    sed -i '' ''$insertCreatePokemonTemplate2SeedRowNumber'i\
-                '$array'\
-    ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
-    insertCreatePokemonTemplate2SeedRowNumber=$((insertCreatePokemonTemplate2SeedRowNumber+1))
-    # done < $inputFileName
+        sed -i '' ''$insertCreatePokemonTemplate2SeedRowNumber'i\
+                    '$array'\
+        ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
+        insertCreatePokemonTemplate2SeedRowNumber=$((insertCreatePokemonTemplate2SeedRowNumber+1))
+        # done < $inputFileName
     done < $today/insertDataToSeeder/create_pokemon_template2.txt
 fi
 
@@ -132,15 +132,15 @@ if [ -n "$isMainSkillSelected" ] && [ $isMainSkillSelected == true ]; then
     insertMainSkillSeedRowNumber=$((insertMainSkillSeedRowNumber+1))
 
     while read -r line; do
-    array=($line)
-    
-    # echo $array
+        array=($line)
+        
+        # echo $array
 
-    sed -i '' ''$insertMainSkillSeedRowNumber'i\
-                '$array'\
-    ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
-    insertMainSkillSeedRowNumber=$((insertMainSkillSeedRowNumber+1))
-    # done < $inputFileName
+        sed -i '' ''$insertMainSkillSeedRowNumber'i\
+                    '$array'\
+        ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
+        insertMainSkillSeedRowNumber=$((insertMainSkillSeedRowNumber+1))
+        # done < $inputFileName
     done < $today/insertDataToSeeder/main_skill.txt
 fi
 
@@ -154,15 +154,15 @@ if [ -n "$isCreatePokemonTemplate3Selected" ] && [ $isCreatePokemonTemplate3Sele
     insertCreatePokemonTemplate3SeedRowNumber=$((insertCreatePokemonTemplate3SeedRowNumber+1))
 
     while read -r line; do
-    array=($line)
-    
-    # echo $array
+        array=($line)
+        
+        # echo $array
 
-    sed -i '' ''$insertCreatePokemonTemplate3SeedRowNumber'i\
-                '$array'\
-    ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
-    insertCreatePokemonTemplate3SeedRowNumber=$((insertCreatePokemonTemplate3SeedRowNumber+1))
-    # done < $inputFileName
+        sed -i '' ''$insertCreatePokemonTemplate3SeedRowNumber'i\
+                    '$array'\
+        ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
+        insertCreatePokemonTemplate3SeedRowNumber=$((insertCreatePokemonTemplate3SeedRowNumber+1))
+        # done < $inputFileName
     done < $today/insertDataToSeeder/create_pokemon_template3.txt
 fi
 
@@ -176,15 +176,15 @@ if [ -n "$isChoicePokemonConstrainedSelected" ] && [ $isChoicePokemonConstrained
     insertChoicePokemonConstrainedSeedRowNumber=$((insertChoicePokemonConstrainedSeedRowNumber+1))
 
     while read -r line; do
-    array=($line)
-    
-    # echo $array
+        array=($line)
+        
+        # echo $array
 
-    sed -i '' ''$insertChoicePokemonConstrainedSeedRowNumber'i\
-                '$array'\
-    ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
-    insertChoicePokemonConstrainedSeedRowNumber=$((insertChoicePokemonConstrainedSeedRowNumber+1))
-    # done < $inputFileName
+        sed -i '' ''$insertChoicePokemonConstrainedSeedRowNumber'i\
+                    '$array'\
+        ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
+        insertChoicePokemonConstrainedSeedRowNumber=$((insertChoicePokemonConstrainedSeedRowNumber+1))
+        # done < $inputFileName
     done < $today/insertDataToSeeder/choice_pokemon_constrained.txt
 fi
 
@@ -198,15 +198,15 @@ if [ -n "$isSubSkillSelected" ] && [ $isSubSkillSelected == true ]; then
     insertSubSkillSeedRowNumber=$((insertSubSkillSeedRowNumber+1))
 
     while read -r line; do
-    array=($line)
-    
-    # echo $array
+        array=($line)
+        
+        # echo $array
 
-    sed -i '' ''$insertSubSkillSeedRowNumber'i\
-                '$array'\
-    ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
-    insertSubSkillSeedRowNumber=$((insertSubSkillSeedRowNumber+1))
-    # done < $inputFileName
+        sed -i '' ''$insertSubSkillSeedRowNumber'i\
+                    '$array'\
+        ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
+        insertSubSkillSeedRowNumber=$((insertSubSkillSeedRowNumber+1))
+        # done < $inputFileName
     done < $today/insertDataToSeeder/sub_skill.txt
 fi
 
@@ -220,15 +220,15 @@ if [ -n "$isPersonalitySelected" ] && [ $isPersonalitySelected == true ]; then
     insertPersonalitySeedRowNumber=$((insertPersonalitySeedRowNumber+1))
 
     while read -r line; do
-    array=($line)
-    
-    # echo $array
+        array=($line)
+        
+        # echo $array
 
-    sed -i '' ''$insertPersonalitySeedRowNumber'i\
-                '$array'\
-    ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
-    insertPersonalitySeedRowNumber=$((insertPersonalitySeedRowNumber+1))
-    # done < $inputFileName
+        sed -i '' ''$insertPersonalitySeedRowNumber'i\
+                    '$array'\
+        ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
+        insertPersonalitySeedRowNumber=$((insertPersonalitySeedRowNumber+1))
+        # done < $inputFileName
     done < $today/insertDataToSeeder/personality.txt
 fi
 

@@ -15,7 +15,6 @@ source ./errorTest.sh
 databaseName=$1
 user=$2
 password=$3
-today=$4
 
 
 

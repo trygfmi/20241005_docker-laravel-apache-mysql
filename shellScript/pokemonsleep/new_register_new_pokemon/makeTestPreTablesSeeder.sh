@@ -21,7 +21,7 @@ use Illuminate\\Support\\Facades\\DB;\
 
 sed -i '' '18i\
 \
-        DB::table('\''personalities'\'')->insert([\
+        DB::table('\''test_personalities'\'')->insert([\
             \
         ]);\
 ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
@@ -30,7 +30,7 @@ sed -i '' '18i\
 
 sed -i '' '18i\
 \
-        DB::table('\''sub_skills'\'')->insert([\
+        DB::table('\''test_sub_skills'\'')->insert([\
             \
         ]);\
 ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
@@ -39,7 +39,7 @@ sed -i '' '18i\
 
 sed -i '' '18i\
 \
-        DB::table('\''choice_pokemon_constraineds'\'')->insert([\
+        DB::table('\''test_choice_pokemon_constraineds'\'')->insert([\
             \
         ]);\
 ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
@@ -48,7 +48,7 @@ sed -i '' '18i\
 
 sed -i '' '18i\
 \
-        DB::table('\''create_pokemon_template3s'\'')->insert([\
+        DB::table('\''test_create_pokemon_template3s'\'')->insert([\
             \
         ]);\
 ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
@@ -57,7 +57,7 @@ sed -i '' '18i\
 
 sed -i '' '18i\
 \
-        DB::table('\''main_skills'\'')->insert([\
+        DB::table('\''test_main_skills'\'')->insert([\
             \
         ]);\
 ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
@@ -66,7 +66,7 @@ sed -i '' '18i\
 
 sed -i '' '18i\
 \
-        DB::table('\''create_pokemon_template2s'\'')->insert([\
+        DB::table('\''test_create_pokemon_template2s'\'')->insert([\
             \
         ]);\
 ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
@@ -84,7 +84,7 @@ sed -i '' '18i\
 
 sed -i '' '18i\
 \
-        DB::table('\''foodlv60s'\'')->insert([\
+        DB::table('\''test_foodlv60s'\'')->insert([\
             \
         ]);\
 ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
@@ -93,7 +93,7 @@ sed -i '' '18i\
 
 sed -i '' '18i\
 \
-        DB::table('\''foodlv30s'\'')->insert([\
+        DB::table('\''test_foodlv30s'\'')->insert([\
             \
         ]);\
 ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php
@@ -102,7 +102,7 @@ sed -i '' '18i\
 
 sed -i '' '18i\
 \
-        DB::table('\''foodlv1s'\'')->insert([\
+        DB::table('\''test_foodlv1s'\'')->insert([\
             \
         ]);\
 ' ../../../src/database/seeders/PokemonSleep/TestPreTablesSeeder2.php

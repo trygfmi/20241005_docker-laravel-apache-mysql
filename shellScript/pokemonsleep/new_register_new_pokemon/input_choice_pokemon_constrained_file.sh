@@ -21,15 +21,7 @@ inputFileName=$1
 
 
 # 読み込むファイルの末尾に改行がないと最後の行が読み込まれないので改行を入れる処理を記述しています
-# ファイルの末尾の1文字を取得
-last_char=$(tail -c 1 "$inputFileName")
-# 最後の文字が改行でない場合
-if [ -n "$last_char" ] && [ $last_char != '\n' ]; then
-    echo "読み込んだファイルの末尾に改行を追加しました"
-    sed -i '' '$a\
-\
-' $inputFileName
-fi
+./addNewLineIfLastCharIsNotEmptyLine.sh $inputFileName
 
 
 
@@ -40,9 +32,9 @@ today=$2
 
 # ファイルを1行ずつ読み込む
 while read -r line; do
-  array=($line)
-#   newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}", \\'food1\\'=>\\'"${array[1]}"\\', \\'food2\\'=>\\'"${array[2]}"\\', \\'created_at\\'=>now(), \\'updated_at\\'=>now()],")
-  newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}",\\'name\\'=>\\'"${array[1]}"\\',\\'create_pokemon_template_id\\'=>"${array[2]}",\\'create_pokemon_template2_id\\'=>"${array[3]}",\\'create_pokemon_template3_id\\'=>"${array[4]}",\\'created_at\\'=>now(),\\'updated_at\\'=>now()],")
+  choicePokemonConstrainedDataRowArray=($line)
+#   newPokemonRow=$(echo "[\\'id\\'=>"${choicePokemonConstrainedDataRowArray[0]}", \\'food1\\'=>\\'"${choicePokemonConstrainedDataRowArray[1]}"\\', \\'food2\\'=>\\'"${choicePokemonConstrainedDataRowArray[2]}"\\', \\'created_at\\'=>now(), \\'updated_at\\'=>now()],")
+  newPokemonRow=$(echo "[\\'id\\'=>"${choicePokemonConstrainedDataRowArray[0]}",\\'name\\'=>\\'"${choicePokemonConstrainedDataRowArray[1]}"\\',\\'create_pokemon_template_id\\'=>"${choicePokemonConstrainedDataRowArray[2]}",\\'create_pokemon_template2_id\\'=>"${choicePokemonConstrainedDataRowArray[3]}",\\'create_pokemon_template3_id\\'=>"${choicePokemonConstrainedDataRowArray[4]}",\\'created_at\\'=>now(),\\'updated_at\\'=>now()],")
   echo $newPokemonRow >> $today/insertDataToSeeder/choice_pokemon_constrained.txt
 done < $inputFileName
 

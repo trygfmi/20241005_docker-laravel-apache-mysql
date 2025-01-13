@@ -21,15 +21,7 @@ inputFileName=$1
 
 
 # 読み込むファイルの末尾に改行がないと最後の行が読み込まれないので改行を入れる処理を記述しています
-# ファイルの末尾の1文字を取得
-last_char=$(tail -c 1 "$inputFileName")
-# 最後の文字が改行でない場合
-if [ -n "$last_char" ] && [ $last_char != '\n' ]; then
-    echo "読み込んだファイルの末尾に改行を追加しました"
-    sed -i '' '$a\
-\
-' $inputFileName
-fi
+./addNewLineIfLastCharIsNotEmptyLine.sh $inputFileName
 
 
 
@@ -40,9 +32,9 @@ today=$2
 
 # ファイルを1行ずつ読み込む
 while read -r line; do
-  array=($line)
-#   newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}", \\'food1\\'=>\\'"${array[1]}"\\', \\'food2\\'=>\\'"${array[2]}"\\', \\'created_at\\'=>now(), \\'updated_at\\'=>now()],")
-  newPokemonRow=$(echo "[\\'id\\'=>"${array[0]}",\\'food1\\'=>\\'"${array[1]}"\\',\\'food2\\'=>\\'"${array[2]}"\\',\\'created_at\\'=>now(),\\'updated_at\\'=>now()],")
+  foodLv30DataRowArray=($line)
+#   newPokemonRow=$(echo "[\\'id\\'=>"${foodLv30DataRowArray0]}", \\'food1\\'=>\\'"${foodLv30DataRowArray1]}"\\', \\'food2\\'=>\\'"${foodLv30DataRowArray2]}"\\', \\'created_at\\'=>now(), \\'updated_at\\'=>now()],")
+  newPokemonRow=$(echo "[\\'id\\'=>"${foodLv30DataRowArray[0]}",\\'food1\\'=>\\'"${foodLv30DataRowArray[1]}"\\',\\'food2\\'=>\\'"${foodLv30DataRowArray[2]}"\\',\\'created_at\\'=>now(),\\'updated_at\\'=>now()],")
   echo $newPokemonRow >> $today/insertDataToSeeder/foodlv30.txt
 done < $inputFileName
 

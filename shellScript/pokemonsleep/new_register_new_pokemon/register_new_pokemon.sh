@@ -10,30 +10,23 @@ trap 'error_handler $today; exit 1' ERR
 
 
 
-# originFile.txtから抽出したデータを格納するフォルダが無ければ作成します
+# シェルの引数から追加するデータが含まれるファイル名を取得
+originFile=$1
+
+# シェルの引数から処理を実行した日付を取得
 # today=$(date +%Y%m%d)
 today=$2
 # echo $today
-if [ -d "$today" ]; then
-    echo "フォルダは既に作成済み"
-else
-    echo $today"フォルダを作成"
-    mkdir $today
-    mkdir $today/insertDataToSeeder
-fi
 
 
 
-# シェルの引数からファイル名を取得
-originFile=$1
+# originFile.txtから抽出したデータを格納するフォルダが無ければ作成します
+./makeWorkingAndDataDirectory.sh $today
 
 
 
-# 読み込むファイルの末尾が改行でなければ、改行を挿入して全ての行を読めるようにします
-last_char=$(tail -c 1 "$originFile")
-if [ -n "$last_char" ] && [ "$last_char" != "\n" ]; then
-    insertNewLineAtLastRow.sh $originFile
-fi
+# 追加するデータが含まれるファイルの最後の行に空行がないと、最後のデータが読み込まれないので、最後に空行を追加します
+./addNewLineIfLastCharIsNotEmptyLine.sh $originFile
 
 
 
@@ -44,17 +37,17 @@ isMainSkillSelected=false
 
 # 読み込んだファイルから1行ずつ読み出して、参照するデータをファイルに書き込みます
 while read line; do
-    array=($line)
-    # echo ${array[0]}
+    originFileRowArray=($line)
+    # echo ${originFileRowArray[0]}
 
-    if [ ${array[0]} == "pokemon" ]; then
-        echo "${array[1]} ${array[2]} ${array[1]} ${array[1]} ${array[1]}" >> $today/choice_pokemon_constrained_data.txt
-        echo "${array[1]} ${array[1]} " >> $today/create_pokemon_template_data.txt
-        echo "${array[1]} ${array[1]} ${array[1]} ${array[1]}" >> $today/create_pokemon_template2_data.txt
-        echo "${array[1]} ${array[1]} ${array[1]} ${array[1]} ${array[6]}" >> $today/create_pokemon_template3_data.txt
-        echo "${array[1]} ${array[3]} " >> $today/food_lv1_data.txt
-        echo "${array[1]} ${array[3]} ${array[4]}" >> $today/food_lv30_data.txt
-        echo "${array[1]} ${array[3]} ${array[4]} ${array[5]}" >> $today/food_lv60_data.txt
+    if [ ${originFileRowArray[0]} == "pokemon" ]; then
+        echo "${originFileRowArray[1]} ${originFileRowArray[2]} ${originFileRowArray[1]} ${originFileRowArray[1]} ${originFileRowArray[1]}" >> $today/choice_pokemon_constrained_data.txt
+        echo "${originFileRowArray[1]} ${originFileRowArray[1]} " >> $today/create_pokemon_template_data.txt
+        echo "${originFileRowArray[1]} ${originFileRowArray[1]} ${originFileRowArray[1]} ${originFileRowArray[1]}" >> $today/create_pokemon_template2_data.txt
+        echo "${originFileRowArray[1]} ${originFileRowArray[1]} ${originFileRowArray[1]} ${originFileRowArray[1]} ${originFileRowArray[6]}" >> $today/create_pokemon_template3_data.txt
+        echo "${originFileRowArray[1]} ${originFileRowArray[3]} " >> $today/food_lv1_data.txt
+        echo "${originFileRowArray[1]} ${originFileRowArray[3]} ${originFileRowArray[4]}" >> $today/food_lv30_data.txt
+        echo "${originFileRowArray[1]} ${originFileRowArray[3]} ${originFileRowArray[4]} ${originFileRowArray[5]}" >> $today/food_lv60_data.txt
 
         if [ $isPokemonSelected == false ]; then
             isSelectedSeeder[0]=true
@@ -68,8 +61,8 @@ while read line; do
             isPokemonSelected=true
         fi
 
-    elif [ ${array[0]} == "main_skill" ]; then
-        echo "${array[1]} ${array[2]} " >> $today/main_skill_data.txt
+    elif [ ${originFileRowArray[0]} == "main_skill" ]; then
+        echo "${originFileRowArray[1]} ${originFileRowArray[2]} " >> $today/main_skill_data.txt
 
         if [ $isMainSkillSelected == false ]; then
             isSelectedSeeder[5]=true
@@ -83,14 +76,14 @@ done < $originFile
 
 
 
-echo ${isSelectedSeeder[@]}
-
+# echo ${isSelectedSeeder[@]}
 
 
 
 # 引数のデータファイルを利用して、seederファイルに書き込むための文字列を生成します
 # <<test
 if [ ${isSelectedSeeder[0]} == true ]; then
+    # generateAndInsertFoodlv1DataIntoSeeder.sh
     ./input_food_lv1_file.sh  $today/food_lv1_data.txt $today
 fi
 if [ ${isSelectedSeeder[1]} == true ]; then
@@ -131,24 +124,31 @@ databaseName=laravel
 user=user
 password=password
 
-./makeTestPreTables.sh $databaseName $user $password $today
+# データベースに検証用のテーブルを作成します
+./makeTestPreTables.sh $databaseName $user $password
 trap 'error_handler_after_makeTestPreTables "register_new_pokemon.sh" "after_makeTestPreTables.sh"; exit 1' ERR
+# 検証テーブル用のデータを追加するためにシーダーを作成し、そのシーダーにデータを追加するための文字列を追加します
 ./makeTestPreTablesSeeder.sh
 trap 'error_handler_after_makeTestPreTablesSeeder "register_new_pokemon.sh" "after_makeTestPreTablesSeeder.sh"; exit 1' ERR
+# テストシーダーにデータを追加する文字列を追加します
 ./insertTestPreTablesSeeder.sh $today ${isSelectedSeeder[@]}
+# テストテーブルにデータを実際に追加します
 ./insertTestPreTables.sh
+# テストシーダーを削除します
 ./deleteTestPreTablesSeeder.sh
+# 検証用テーブルを全て削除します
 ./dropTestPreTables.sh
 
 
 
+# 更新する必要のあるシーダーのコメントアウトを解除します
 ./enable_selected_seeder.sh ${isSelectedSeeder[@]}
 trap 'error_handler_after_enable_selected_seeder "register_new_pokemon.sh" "enable_selected_seeder.sh"; exit 1' ERR
 
 
 
-sed -i '' 's|DB_HOST=laravel_db2|# DB_HOST=laravel_db2|g' ../../../src/.env
-sed -i '' 's|# DB_HOST=127.0.0.1|DB_HOST=127.0.0.1|g' ../../../src/.env
+# .envファイルのDB_HOSTをローカルにして、コマンドを実行できるようにします
+./changeDB_HOSTToLocalHost.sh
 
 
 
@@ -190,11 +190,12 @@ fi
 
 
 
-sed -i '' 's|# DB_HOST=laravel_db2|DB_HOST=laravel_db2|g' ../../../src/.env
-sed -i '' 's|DB_HOST=127.0.0.1|# DB_HOST=127.0.0.1|g' ../../../src/.env
+# .envファイルのDB_HOSTをデータベースにして、ブラウザでアクセス可能にします
+./changeDB_HOSTToDatabase.sh
 
 
 
+# コメントアウトを解除した部分をまたコメントアウトします
 ./disable_selected_seeder.sh ${isSelectedSeeder[@]}
 
 

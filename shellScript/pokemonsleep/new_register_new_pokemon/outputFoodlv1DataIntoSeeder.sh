@@ -16,7 +16,7 @@ insertLineNumber=18
 inputFileName=$1
 today=$2
 writingFile=$(readlink food_lv1_seeder_symbolic)
-insertFoodlv1SeedRowNumber=$(grep -n 'DB::table('\''foodlv1s'\'')->insert('\\['' ../../../src/database/seeders/PokemonSleep/BackupSeeder.php | cut -d: -f1)
+insertBackupFoodlv1SeedRowNumber=$(grep -n 'DB::table('\''foodlv1s'\'')->insert('\\['' ../../../src/database/seeders/PokemonSleep/BackupSeeder.php | cut -d: -f1)
 
 
 
@@ -39,7 +39,7 @@ while read -r line; do
 ' $writingFile
   insertLineNumber=$((insertLineNumber+1))
 
-#   sed -i '' $(($insertFoodlv1SeedRowNumber+2))'i\
+#   sed -i '' $(($insertBackupFoodlv1SeedRowNumber+2))'i\
 #             '$array'\
 # ' ../../../src/database/seeders/PokemonSleep/BackupSeeder.php
 done < $inputFileName

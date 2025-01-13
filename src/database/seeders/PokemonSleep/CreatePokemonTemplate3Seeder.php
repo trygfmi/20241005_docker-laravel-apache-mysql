@@ -16,6 +16,20 @@ class CreatePokemonTemplate3Seeder extends Seeder
     {
         //
         /*
+        // 20250110に追加
+        DB::table('create_pokemon_template3s')->insert([
+            ['id'=>1000,'food_lv1_id'=>1000,'food_lv30_id'=>1000,'food_lv60_id'=>1000,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
+        // 20250109に追加
+        DB::table('create_pokemon_template3s')->insert([
+            ['id'=>1000,'food_lv1_id'=>1000,'food_lv30_id'=>1000,'food_lv60_id'=>1000,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
+        ]);
+        */
+
+        /*
         // 20250108に追加
         DB::table('create_pokemon_template3s')->insert([
             ['id'=>1000,'food_lv1_id'=>1000,'food_lv30_id'=>1000,'food_lv60_id'=>1000,'main_skill_id'=>8,'created_at'=>now(),'updated_at'=>now()],
