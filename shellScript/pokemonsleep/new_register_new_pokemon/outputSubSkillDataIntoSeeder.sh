@@ -29,21 +29,7 @@ insertLineNumber=$((insertLineNumber+2))
 
 
 
-while read -r line; do
-  array=($line)
-  
-  echo $array
-
-  sed -i '' ''$insertLineNumber'i\
-            '$array'\
-' $writingFile
-  insertLineNumber=$((insertLineNumber+1))
-
-#   sed -i '' $(($insertCreatePokemonTemplateSeedRowNumber+2))'i\
-#             '$array'\
-# ' ../../../src/database/seeders/PokemonSleep/BackupSeeder.php
-done < $inputFileName
-# done < 20241229/insertDataToSeeder/sub_skill.txt
+insertLineNumber=$(./readData.sh $insertLineNumber $inputFileName $writingFile)
 
 
 
